@@ -1,5 +1,54 @@
 .App {
+  background-color: #282c34;
+  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   text-align: center;
+}
+
+.App-header {
+  min-height: 36pt;
+  display: inline;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-body {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: max-content;
+  color: white;
+}
+
+.SeedCell {
+  text-align: left;
+  margin: 12pt;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4pt;
+}
+
+.checkboxes > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 4pt;
+}
+
+.checkboxes > div > span{
+  display: inline;
+  margin: 2pt;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .App-logo {
@@ -11,28 +60,4 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} */

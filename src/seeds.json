@@ -1,0 +1,452 @@
+{
+    "categories": [
+        "Restaurant",
+        "Café",
+        "Sweetshop",
+        "Movie-Theatre",
+        "Pharmacy",
+        "Zoo",
+        "Forest",
+        "Waterside",
+        "Post-Office",
+        "Art-Gallery",
+        "Airport",
+        "Station",
+        "Beach",
+        "Burger-Place",
+        "Corner-Store",
+        "Supermarket",
+        "Bakery",
+        "Hair-Salon",
+        "Clothes-Store",
+        "Park",
+        "Library/Bookstore",
+        "Special",
+        "Roadside",
+        "Sushi-Restaurant",
+        "Mountain",
+        "Weather",
+        "Theme-Park"
+    ],
+    "decorTypes": [
+        {
+            "name": "Chef Hat",
+            "catInd": 0,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": "chef"
+        },
+        {
+            "name": "Chef Hat (Shiny)",
+            "catInd": 0,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off"
+            },
+            "group": "chef"
+        },
+        {
+            "name": "Coffee Cup",
+            "catInd": 1,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Macaron",
+            "catInd": 2,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Popcorn Snack",
+            "catInd": 3,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Toothbrush",
+            "catInd": 4,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Dandelion",
+            "catInd": 5,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Stag Beetle",
+            "catInd": 6,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Acorn",
+            "catInd": 6,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Fishing Lure",
+            "catInd": 7,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Stamp",
+            "catInd": 8,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Picture Frame",
+            "catInd": 9,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Toy Airplane",
+            "catInd": 10,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Paper Train",
+            "catInd": 11,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Ticket",
+            "catInd": 11,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Shell",
+            "catInd": 12,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Burger",
+            "catInd": 13,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Bottle Cap",
+            "catInd": 14,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Snack",
+            "catInd": 14,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Mushroom",
+            "catInd": 15,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Banana",
+            "catInd": 15,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Baguette",
+            "catInd": 16,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Scissors",
+            "catInd": 17,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Hair Tie",
+            "catInd": 18,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Clover",
+            "catInd": 19,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "4-Leaf Clover",
+            "catInd": 19,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Tiny Book",
+            "catInd": 20,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Mario Hat",
+            "catInd": 21,
+            "colors": {
+                "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Lunar New Year Ornament",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Chess Piece",
+            "catInd": 21,
+            "colors": {
+                "yellow": "off", "blue": "off", "white": "off", "purple": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Fingerboard",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "purple": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Hanafuda A",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            },
+            "group": "hanafuda"
+        },
+        {
+            "name": "Hanafuda B",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            },
+            "group": "hanafuda"
+        },
+        {
+            "name": "Hanafuda C",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            },
+            "group": "hanafuda"
+        },
+        {
+            "name": "Hanafuda D",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            },
+            "group": "hanafuda"
+        },
+        {
+            "name": "Hanafuda E",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            },
+            "group": "hanafuda"
+        },
+        {
+            "name": "Hanafuda F",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            },
+            "group": "hanafuda"
+        },
+        {
+            "name": "Sticker (Green)",
+            "catInd": 22,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": "sticker"
+        },
+        {
+            "name": "Sticker (Blue)",
+            "catInd": 22,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": "sticker"
+        },
+        {
+            "name": "Sticker (Orange)",
+            "catInd": 22,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": "sticker"
+        },
+        {
+            "name": "Sticker (Winter)",
+            "catInd": 22,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": "sticker"
+        },
+        {
+            "name": "Sushi",
+            "catInd": 23,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Mountain Pin Badge",
+            "catInd": 24,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Leaf Hat A",
+            "catInd": 25,
+            "colors": {
+                "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Leaf Hat B",
+            "catInd": 25,
+            "colors": {
+                "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Leaf Hat C",
+            "catInd": 25,
+            "colors": {
+                "blue": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Theme Park Ticket",
+            "catInd": 26,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off"
+            },
+            "group": null
+        }
+    ],
+    "groups": {
+        "chef": {
+            "red": "off", "yellow": "off", "blue": "off",
+            "white": "off", "purple": "off", "grey": "off", "pink": "off"
+        },
+        "hanafuda": {
+            "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+        },
+        "sticker": {
+            "red": "off", "yellow": "off", "blue": "off",
+            "white": "off", "purple": "off", "grey": "off", "pink": "off"
+        }
+    }
+}
