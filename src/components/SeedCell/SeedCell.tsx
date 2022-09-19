@@ -12,8 +12,9 @@ interface Prop {
 export const SeedCell: React.FC<Prop> = (props) => {
     var { seed, categories, nextCat, clickHandler } = props;
 
-        // TODO: Categories
+        // TODO: Add blank checkboxes to allow grid alignment
         // TODO: Implement group-based counting (i.e., don't count special variants)
+        //
         // --- Commented code below counts every seedling ---
         // var count = 0;
         // var total = 0;

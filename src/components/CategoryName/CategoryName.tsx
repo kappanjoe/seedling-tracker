@@ -9,8 +9,9 @@ interface Prop {
 
 export const CategoryName: React.FC<Prop> = (props) => {
     const { seed, readyForCat, categories } = props;
-    
+    var name = categories[seed.catInd];
+    name = name.replace("-", " ");
     if (readyForCat) {
-           return <div className="CategoryName">{ categories[seed.catInd] }</div>;
+           return <div className="CategoryName">{ name }</div>;
     } else { return <></>};
 }
