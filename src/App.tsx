@@ -51,8 +51,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={ clearStorage }>DEBUG - Clear Storage</button>
-        <button onClick={ reformatStorage }>DEBUG - Reformat Storage</button>
+        {/* <button onClick={ clearStorage }>DEBUG - Clear Storage</button>
+        <button onClick={ reformatStorage }>DEBUG - Reformat Storage</button> */}
       </header>
       <div className='App-body'>
         { seeds.decorTypes.map((seed) => {

@@ -51,10 +51,10 @@
 
 .CheckboxBlock > div {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
-  margin: 0pt 2pt 0pt 2pt;
-  padding: 1pt 2pt 4pt 2pt;
+  margin: 0pt 3pt 0pt 3pt;
+  padding: 6pt 2pt 1pt 2pt;
   border-radius: 5pt;
 }
 
@@ -86,10 +86,13 @@
   color: rgb(149, 43, 146);
   background-color: rgb(255, 240, 245);
 }
+.blankDiv {
+  background-color: rgb(245, 245, 245);
+}
 
 .CheckboxBlock > div > span {
   display: inline;
-  margin: 2pt;
+  margin: 0pt 2pt 4pt 2pt;
 }
 
 /* @keyframes App-logo-spin {
