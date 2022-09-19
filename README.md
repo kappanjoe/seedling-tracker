@@ -1,3 +1,23 @@
+# Seedling Tracker
+Seedling Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It was built as a React web app in TypeScript.
+
+*Seedling Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
+
+## TODO:
+
+### Github Pages
+- [ ] Set up Github Pages
+
+### Features
+- [ ] Color labels/color-blind accessibility
+- [ ] Coloring based on checkbox state
+- [ ] Current total counts
+  - [ ] "Official" totals
+  - [ ] 100% completionist totals
+  - [ ] "Completed!" element
+- [ ] Dark Mode
+- [ ] Detail views?
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

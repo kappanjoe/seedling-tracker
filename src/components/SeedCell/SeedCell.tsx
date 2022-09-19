@@ -13,7 +13,6 @@ export const SeedCell: React.FC<Prop> = (props) => {
     var { seed, categories, nextCat, clickHandler } = props;
     const colors = ["red", "yellow", "blue", "white", "purple", "grey", "pink"];
 
-        // TODO: Add blank checkboxes to allow grid alignment
         // TODO: Implement group-based counting (i.e., don't count special variants)
         //
         // --- Commented code below counts every seedling ---
@@ -41,7 +40,7 @@ export const SeedCell: React.FC<Prop> = (props) => {
                     
                     return (
                         <div className={ key + "Div" } key={ key }>
-                            <span className={ key + "Name" }>{ key }</span>
+                            {/* <span className={ key + "Name" }>{ key }</span> */}
                             <Checkbox
                                 seed= { seed }
                                 clickHandler= { clickHandler }
