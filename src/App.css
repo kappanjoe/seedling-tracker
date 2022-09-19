@@ -24,20 +24,51 @@
   margin: 12pt;
 }
 
-.checkboxes {
-  display: flex;
-  flex-direction: row;
-  margin-top: 4pt;
+.CategoryName {
+  margin-left: -30pt;
+  margin-bottom: 12pt;
 }
 
-.checkboxes > div {
+.SeedName{
+  margin-left: -12pt;
+}
+
+.CheckboxBlock {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2pt;
+}
+
+.CheckboxBlock > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 4pt;
 }
 
-.checkboxes > div > span{
+/* .redDiv {
+  background-color: rgb(121, 13, 13);
+}
+.yellowDiv {
+  background-color: rgb(121, 112, 13);
+}
+.blueDiv {
+  background-color: rgb(13, 36, 121);
+}
+.whiteDiv {
+  background-color: rgb(125, 125, 125);
+}
+.purpleDiv {
+  background-color: rgb(83, 13, 121);
+}
+.greyDiv {
+  background-color: rgb(41, 41, 41);
+}
+.pinkDiv {
+  background-color: rgb(87, 40, 84);
+} */
+
+.CheckboxBlock > div > span {
   display: inline;
   margin: 2pt;
 }

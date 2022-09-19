@@ -29,14 +29,29 @@ function App() {
     window.location.reload();
   }
 
+  var prevCat = -1;
+  var nextCat = false;
+
   return (
     <div className="App">
       <header className="App-header">
         <button onClick={ clearStorage }>DEBUG - Clear Storage</button>
       </header>
       <div className='App-body'>
-        { seeds.decorTypes.map((decorType) => {
-                return (<SeedCell seed={ decorType } categories={ seeds.categories } clickHandler={ updateValue } key={ decorType.name }/>)
+        { seeds.decorTypes.map((seed) => {
+                // Set value to generate CategoryName in SeedCell when needed
+                if (prevCat < seed.catInd) {
+                  nextCat = true;
+                  prevCat = seed.catInd;
+                }
+                let output = (<SeedCell
+                  seed={ seed }
+                  categories={ seeds.categories }
+                  nextCat={ nextCat }
+                  clickHandler={ updateValue }
+                  key={ seed.name }/>);
+                nextCat = false;
+                return output;
         })}
       </div>
     </div>

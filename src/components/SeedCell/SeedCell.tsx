@@ -1,16 +1,17 @@
 import React from 'react';
 import { Checkbox, seedType, colors } from '../Checkbox';
+import { CategoryName } from '../CategoryName';
 
 interface Prop {
     seed: seedType;
     categories: string[];
+    nextCat: boolean;
     clickHandler: (seed: seedType, key: keyof colors, value?: string) => void;
 };
 
 export const SeedCell: React.FC<Prop> = (props) => {
-    var { seed, categories, clickHandler } = props;
+    var { seed, categories, nextCat, clickHandler } = props;
 
-        // TODO: Create "onChange" property
         // TODO: Categories
         // TODO: Implement group-based counting (i.e., don't count special variants)
         // --- Commented code below counts every seedling ---
@@ -22,10 +23,11 @@ export const SeedCell: React.FC<Prop> = (props) => {
         // }
         // var output = <span className='ColorCount'>{ count + " / " + total }</span>
 
-    return ( 
+    return (
         <div className={ "SeedCell " + categories[seed.catInd] }>
+            <CategoryName seed={ seed } readyForCat={ nextCat } categories={ categories }/>
             <span className='SeedName'>{ seed.name }</span>
-            <div className='checkboxes'>
+            <div className='CheckboxBlock'>
                 { Object.keys(seed.colors).map((key: string) => {
                     // console.log(key + " " + seed.colors[key as keyof colors]);
                     var checked: string = seed.colors[key as keyof colors]!;
