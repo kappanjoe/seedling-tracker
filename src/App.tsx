@@ -15,7 +15,7 @@ function App() {
     seeds = JSON.parse(localStorage.getItem("seeds")!);
   }
 
-  function updateValue(seed: seedType, key: keyof colors, value?: string) {
+  function updateValue(seed: seedType, key: keyof colors, value: string) {
     var seedInd = seeds.decorTypes.findIndex((x) => x.name === seed.name);
     // console.log(seedInd);
     if (seedInd >= 0) {
@@ -29,6 +29,22 @@ function App() {
     window.location.reload();
   }
 
+  function reformatStorage() {
+    const colors = ["red", "yellow", "blue", "white", "purple", "grey", "pink"];
+    
+    seeds.decorTypes.forEach( (x) => {
+      for (let each of colors) {
+        if (x.colors[each as keyof colors] === undefined) {
+          x.colors[each as keyof colors] = "nil";
+        }
+      }
+    });
+
+    localStorage.setItem("seeds", JSON.stringify(seeds));
+    window.location.reload();
+
+  }
+
   var prevCat = -1;
   var nextCat = false;
 
@@ -36,6 +52,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button onClick={ clearStorage }>DEBUG - Clear Storage</button>
+        <button onClick={ reformatStorage }>DEBUG - Reformat Storage</button>
       </header>
       <div className='App-body'>
         { seeds.decorTypes.map((seed) => {

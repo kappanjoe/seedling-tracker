@@ -42,7 +42,8 @@
             "name": "Chef Hat (Shiny)",
             "catInd": 0,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": "chef"
         },
@@ -275,7 +276,8 @@
             "name": "Mario Hat",
             "catInd": 21,
             "colors": {
-                "blue": "off"
+                "red": "nil", "yellow": "nil", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -283,7 +285,8 @@
             "name": "Lunar New Year Ornament",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -291,7 +294,8 @@
             "name": "Chess Piece",
             "catInd": 21,
             "colors": {
-                "yellow": "off", "blue": "off", "white": "off", "purple": "off"
+                "red": "nil", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -299,7 +303,8 @@
             "name": "Fingerboard",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "purple": "off", "pink": "off"
+                "red": "off", "yellow": "off", "blue": "nil",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "off"
             },
             "group": null
         },
@@ -307,7 +312,8 @@
             "name": "Hanafuda A",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
             },
             "group": "hanafuda"
         },
@@ -315,7 +321,9 @@
             "name": "Hanafuda B",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
+
             },
             "group": "hanafuda"
         },
@@ -323,7 +331,8 @@
             "name": "Hanafuda C",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
             },
             "group": "hanafuda"
         },
@@ -331,7 +340,8 @@
             "name": "Hanafuda D",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
             },
             "group": "hanafuda"
         },
@@ -339,7 +349,8 @@
             "name": "Hanafuda E",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
             },
             "group": "hanafuda"
         },
@@ -347,7 +358,8 @@
             "name": "Hanafuda F",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
             },
             "group": "hanafuda"
         },
@@ -391,7 +403,8 @@
             "name": "Sushi",
             "catInd": 23,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -399,7 +412,8 @@
             "name": "Mountain Pin Badge",
             "catInd": 24,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -407,7 +421,8 @@
             "name": "Leaf Hat A",
             "catInd": 25,
             "colors": {
-                "blue": "off"
+                "red": "nil", "yellow": "nil", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -415,7 +430,8 @@
             "name": "Leaf Hat B",
             "catInd": 25,
             "colors": {
-                "blue": "off"
+                "red": "nil", "yellow": "nil", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -423,7 +439,8 @@
             "name": "Leaf Hat C",
             "catInd": 25,
             "colors": {
-                "blue": "off"
+                "red": "nil", "yellow": "nil", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         },
@@ -431,7 +448,8 @@
             "name": "Theme Park Ticket",
             "catInd": 26,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         }
@@ -442,7 +460,8 @@
             "white": "off", "purple": "off", "grey": "off", "pink": "off"
         },
         "hanafuda": {
-            "red": "off", "yellow": "off", "blue": "off", "purple": "off"
+            "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
         },
         "sticker": {
             "red": "off", "yellow": "off", "blue": "off",

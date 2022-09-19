@@ -8,18 +8,18 @@ export type seedType = {
 }
 
 export type colors = {
-    red?: string;
-    yellow?: string;
-    blue?: string;
-    white?: string;
-    purple?: string;
-    grey?: string;
-    pink?: string;
+    red: string;
+    yellow: string;
+    blue: string;
+    white: string;
+    purple: string;
+    grey: string;
+    pink: string;
 }
 
 interface Prop {
     seed: seedType;
-    clickHandler: (seed: seedType, key: keyof colors, value?: string) => void;
+    clickHandler: (seed: seedType, key: keyof colors, value: string) => void;
     checkState: string;
     keyName: string;
 };

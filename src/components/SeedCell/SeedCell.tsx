@@ -6,11 +6,12 @@ interface Prop {
     seed: seedType;
     categories: string[];
     nextCat: boolean;
-    clickHandler: (seed: seedType, key: keyof colors, value?: string) => void;
+    clickHandler: (seed: seedType, key: keyof colors, value: string) => void;
 };
 
 export const SeedCell: React.FC<Prop> = (props) => {
     var { seed, categories, nextCat, clickHandler } = props;
+    const colors = ["red", "yellow", "blue", "white", "purple", "grey", "pink"];
 
         // TODO: Add blank checkboxes to allow grid alignment
         // TODO: Implement group-based counting (i.e., don't count special variants)
@@ -29,12 +30,18 @@ export const SeedCell: React.FC<Prop> = (props) => {
             <CategoryName seed={ seed } readyForCat={ nextCat } categories={ categories }/>
             <span className='SeedName'>{ seed.name }</span>
             <div className='CheckboxBlock'>
-                { Object.keys(seed.colors).map((key: string) => {
+                { colors.map((key: string) => {
                     // console.log(key + " " + seed.colors[key as keyof colors]);
                     var checked: string = seed.colors[key as keyof colors]!;
+                    if (checked === "nil") {
+                        return (
+                            <div className='blankDiv' key={ Math.random() }></div>
+                        )
+                    }
+                    
                     return (
                         <div className={ key + "Div" } key={ key }>
-                            <span className={ key + "Name" }> { key }</span>
+                            <span className={ key + "Name" }>{ key }</span>
                             <Checkbox
                                 seed= { seed }
                                 clickHandler= { clickHandler }
