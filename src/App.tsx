@@ -53,6 +53,7 @@ function App() {
       <header className="App-header">
         {/* <button onClick={ clearStorage }>DEBUG - Clear Storage</button>
         <button onClick={ reformatStorage }>DEBUG - Reformat Storage</button> */}
+        <span>Deco Tracker</span>
       </header>
       <div className='App-body'>
         { seeds.decorTypes.map((seed) => {

@@ -9,7 +9,8 @@
 .App-header {
   min-height: 36pt;
   display: inline;
-  font-size: calc(10px + 2vmin);
+  font-weight: 900;
+  font-size: calc(24px + 2vmin);
   color: midnightblue;
 }
 

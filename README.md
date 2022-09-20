@@ -1,20 +1,31 @@
-# Seedling Tracker
-Seedling Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written mostly in TypeScript and was bootstrapped as a React web app.
+# Deco Tracker v0.4
+Deco Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written mostly in TypeScript and was bootstrapped as a React web app.
 
-*Seedling Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
+*Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
+
+## How to Use
+
+1. Visit [Deco Tracker web app](https://kappanjoe.github.io/seedling-tracker/)
+2. Check boxes for the colors of pikmin you have collected. All known variations are to be included.
+
+**Note:** JavaScript must be enabled in your browser. Your collection status will auto-save every time you check or uncheck a box. Wiping your browser's cookies or local storage will remove the save file. Deco Tracker is still under development. Bugs *will* occur. :)
 
 ## TODO:
 
 ### Github Pages
-- [ ] Set up Github Pages
-- [ ] Update favicon, app icon, etc.
+- [x] Set up Github Pages
+- [x] Update favicon, app icon, etc.
 
 ### Features
+- [ ] Data structure updates/versioning
+  - [ ] Bus Stop
+  - [ ] Theme Park B
 - [ ] Color labels/color-blind accessibility
 - [ ] Coloring based on checkbox state
+- [ ] Collapsible category headers
 - [ ] Current total counts
-  - [ ] "Official" totals
-  - [ ] 100% completionist totals
+  - [ ] "Official" totals (i.e., how they're counted in-game without counting some variations)
+  - [ ] 100% completionist totals (counting every possible variation)
   - [ ] "Completed!" element
 - [ ] Dark Mode
 - [ ] Detail views?
