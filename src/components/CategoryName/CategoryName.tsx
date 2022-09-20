@@ -1,8 +1,8 @@
 import React from 'react';
-import { seedType } from '../Checkbox';
+import { decoration } from '../../App';
 
 interface Prop {
-    seed: seedType;
+    seed: decoration;
     readyForCat: boolean;
     categories: string[];
 };

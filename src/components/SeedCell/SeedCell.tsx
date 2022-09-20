@@ -1,17 +1,19 @@
 import React from 'react';
-import { Checkbox, seedType, colors } from '../Checkbox';
+import { decoration, colors } from '../../App';
+import { Checkbox } from '../Checkbox';
 import { CategoryName } from '../CategoryName';
+import structure from '../../seeds.json';
 
 interface Prop {
-    seed: seedType;
+    deco: decoration;
     categories: string[];
-    nextCat: boolean;
-    clickHandler: (seed: seedType, key: keyof colors, value: string) => void;
+    newCat: boolean;
+    clickHandler: (seed: decoration, key: keyof colors, value: string) => void;
 };
 
 export const SeedCell: React.FC<Prop> = (props) => {
-    var { seed, categories, nextCat, clickHandler } = props;
-    const colors = ["red", "yellow", "blue", "white", "purple", "grey", "pink"];
+    var { deco, categories, newCat, clickHandler } = props;
+    const colors = structure.colors;
 
         // TODO: Implement group-based counting (i.e., don't count special variants)
         //
@@ -25,13 +27,13 @@ export const SeedCell: React.FC<Prop> = (props) => {
         // var output = <span className='ColorCount'>{ count + " / " + total }</span>
 
     return (
-        <div className={ "SeedCell " + categories[seed.catInd] }>
-            <CategoryName seed={ seed } readyForCat={ nextCat } categories={ categories }/>
-            <span className='SeedName'>{ seed.name }</span>
+        <div className={ "SeedCell " + categories[deco.catInd] }>
+            <CategoryName seed={ deco } readyForCat={ newCat } categories={ categories }/>
+            <span className='SeedName'>{ deco.name }</span>
             <div className='CheckboxBlock'>
                 { colors.map((key: string) => {
                     // console.log(key + " " + seed.colors[key as keyof colors]);
-                    var checked: string = seed.colors[key as keyof colors]!;
+                    var checked: string = deco.colors[key as keyof colors]!;
                     if (checked === "nil") {
                         return (
                             <div className='blankDiv' key={ Math.random() }></div>
@@ -42,7 +44,7 @@ export const SeedCell: React.FC<Prop> = (props) => {
                         <div className={ key + "Div" } key={ key }>
                             {/* <span className={ key + "Name" }>{ key }</span> */}
                             <Checkbox
-                                seed= { seed }
+                                deco= { deco }
                                 clickHandler= { clickHandler }
                                 checkState= { checked }
                                 keyName= { key }/>

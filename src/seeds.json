@@ -1,4 +1,11 @@
 {
+    "info": {
+        "seedsVersion": 0.5,
+        "appVersion": 0.5
+    },
+    "colors": [
+        "red", "yellow", "blue", "white", "purple", "grey", "pink"
+    ],
     "categories": [
         "Restaurant",
         "Café",
@@ -26,9 +33,24 @@
         "Sushi-Restaurant",
         "Mountain",
         "Weather",
-        "Theme-Park"
+        "Theme-Park",
+        "Bus-Stop"
     ],
-    "decorTypes": [
+    "groups": {
+        "chef": {
+            "red": "off", "yellow": "off", "blue": "off",
+            "white": "off", "purple": "off", "grey": "off", "pink": "off"
+        },
+        "hanafuda": {
+            "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
+        },
+        "sticker": {
+            "red": "off", "yellow": "off", "blue": "off",
+            "white": "off", "purple": "off", "grey": "off", "pink": "off"
+        }
+    },
+    "decorations": [
         {
             "name": "Chef Hat",
             "catInd": 0,
@@ -445,27 +467,31 @@
             "group": null
         },
         {
-            "name": "Theme Park Ticket",
+            "name": "Theme Park Ticket A",
             "catInd": 26,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
-        }
-    ],
-    "groups": {
-        "chef": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "off", "purple": "off", "grey": "off", "pink": "off"
         },
-        "hanafuda": {
-            "red": "off", "yellow": "off", "blue": "off",
-                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
+        {
+            "name": "Theme Park Ticket B",
+            "catInd": 26,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            },
+            "group": null
         },
-        "sticker": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "off", "purple": "off", "grey": "off", "pink": "off"
+        {
+            "name": "Paper Bus",
+            "catInd": 27,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
         }
-    }
+    ]
 }

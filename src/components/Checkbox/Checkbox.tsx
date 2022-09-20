@@ -1,25 +1,9 @@
 import React, { useState } from 'react';
-
-export type seedType = {
-    name: string;
-    catInd: number;
-    colors: colors;
-    group: string | null;
-}
-
-export type colors = {
-    red: string;
-    yellow: string;
-    blue: string;
-    white: string;
-    purple: string;
-    grey: string;
-    pink: string;
-}
+import { decoration, colors } from '../../App';
 
 interface Prop {
-    seed: seedType;
-    clickHandler: (seed: seedType, key: keyof colors, value: string) => void;
+    deco: decoration;
+    clickHandler: (seed: decoration, key: keyof colors, value: string) => void;
     checkState: string;
     keyName: string;
 };
@@ -39,10 +23,10 @@ export const Checkbox: React.FC<Prop> = (props) => {
             onChange={ (event) => {
                 if (event.target.checked) {
                     setChecked("on");
-                    props.clickHandler(props.seed, props.keyName as keyof colors, "on");
+                    props.clickHandler(props.deco, props.keyName as keyof colors, "on");
                 } else {
                     setChecked("off");
-                    props.clickHandler(props.seed, props.keyName as keyof colors, "off");
+                    props.clickHandler(props.deco, props.keyName as keyof colors, "off");
                 }
             } }/>
     );

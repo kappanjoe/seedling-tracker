@@ -1,4 +1,4 @@
-# Deco Tracker v0.4
+# Deco Tracker v0.5
 Deco Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written mostly in TypeScript and was bootstrapped as a React web app.
 
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
@@ -10,6 +10,17 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 **Note:** JavaScript must be enabled in your browser. Your collection status will auto-save every time you check or uncheck a box. Wiping your browser's cookies or local storage will remove the save file. Deco Tracker is still under development. Bugs *will* occur. :)
 
+## Changelog
+
+### v0.5
+
+- Updated page title, favicons, etc.
+- Added data structure and app versioning
+- Updated data structures for more flexibility and cleaner handling
+- Added storage checks and updating
+- Added new decoration type 'Bus Stop'
+- Added missing decoration type 'Theme Park B'
+
 ## TODO:
 
 ### Github Pages
@@ -17,9 +28,9 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 - [x] Update favicon, app icon, etc.
 
 ### Features
-- [ ] Data structure updates/versioning
-  - [ ] Bus Stop
-  - [ ] Theme Park B
+- [x] Data structure updates/versioning
+  - [x] Bus Stop
+  - [x] Theme Park B
 - [ ] Color labels/color-blind accessibility
 - [ ] Coloring based on checkbox state
 - [ ] Collapsible category headers
