@@ -48,7 +48,7 @@ function App() {
     }
   } else if (localStorage.getItem("info")) {
     console.log("Version 0.5 or later");
-    // Recent version of storage (0.5 or later) implemented; load and update version if necessary
+    // Recent version of storage (0.5 or later) implemented; load and update version if not current
     loadStorage();
     if (storage.info.seedsVersion < info.seedsVersion || storage.info.appVersion < info.appVersion) {
       console.log("New version available - upgrading");
@@ -90,7 +90,7 @@ function App() {
     } else {
       reinitDecorArray(storage.decorations);
     }
-    // Save all values to localStorage and remove old version
+    // Save all values to localStorage and remove old version; initialize "categories" if v0.5 or v0.6
     localStorage.removeItem("seeds");
     if (storage.info.seedsVersion < 0.7) {
       localStorage.setItem("categories", JSON.stringify(categories));

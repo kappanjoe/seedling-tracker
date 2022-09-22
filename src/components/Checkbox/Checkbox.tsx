@@ -20,10 +20,12 @@ export const Checkbox: React.FC<Prop> = (props) => {
         setChecked(value);
     }
 
+    // Convert string to boolean for updating checkbox state
     function boolString(input: string) {
         if (input === "on") { return true; } else { return false; }
     }
 
+    // Click handler to allow checkbox parent to update state, effectively increasing tap target
     function clickHandler(event: MouseEvent) {
         if ((event.currentTarget.firstChild! as HTMLInputElement).checked) {
             updateValue("off")

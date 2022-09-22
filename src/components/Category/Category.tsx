@@ -16,12 +16,14 @@ export const Category: React.FC<Prop> = (props) => {
     const prettyName = category.name.replace("-", " ");
     const [isOpen, setIsOpen] = useState(category.isOpen);
 
+    // Save category visibility state to localStorage
     function onClick(event: MouseEvent) {
         categories[index].isOpen = !isOpen;
         localStorage.setItem("categories", JSON.stringify(categories));
         setIsOpen(!isOpen);
     }
-
+    
+    // Create array to populate category with appropriate decoration types
     let seedCells: JSX.Element[] = [];
     for (let i of category.values) {
         seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i }/>);
