@@ -24,24 +24,20 @@
   font-weight: 200;
 }
 
-.SeedCell {
-  text-align: left;
-  margin: 12pt;
-}
-
 .Category {
   display: flex;
-  flex-direction: row;
-  margin: 12pt 12pt 4pt 12pt;
-  padding-bottom: 4pt;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: lightgray;
+  flex-direction: column;
+  margin: 8pt 12pt 8pt 12pt;
 }
 
 .CategoryName {
   text-align: left;
   font-weight: 800;
+  margin-bottom: 4pt;
+  padding-bottom: 4pt;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: lightgray;
 }
 
 .Category > svg {
@@ -52,6 +48,12 @@
 
 .rotate-90-transform {
   rotate: 90deg;
+}
+
+.SeedCell {
+  text-align: left;
+  margin-top: 8pt;
+  margin-bottom: 8pt;
 }
 
 .SeedName{

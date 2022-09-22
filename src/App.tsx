@@ -1,5 +1,5 @@
 import './App.css';
-import { CategoryName } from './components/CategoryName';
+import { Category } from './components/Category';
 import { SeedCell } from './components/SeedCell';
 import structure from './seeds.json';
 
@@ -9,7 +9,7 @@ export type decoration = {
   catInd: number;
   colors: colors;
   group: string | null;
-}
+};
 
 export type colors = {
   red: string;
@@ -19,7 +19,13 @@ export type colors = {
   purple: string;
   grey: string;
   pink: string;
-}
+};
+
+export type category = { 
+  name: string;
+  values: number[];
+  isOpen: boolean;
+};
 
 function App() {
   const { info, colors, categories, decorations } = structure;
@@ -62,6 +68,7 @@ function App() {
     localStorage.clear();
     localStorage.setItem("info", JSON.stringify(info));
     localStorage.setItem("decorations", JSON.stringify(decorations));
+    localStorage.setItem("categories", JSON.stringify(categories));
     console.log("Initialization completed");
     window.location.reload();
   }
@@ -86,6 +93,9 @@ function App() {
     }
     // Save all values to localStorage and remove old version
     localStorage.removeItem("seeds");
+    if (storage.info.seedsVersion < 0.7) {
+      localStorage.setItem("categories", JSON.stringify(categories));
+    }
     localStorage.setItem("info", JSON.stringify(info));
     localStorage.setItem("decorations", JSON.stringify(storage.decorations));
     window.location.reload();
@@ -114,6 +124,7 @@ function App() {
     storage = structure as structure;
     storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
     storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
+    storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
   }
 
   // Save checkbox state to respective value in storage
@@ -125,30 +136,19 @@ function App() {
     }
   }
 
-  // Initialize variables for handling category placement
-  var catInd = 0;
-  var decoInd = 0;
-
   return (
     <div className="App">
       <header className="App-header">
         <span>Deco Tracker</span>
       </header>
       <div className='App-body'>
-        { categories.map( (category: string) => {
-            // Place category name
-            let output: JSX.Element[];
-            output = [<CategoryName name={ category } key={ category } />];
-            for (let deco of storage.decorations.slice(decoInd)) {
-              if (deco.catInd === catInd) {
-                output.push(<SeedCell deco={ deco } clickHandler={ updateValue } key={ deco.name } />);
-                decoInd++;
-              } else { 
-                break;
-              }
-            }
-            catInd++;
-            return output;
+        { categories.map( (category) => {
+            return <Category
+                      name={ category.name }
+                      key={ category.name }
+                      category= { category }
+                      decorations={ storage.decorations }
+                      clickHandler= { updateValue }/>;
         })}
         <span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
       </div>
