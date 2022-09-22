@@ -35,7 +35,7 @@
 }
 
 :root[data-theme="theme-dark"] {
-  --bg-color: #f9f8f3;
+  --bg-color: darkslategrey;
   --text-color: midnightblue;
   --border-color: lightgrey;
 

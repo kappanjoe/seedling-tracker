@@ -1,7 +1,7 @@
 {
     "info": {
         "seedsVersion": 0.7,
-        "appVersion": 0.7
+        "appVersion": 0.8
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"

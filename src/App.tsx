@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import { Category } from './components/Category';
 import structure from './seeds.json';
@@ -30,7 +31,16 @@ function App() {
   const { info, colors, categories, decorations } = structure;
   type structure = typeof structure;
   var storage: structure | any;
-  document.querySelector('html')!.dataset.theme = `theme-light`;
+
+  // Set themeing
+  const [themeMode, setThemeMode] = useState(`theme-light`);
+  document.querySelector('html')!.dataset.theme = themeMode;
+  var bgColor: string;
+  if (themeMode === `theme-light`) {
+    bgColor = "#f9f8f3";
+  } else {
+    bgColor = "darkslategrey";
+  }
 
   //-- INITIAL CHECKS --//
   if (!localStorage.getItem("decorations")) {
@@ -128,6 +138,7 @@ function App() {
 
   return (
     <div className="App">
+      <meta name="theme-color" content={ bgColor }/>
       <header className="App-header">
         <span>Deco Tracker</span>
       </header>
