@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { decoration, colors } from '../../App';
 
 interface Prop {
@@ -23,9 +23,17 @@ export const Checkbox: React.FC<Prop> = (props) => {
     function boolString(input: string) {
         if (input === "on") { return true; } else { return false; }
     }
+
+    function clickHandler(event: MouseEvent) {
+        if ((event.currentTarget.firstChild! as HTMLInputElement).checked) {
+            updateValue("off")
+        } else {
+            updateValue("on")
+        }
+    }
     
     return ( 
-        <div className={ boolString(checked)? keyName + 'Checked' : keyName + 'Unchecked' } key= { keyName }>
+        <div className={ boolString(checked)? keyName + 'Checked' : keyName + 'Unchecked' } key= { keyName } onClick={ clickHandler }>
             {/* <span className={ key + "Name" }>{ key }</span> */}
             <input
                 type="checkbox"
