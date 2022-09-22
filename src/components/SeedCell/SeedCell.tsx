@@ -41,7 +41,8 @@ export const SeedCell: React.FC<Prop> = (props) => {
                                 index= { index }
                                 decorations= { decorations }
                                 checkState= { checked }
-                                keyName= { key }/>;
+                                keyName= { key }
+                                key= { key }/>;
                 })}
             </div>
         </div>

@@ -24,7 +24,7 @@ export const Category: React.FC<Prop> = (props) => {
 
     let seedCells: JSX.Element[] = [];
     for (let i of category.values) {
-        seedCells.push(<SeedCell index={ i } decorations={ decorations }/>);
+        seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i }/>);
     }
 
     return (
