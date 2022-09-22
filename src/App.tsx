@@ -1,6 +1,5 @@
 import './App.css';
 import { Category } from './components/Category';
-import { SeedCell } from './components/SeedCell';
 import structure from './seeds.json';
 
 export type decoration = {
@@ -31,7 +30,7 @@ function App() {
   const { info, colors, categories, decorations } = structure;
   type structure = typeof structure;
   var storage: structure | any;
-
+  document.querySelector('html')!.dataset.theme = `theme-light`;
 
   //-- INITIAL CHECKS --//
   if (!localStorage.getItem("decorations")) {
@@ -127,15 +126,6 @@ function App() {
     storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
   }
 
-  // Save checkbox state to respective value in storage
-  function updateValue(deco: decoration, key: keyof colors, value: string) {
-    var i = storage.decorations.findIndex( (x: decoration) => x.name === deco.name );
-    if (i >= 0) {
-      storage.decorations[i].colors[key] = value;
-      localStorage.setItem("decorations", JSON.stringify(storage.decorations));
-    }
-  }
-
   return (
     <div className="App">
       <header className="App-header">
@@ -144,11 +134,10 @@ function App() {
       <div className='App-body'>
         { categories.map( (category) => {
             return <Category
-                      name={ category.name }
                       key={ category.name }
-                      category= { category }
-                      decorations={ storage.decorations }
-                      clickHandler= { updateValue }/>;
+                      index={ categories.indexOf(category) }
+                      categories={ storage.categories }
+                      decorations={ storage.decorations }/>;
         })}
         <span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
       </div>

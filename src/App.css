@@ -1,5 +1,77 @@
+:root[data-theme="theme-light"] {
+  --bg-color: #f9f8f3;
+  --text-color: midnightblue;
+  --border-color: lightgrey;
+
+  --red-unchecked: rgb(250, 222, 220);
+  --red-checked: rgb(235, 110, 85);
+  --red-text: rgb(120, 8, 0);
+
+  --yellow-unchecked: rgb(250, 247, 210);
+  --yellow-checked: rgb(250, 235, 90);
+  --yellow-text: rgb(126, 101, 30);
+
+  --blue-unchecked: rgb(230, 245, 255);
+  --blue-checked: rgb(70, 160, 250);
+  --blue-text: rgb(0, 51, 86);
+
+  --white-unchecked: rgb(240, 240, 245);
+  --white-checked: white;
+  --white-text: rgb(77, 77, 77);
+
+  --purple-unchecked: rgb(240, 235, 255);
+  --purple-checked: rgb(170, 110, 240);
+  --purple-text: rgb(39, 0, 157);
+
+  --grey-unchecked: rgb(230, 230, 230);
+  --grey-checked: rgb(94, 94, 94);
+  --grey-text: rgb(42, 42, 42);
+
+  --pink-unchecked: rgb(255, 240, 245);
+  --pink-checked: rgb(240, 150, 210);
+  --pink-text: rgb(149, 43, 146);
+
+  --blank-div: rgb(245, 245, 245);
+}
+
+:root[data-theme="theme-dark"] {
+  --bg-color: #f9f8f3;
+  --text-color: midnightblue;
+  --border-color: lightgrey;
+
+  --red-unchecked: rgb(250, 222, 220);
+  --red-checked: ;
+  --red-text: rgb(120, 8, 0);
+
+  --yellow-unchecked: rgb(250, 247, 210);
+  --yellow-checked: ;
+  --yellow-text: rgb(126, 101, 30);
+
+  --blue-unchecked: rgb(230, 245, 255);
+  --blue-checked: ;
+  --blue-text: rgb(0, 51, 86);
+
+  --white-unchecked: rgb(240, 240, 245);
+  --white-checked: white;
+  --white-text: rgb(77, 77, 77);
+
+  --purple-unchecked: rgb(240, 235, 255);
+  --purple-checked: ;
+  --purple-text: rgb(39, 0, 157);
+
+  --grey-unchecked: rgb(230, 230, 230);
+  --grey-checked: ;
+  --grey-text: rgb(42, 42, 42);
+
+  --pink-unchecked: rgb(255, 240, 245);
+  --pink-checked: ;
+  --pink-text: rgb(149, 43, 146);
+
+  --blank-div: rgb(245, 245, 245);
+}
+
 .App {
-  background-color: #f9f8f3;
+  background-color: var(--bg-color);
   font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
   text-align: center;
   padding-top: 5vh;
@@ -9,18 +81,18 @@
 .App-header {
   min-height: 36pt;
   display: inline;
-  font-weight: 900;
+  font-weight: 800;
   font-size: calc(24px + 2vmin);
-  color: midnightblue;
+  color: var(--text-color);
 }
 
 .App-body {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 10pt auto;
   min-width: 30pt;
   max-width: 450pt;
-  color: midnightblue;
+  color: var(--text-color);
   font-weight: 200;
 }
 
@@ -28,26 +100,40 @@
   display: flex;
   flex-direction: column;
   margin: 8pt 12pt 8pt 12pt;
+  height: fit-content;
 }
 
 .CategoryName {
+  display: flex;
   text-align: left;
-  font-weight: 800;
   margin-bottom: 4pt;
   padding-bottom: 4pt;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: lightgray;
+  border-bottom-color: var(--border-color);
 }
 
-.Category > svg {
-  display: inline;
+.CategoryName > span {
+  text-align: left;
+  font-weight: 800;
+}
+
+.CategoryName > svg {
+  display:  block;
   width: 12pt;
   margin-left: auto;
 }
 
 .rotate-90-transform {
   rotate: 90deg;
+}
+
+.SeedsOpen {
+  display: block;
+}
+
+.SeedsClosed {
+  display: none;
 }
 
 .SeedCell {
@@ -67,6 +153,7 @@
   grid-template-rows: 2;
   row-gap: 6pt;
   margin-top: 6pt;
+  padding-bottom: 6pt;
 }
 
 .CheckboxBlock > div {
@@ -78,36 +165,71 @@
   border-radius: 5pt;
 }
 
-.redDiv {
-  color: rgb(120, 8, 0);
-  background-color: rgb(250, 222, 220);
+.redChecked {
+  color: var(--red-text);
+  background-color: var(--red-checked);
 }
-.yellowDiv {
-  color: rgb(126, 101, 30);
-  background-color: rgb(250, 247, 210);
+.redUnchecked {
+  color: var(--red-text);
+  background-color: var(--red-unchecked);
 }
-.blueDiv {
-  color: rgb(0, 51, 86);
-  background-color: rgb(230, 245, 255);
+
+.yellowChecked {
+  color: var(--yellow-text);
+  background-color: var(--yellow-checked);
 }
-.whiteDiv {
-  color: rgb(77, 77, 77);
-  background-color: rgb(240, 240, 245);
+.yellowUnchecked {
+  color: var(--yellow-text);
+  background-color: var(--yellow-unchecked);
 }
-.purpleDiv {
-  color: rgb(39, 0, 157);
-  background-color: rgb(240, 235, 255);
+
+.blueChecked {
+  color: var(--blue-text);
+  background-color: var(--blue-checked);
 }
-.greyDiv {
-  color: rgb(42, 42, 42);
-  background-color: rgb(230, 230, 230);
+.blueUnchecked {
+  color: var(--blue-text);
+  background-color: var(--blue-unchecked);
 }
-.pinkDiv {
-  color: rgb(149, 43, 146);
-  background-color: rgb(255, 240, 245);
+
+.whiteChecked {
+  color: var(--white-text);
+  background-color: var(--white-checked);
 }
+.whiteUnchecked {
+  color: var(--white-text);
+  background-color: var(--white-unchecked);
+}
+
+.purpleChecked {
+  color: var(--purple-text);
+  background-color: var(--purple-checked);
+}
+.purpleUnchecked {
+  color: var(--purple-text);
+  background-color: var(--purple-unchecked);
+}
+
+.greyChecked {
+  color: var(--grey-text);
+  background-color: var(--grey-checked);
+}
+.greyUnchecked {
+  color: var(--grey-text);
+  background-color: var(--grey-unchecked);
+}
+
+.pinkChecked {
+  color: var(--pink-text);
+  background-color: var(--pink-checked);
+}
+.pinkUnchecked {
+  color: var(--pink-text);
+  background-color: var(--pink-unchecked);
+}
+
 .blankDiv {
-  background-color: rgb(245, 245, 245);
+  background-color: var(--blank-div);
 }
 
 .Version-info {

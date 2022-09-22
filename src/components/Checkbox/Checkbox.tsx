@@ -2,32 +2,43 @@ import React, { useState } from 'react';
 import { decoration, colors } from '../../App';
 
 interface Prop {
-    deco: decoration;
-    clickHandler: (seed: decoration, key: keyof colors, value: string) => void;
+    index: number;
+    decorations: decoration[];
     checkState: string;
     keyName: string;
 };
 
 export const Checkbox: React.FC<Prop> = (props) => {
     const [checked, setChecked] = useState(props.checkState);
+    const { index, keyName } = props;
+    var decorations = props.decorations;
     
+    // Save checkbox state to respective value in storage
+    function updateValue(value: string) {
+        decorations[index].colors[keyName as keyof colors] = value;
+        localStorage.setItem("decorations", JSON.stringify(decorations));
+        setChecked(value);
+    }
+
     function boolString(input: string) {
         if (input === "on") { return true; } else { return false; }
     }
     
     return ( 
-        <input
-            type="checkbox"
-            checked={ boolString(checked) }
-            className={ props.keyName + "Checkbox" }
-            onChange={ (event) => {
-                if (event.target.checked) {
-                    setChecked("on");
-                    props.clickHandler(props.deco, props.keyName as keyof colors, "on");
-                } else {
-                    setChecked("off");
-                    props.clickHandler(props.deco, props.keyName as keyof colors, "off");
-                }
-            } }/>
+        <div className={ boolString(checked)? keyName + 'Checked' : keyName + 'Unchecked' } key= { keyName }>
+            {/* <span className={ key + "Name" }>{ key }</span> */}
+            <input
+                type="checkbox"
+                checked={ boolString(checked) }
+                className={ keyName + "Checkbox" }
+                onChange={ (event) => {
+                    if (event.target.checked) {
+                        updateValue("on");
+                    } else {
+                        updateValue("off");
+                    }
+                }}
+                key={ keyName + "Checkbox" }/>
+        </div>
     );
 }

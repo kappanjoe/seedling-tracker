@@ -12,6 +12,12 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 ## Changelog
 
+### v0.7
+
+- Categories are now collapsible
+- Updated data structures to allow saving of collapse states
+- Checkbox color now reflects state
+
 ### v0.5
 
 - Updated page title, favicons, etc.
@@ -32,8 +38,8 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
   - [x] Bus Stop
   - [x] Theme Park B
 - [ ] Color labels/color-blind accessibility
-- [ ] Coloring based on checkbox state
-- [ ] Collapsible category headers
+- [x] Coloring based on checkbox state
+- [x] Collapsible category headers
 - [ ] Current total counts
   - [ ] "Official" totals (i.e., how they're counted in-game without counting some variations)
   - [ ] 100% completionist totals (counting every possible variation)
