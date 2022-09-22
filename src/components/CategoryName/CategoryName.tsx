@@ -1,17 +1,18 @@
-import React from 'react';
-import { decoration } from '../../App';
+import React, { MouseEventHandler } from 'react';
+// import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 interface Prop {
-    seed: decoration;
-    readyForCat: boolean;
-    categories: string[];
+    name: string;
 };
 
 export const CategoryName: React.FC<Prop> = (props) => {
-    const { seed, readyForCat, categories } = props;
-    const name = categories[seed.catInd];
+    const { name } = props;
     const prettyName = name.replace("-", " ");
-    if (readyForCat) {
-           return <div className="CategoryName" key={ name }>{ prettyName }</div>;
-    } else { return <></>};
+
+    return (
+        <div className="Category" key={ name + "Container" } >
+            <span className="CategoryName" key={ name }>{ prettyName }</span>
+            {/* <ChevronRightIcon className={ } /> */}
+        </div>
+    );
 }

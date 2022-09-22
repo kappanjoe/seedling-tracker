@@ -1,4 +1,5 @@
 import './App.css';
+import { CategoryName } from './components/CategoryName';
 import { SeedCell } from './components/SeedCell';
 import structure from './seeds.json';
 
@@ -28,24 +29,24 @@ function App() {
 
   //-- INITIAL CHECKS --//
   if (!localStorage.getItem("decorations")) {
-    console.log("Decorations item undefined.")
+    console.log("Decorations item undefined.");
     // Current version of storage not implemented
     if (localStorage.getItem("seeds")) {
-      console.log("Version 0.4 or earlier - upgrading")
+      console.log("Version 0.4 or earlier - upgrading");
       // Version 0.4 or earlier of storage exists; upgrade version
       storage = JSON.parse(localStorage.getItem("seeds")!);
       upgradeStorage();
     } else {
-      console.log("No storage found - quietly initializing")
+      console.log("No storage found - quietly initializing");
       // No version of storage exists; initialize with current version
       initializeStorage();
     }
   } else if (localStorage.getItem("info")) {
-    console.log("Version 0.5 or later")
+    console.log("Version 0.5 or later");
     // Recent version of storage (0.5 or later) implemented; load and update version if necessary
     loadStorage();
-    if (storage.info.seedsVersion < info.seedsVersion) {
-      console.log("New version available - upgrading")
+    if (storage.info.seedsVersion < info.seedsVersion || storage.info.appVersion < info.appVersion) {
+      console.log("New version available - upgrading");
       upgradeStorage();
     }
   } else {
@@ -79,26 +80,33 @@ function App() {
           }
         });
       }
-      // Create temporary decor array and fill with existing values from outdated version or default values from current
-      var tempDecor: decoration[] = [];
-      decorations.forEach( (x: decoration) => {
-        let i = storage.decorTypes.findIndex( (y: decoration) => {
-          return y.name === x.name;
-        });
-        if (i >= 0) {
-          tempDecor.push(storage.decorTypes[i]);
-        } else {
-          tempDecor.push(x);
-        }
-      });
-      // Assign tempDecor to storage.decorations
-      storage.decorations = tempDecor as decoration[];
+      reinitDecorArray(storage.decorTypes);
+    } else {
+      reinitDecorArray(storage.decorations);
     }
     // Save all values to localStorage and remove old version
     localStorage.removeItem("seeds");
     localStorage.setItem("info", JSON.stringify(info));
     localStorage.setItem("decorations", JSON.stringify(storage.decorations));
     window.location.reload();
+  }
+
+  // Reinitialize decorations array
+  function reinitDecorArray(source: decoration[]) {
+    // Create temporary decor array and fill with existing values from outdated version or default values from current
+    var tempDecor: decoration[] = [];
+    decorations.forEach( (x: decoration) => {
+      let i = source.findIndex( (y: decoration) => {
+        return y.name === x.name;
+      });
+      if (i >= 0) {
+        tempDecor.push(source[i]);
+      } else {
+        tempDecor.push(x);
+      }
+    })
+    // Assign tempDecor to storage.decorations
+    storage.decorations = tempDecor;
   }
 
   // Load storage to populate UI
@@ -117,9 +125,9 @@ function App() {
     }
   }
 
-  // Initialize variables for handling category title placement
-  var prevCatInd = -1;
-  var newCat = false;
+  // Initialize variables for handling category placement
+  var catInd = 0;
+  var decoInd = 0;
 
   return (
     <div className="App">
@@ -127,21 +135,22 @@ function App() {
         <span>Deco Tracker</span>
       </header>
       <div className='App-body'>
-        { storage.decorations.map( (deco: decoration) => {
-                // Set value to generate CategoryName in SeedCell when needed
-                if (prevCatInd < deco.catInd) {
-                  newCat = true;
-                  prevCatInd = deco.catInd;
-                }
-                let output = (<SeedCell
-                  deco={ deco }
-                  categories={ categories }
-                  newCat={ newCat }
-                  clickHandler={ updateValue }
-                  key={ deco.name }/>);
-                newCat = false;
-                return output;
+        { categories.map( (category: string) => {
+            // Place category name
+            let output: JSX.Element[];
+            output = [<CategoryName name={ category } key={ category } />];
+            for (let deco of storage.decorations.slice(decoInd)) {
+              if (deco.catInd === catInd) {
+                output.push(<SeedCell deco={ deco } clickHandler={ updateValue } key={ deco.name } />);
+                decoInd++;
+              } else { 
+                break;
+              }
+            }
+            catInd++;
+            return output;
         })}
+        <span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
       </div>
     </div>
   )

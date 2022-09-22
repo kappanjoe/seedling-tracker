@@ -29,13 +29,29 @@
   margin: 12pt;
 }
 
-.CategoryName {
-  font-weight: 800;
-  margin-bottom: 8pt;
+.Category {
+  display: flex;
+  flex-direction: row;
+  margin: 12pt 12pt 4pt 12pt;
   padding-bottom: 4pt;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: lightgray;
+}
+
+.CategoryName {
+  text-align: left;
+  font-weight: 800;
+}
+
+.Category > svg {
+  display: inline;
+  width: 12pt;
+  margin-left: auto;
+}
+
+.rotate-90-transform {
+  rotate: 90deg;
 }
 
 .SeedName{
@@ -90,6 +106,12 @@
 }
 .blankDiv {
   background-color: rgb(245, 245, 245);
+}
+
+.Version-info {
+  margin-top: 12pt;
+  font-size: 10pt;
+  font-weight: 300;
 }
 
 /* .CheckboxBlock > div > span {
