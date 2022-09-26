@@ -142,9 +142,23 @@
   margin-bottom: 8pt;
 }
 
-.SeedName{
+.SeedInfo {
   margin-left: 6pt;
+}
+
+.SeedName{
   font-weight: 600;
+}
+
+.ColorCount {
+  margin-left: 8pt;
+}
+
+.ColorComplete {
+  margin-left: 8pt;
+  padding: 1pt 6pt 1pt 6pt;
+  border-radius: 8pt;
+  background-color: lightgreen;
 }
 
 .CheckboxBlock {

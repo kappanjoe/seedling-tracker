@@ -6,17 +6,25 @@ interface Prop {
     decorations: decoration[];
     checkState: string;
     keyName: string;
+    countHandler: (value: number) => void;
 };
 
 export const Checkbox: React.FC<Prop> = (props) => {
     const [checked, setChecked] = useState(props.checkState);
-    const { index, keyName } = props;
+    const { index, keyName, countHandler } = props;
     var decorations = props.decorations;
     
     // Save checkbox state to respective value in storage
     function updateValue(value: string) {
         decorations[index].colors[keyName as keyof colors] = value;
         localStorage.setItem("decorations", JSON.stringify(decorations));
+
+        let count = 0;
+        Object.keys(decorations[index].colors).forEach( (x) => {
+            if (decorations[index].colors[x as keyof colors] === "on") { count++; } 
+        });
+        countHandler(count);
+
         setChecked(value);
     }
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { CompletionTriggerKind } from 'typescript';
 import './App.css';
 import { Category } from './components/Category';
 import structure from './seeds.json';
@@ -31,6 +32,9 @@ function App() {
   const { info, colors, categories, decorations } = structure;
   type structure = typeof structure;
   var storage: structure | any;
+
+  // var max = 0;
+  // var count = 0;
 
   // Set themeing
   const [themeMode, setThemeMode] = useState(`theme-light`);
@@ -134,13 +138,30 @@ function App() {
     storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
     storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
     storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
+    // completionStatus();
   }
+
+  // // Calculate completed pikmin
+  // function completionStatus() {
+  //   (storage.decorations as decoration[]).forEach( (deco) => {
+  //     Object.keys(deco.colors).forEach( (color) => {
+  //       let value = deco.colors[color as keyof colors];
+  //       if (value === "on") {
+  //         count++;
+  //         max++;
+  //       } else if (value === "off") {
+  //         max++;
+  //       }
+  //     })
+  //   })
+  // }
 
   return (
     <div className="App">
       <meta name="theme-color" content={ bgColor }/>
       <header className="App-header">
-        <span>Deco Tracker</span>
+        <span>Deco Tracker</span><br/>
+        {/* <span>{ count + " out of " + max }</span> */}
       </header>
       <div className='App-body'>
         { categories.map( (category) => {

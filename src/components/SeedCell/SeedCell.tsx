@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { decoration, colors } from '../../App';
 import { Checkbox } from '../Checkbox';
+import { CountSpan } from '../CountSpan';
 import structure from '../../seeds.json';
 
 interface Prop {
@@ -11,22 +12,33 @@ interface Prop {
 export const SeedCell: React.FC<Prop> = (props) => {
     var { index, decorations } = props;
     const colors = structure.colors;
-    let deco = decorations[index];
+    var deco = decorations[index];
 
-        // TODO: Implement group-based counting (i.e., don't count special variants)
-        //
-        // --- Commented code below counts every seedling ---
-        // var count = 0;
-        // var total = 0;
-        // for (key of colors) {
-        //     total++;
-        //     if (colors.key) { count ++; }
-        // }
-        // var output = <span className='ColorCount'>{ count + " / " + total }</span>
+    // Initialize counts
+    var count = 0;
+    var max = 0;
+    Object.keys(deco.colors).forEach( (color) => {
+        let value = deco.colors[color as keyof colors];
+        if (value === "off") {
+            max++;
+        } else if (value === "on") {
+            count++;
+            max++;
+        }
+    })
+
+    // Assign handler to refresh count for CountSpan component
+    const [currentCount, setCurrentCount] = useState(count);
+    function refreshCount(value: number) {
+        setCurrentCount(value);
+    }
 
     return (
         <div className={ 'SeedCell' } key={ "Cell-" + index }>
-            <span className='SeedName'>{ deco.name }</span>
+            <div className='SeedInfo'>
+                <span className='SeedName'>{ deco.name }:</span>
+                <CountSpan count={ currentCount } max={ max }/>
+            </div>
             <div className='CheckboxBlock'>
                 { colors.map((key: string) => {
                     // console.log(key + " " + seed.colors[key as keyof colors]);
@@ -42,7 +54,8 @@ export const SeedCell: React.FC<Prop> = (props) => {
                                 decorations= { decorations }
                                 checkState= { checked }
                                 keyName= { key }
-                                key= { key }/>;
+                                key= { key }
+                                countHandler= { refreshCount }/>;
                 })}
             </div>
         </div>
