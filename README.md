@@ -14,7 +14,8 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 ### v0.9
 - Dark Mode now supported! Tap/click the moon in the upper right to switch themes.
--
+- Overall Total count is now displayed.
+- More checkboxes now fit on one line for compatibility with smaller screens.
 
 ### v0.8
 
@@ -50,9 +51,9 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 - [x] Coloring based on checkbox state
 - [x] Collapsible category headers
 - [ ] Current total counts
-  - [ ] Overall total display at top
   - [ ] "Official" totals (i.e., how they're counted in-game without counting some variations)
   - [x] 100% completionist totals (counting every possible variation)
+  - [x] Overall Total display
   - [x] "Completed!" element
 - [x] Dark Mode
 - [ ] Animations

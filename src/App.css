@@ -171,6 +171,7 @@
 
 .ColorComplete {
   margin-left: 8pt;
+  margin-right: 8pt;
   padding: 1pt 6pt 1pt 6pt;
   border-radius: 8pt;
   background-color: var(--completed-color);
@@ -178,7 +179,7 @@
 
 .CheckboxBlock {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 40pt);
+  grid-template-columns: repeat(auto-fill, 35pt);
   grid-template-rows: 2;
   row-gap: 6pt;
   margin-top: 6pt;
@@ -191,7 +192,7 @@
   align-items: center;
   margin: 0pt 3pt 0pt 3pt;
   padding: 6pt;
-  border-radius: 5pt;
+  border-radius: 6pt;
 }
 
 .redChecked {

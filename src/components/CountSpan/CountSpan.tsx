@@ -15,7 +15,7 @@ export const CountSpan: React.FC<Prop> = (props) => {
         countText = "Completed!";
     } else {
         countClass = "ColorCount"
-        countText = count + " out of " + max;
+        countText = count + " / " + max;
     }
 
     return (

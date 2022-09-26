@@ -3,6 +3,7 @@ import './App.css';
 import { Category } from './components/Category';
 import structure from './seeds.json';
 import { MoonIcon } from '@heroicons/react/20/solid';
+import { CountSpan } from './components/CountSpan';
 
 export type decoration = {
   // Names must be unique!!
@@ -36,7 +37,7 @@ function App() {
   // Set themeing
   let prefersDark: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
   var preference: string;
-  if (localStorage.getItem("theme") !== undefined) {
+  if (localStorage.getItem("theme")) {
     preference = localStorage.getItem("theme")!;
   } else if (prefersDark) {
     preference = "dark";
@@ -148,39 +149,53 @@ function App() {
     storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
     storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
     storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
-    // completionStatus();
   }
 
-  // // Calculate completed pikmin
-  // function completionStatus() {
-  //   (storage.decorations as decoration[]).forEach( (deco) => {
-  //     Object.keys(deco.colors).forEach( (color) => {
-  //       let value = deco.colors[color as keyof colors];
-  //       if (value === "on") {
-  //         count++;
-  //         max++;
-  //       } else if (value === "off") {
-  //         max++;
-  //       }
-  //     })
-  //   })
-  // }
+  // Calculate full count of decorations
+  var fullCount = 0;
+  var fullMax = 0;
+  (storage.decorations as decoration[]).forEach( (deco) => {
+    Object.keys(deco.colors).forEach( (color) => {
+      let value = deco.colors[color as keyof colors];
+      if (value === "on") {
+        fullCount++;
+        fullMax++;
+      } else if (value === "off") {
+        fullMax++;
+      }
+    })
+  });
+  const [currentFullCount, setCurrentFullCount] = useState(fullCount);
+
+  function bigCountHandler() {
+    var count = 0;
+    (storage.decorations as decoration[]).forEach( (deco) => {
+      Object.keys(deco.colors).forEach( (color) => {
+        let value = deco.colors[color as keyof colors];
+        if (value === "on") {
+          count++;
+        }
+      })
+    });
+    setCurrentFullCount(count);
+  }
 
   return (
     <div className="App" data-theme={ themeMode }>
       <meta name="theme-color" content={ bgColor }/>
       <header className="App-header">
-        <span>Deco Tracker</span><br/>
+        <span>Deco Tracker</span>
         <MoonIcon onClick={ switchTheme }/>
-        {/* <span>{ count + " out of " + max }</span> */}
       </header>
       <div className='App-body'>
+        <CountSpan count={ currentFullCount } max={ fullMax }/>
         { categories.map( (category) => {
             return <Category
                       key={ category.name }
                       index={ categories.indexOf(category) }
                       categories={ storage.categories }
-                      decorations={ storage.decorations }/>;
+                      decorations={ storage.decorations }
+                      bigCountHandler={ bigCountHandler }/>;
         })}
         <span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
       </div>

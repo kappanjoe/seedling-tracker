@@ -7,10 +7,11 @@ interface Prop {
     index: number;
     categories: category[];
     decorations: decoration[];
+    bigCountHandler: () => void;
 };
 
 export const Category: React.FC<Prop> = (props) => {
-    const { index, decorations } = props;
+    const { index, decorations, bigCountHandler } = props;
     var categories = props.categories;
     let category = categories[index]
     const prettyName = category.name.replace("-", " ");
@@ -26,7 +27,7 @@ export const Category: React.FC<Prop> = (props) => {
     // Create array to populate category with appropriate decoration types
     let seedCells: JSX.Element[] = [];
     for (let i of category.values) {
-        seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i }/>);
+        seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i } bigCountHandler={ bigCountHandler }/>);
     }
 
     return (
