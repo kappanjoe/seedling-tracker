@@ -58,6 +58,7 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 - [x] Dark Mode
 - [ ] Animations
 - [ ] Detail views?
+- [ ] Toolbar/Menu for options (Dark mode, count type, color labels/accessibility)
 
 # Getting Started with Create React App
 
