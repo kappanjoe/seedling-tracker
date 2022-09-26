@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { CompletionTriggerKind } from 'typescript';
 import './App.css';
 import { Category } from './components/Category';
 import structure from './seeds.json';
+import { MoonIcon } from '@heroicons/react/20/solid';
 
 export type decoration = {
   // Names must be unique!!
@@ -33,17 +33,27 @@ function App() {
   type structure = typeof structure;
   var storage: structure | any;
 
-  // var max = 0;
-  // var count = 0;
-
   // Set themeing
-  const [themeMode, setThemeMode] = useState(`theme-light`);
-  document.querySelector('html')!.dataset.theme = themeMode;
+  let prefersDark: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var preference: string;
+  if (localStorage.getItem("theme") !== undefined) {
+    preference = localStorage.getItem("theme")!;
+  } else if (prefersDark) {
+    preference = "dark";
+  } else {
+    preference = "light";
+  }
+  const [themeMode, setThemeMode] = useState(preference);
   var bgColor: string;
-  if (themeMode === `theme-light`) {
+  if (themeMode === 'light') {
     bgColor = "#f9f8f3";
   } else {
-    bgColor = "darkslategrey";
+    bgColor = "#191919";
+  }
+  function switchTheme() {
+    const newTheme = themeMode === 'light'? 'dark' : 'light';
+    localStorage.setItem("theme", newTheme);
+    setThemeMode(newTheme);
   }
 
   //-- INITIAL CHECKS --//
@@ -157,10 +167,11 @@ function App() {
   // }
 
   return (
-    <div className="App">
+    <div className="App" data-theme={ themeMode }>
       <meta name="theme-color" content={ bgColor }/>
       <header className="App-header">
         <span>Deco Tracker</span><br/>
+        <MoonIcon onClick={ switchTheme }/>
         {/* <span>{ count + " out of " + max }</span> */}
       </header>
       <div className='App-body'>

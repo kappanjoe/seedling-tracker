@@ -1,7 +1,8 @@
-:root[data-theme="theme-light"] {
+:root {
   --bg-color: #f9f8f3;
   --text-color: midnightblue;
   --border-color: lightgrey;
+  --completed-color: lightgreen;
 
   --red-unchecked: rgb(250, 222, 220);
   --red-checked: rgb(235, 110, 85);
@@ -34,40 +35,41 @@
   --blank-div: rgb(245, 245, 245);
 }
 
-:root[data-theme="theme-dark"] {
-  --bg-color: darkslategrey;
-  --text-color: midnightblue;
-  --border-color: lightgrey;
+[data-theme="dark"] {
+  --bg-color: #191919;
+  --text-color: lightgrey;
+  --border-color: rgb(80, 80, 80);
+  --completed-color: rgb(21, 115, 55);
 
-  --red-unchecked: rgb(250, 222, 220);
-  --red-checked: ;
-  --red-text: rgb(120, 8, 0);
+  --red-unchecked: rgba(235, 110, 85, 0.3);
+  --red-checked: rgb(235, 110, 85);
+  --red-text: rgb(250, 222, 220);
 
-  --yellow-unchecked: rgb(250, 247, 210);
-  --yellow-checked: ;
-  --yellow-text: rgb(126, 101, 30);
+  --yellow-unchecked: rgba(250, 230, 90, 0.3);
+  --yellow-checked: rgb(250, 230, 90);
+  --yellow-text: rgb(250, 247, 210);
 
-  --blue-unchecked: rgb(230, 245, 255);
-  --blue-checked: ;
-  --blue-text: rgb(0, 51, 86);
+  --blue-unchecked: rgba(70, 160, 250, 0.3);
+  --blue-checked: rgb(70, 160, 250);
+  --blue-text: rgb(230, 245, 255);
 
-  --white-unchecked: rgb(240, 240, 245);
-  --white-checked: white;
-  --white-text: rgb(77, 77, 77);
+  --white-unchecked: rgba(240, 240, 240, 0.3);
+  --white-checked: rgb(240, 240, 240);
+  --white-text: rgb(240, 240, 245);
 
-  --purple-unchecked: rgb(240, 235, 255);
-  --purple-checked: ;
-  --purple-text: rgb(39, 0, 157);
+  --purple-unchecked: rgba(170, 110, 240, 0.3);
+  --purple-checked: rgb(170, 110, 240);
+  --purple-text: rgb(240, 235, 255);
 
-  --grey-unchecked: rgb(230, 230, 230);
-  --grey-checked: ;
-  --grey-text: rgb(42, 42, 42);
+  --grey-unchecked: rgba(130, 130, 130, 0.3);
+  --grey-checked: rgb(130, 130, 130);
+  --grey-text: rgb(230, 230, 230);
 
-  --pink-unchecked: rgb(255, 240, 245);
-  --pink-checked: ;
-  --pink-text: rgb(149, 43, 146);
+  --pink-unchecked: rgba(240, 150, 210, 0.3);
+  --pink-checked: rgb(240, 150, 210);
+  --pink-text: rgb(255, 240, 245);
 
-  --blank-div: rgb(245, 245, 245);
+  --blank-div: rgb(45, 45, 45);
 }
 
 .App {
@@ -80,10 +82,23 @@
 
 .App-header {
   min-height: 36pt;
-  display: inline;
+  display: flex;
+  flex-direction: row;
   font-weight: 800;
   font-size: calc(24px + 2vmin);
   color: var(--text-color);
+}
+
+.App-header > span {
+  margin-left: auto;
+  margin-right: -40pt;
+}
+
+.App-header > svg {
+  display: inline;
+  margin-left: auto;
+  margin-right: 24pt;
+  width: 16pt;
 }
 
 .App-body {
@@ -158,7 +173,7 @@
   margin-left: 8pt;
   padding: 1pt 6pt 1pt 6pt;
   border-radius: 8pt;
-  background-color: lightgreen;
+  background-color: var(--completed-color);
 }
 
 .CheckboxBlock {
