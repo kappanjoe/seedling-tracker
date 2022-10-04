@@ -80,24 +80,29 @@
   padding-bottom: 5vh;
 }
 
-.App-header {
-  min-height: 36pt;
-  display: flex;
-  flex-direction: row;
+.Toolbar {
+  display: table;
+  width: min(450pt, 100%);
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 800;
   font-size: calc(24px + 2vmin);
   color: var(--text-color);
 }
 
-.App-header > span {
+.Title {
+  display: table-cell;
   margin-left: auto;
-  margin-right: -40pt;
+  margin-right: auto;
 }
 
-.App-header > svg {
-  display: inline;
-  margin-left: auto;
-  margin-right: 24pt;
+.TBarItem {
+  display: table-cell;
+  padding-left: 8pt;
+  padding-right: 8pt;
+}
+
+.TBarItem > p > svg {
   width: 16pt;
 }
 
