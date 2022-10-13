@@ -46,7 +46,7 @@ export const SeedCell: React.FC<Prop> = (props) => {
                     var checked: string = deco.colors[key as keyof colors]!;
                     if (checked === "nil") {
                         return (
-                            <div className='blankDiv transition-colors' key={ Math.random() }></div>
+                            <div className='blankDiv transition-colors' key={ key }></div>
                         )
                     }
                     

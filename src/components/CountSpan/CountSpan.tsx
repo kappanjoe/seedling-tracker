@@ -11,10 +11,10 @@ export const CountSpan: React.FC<Prop> = (props) => {
     var countText = "";
 
     if (count === max) {
-        countClass = "ColorComplete"
+        countClass = "ColorComplete transition-all"
         countText = "Completed!";
     } else {
-        countClass = "ColorCount"
+        countClass = "ColorCount transition-all"
         countText = count + " / " + max;
     }
 

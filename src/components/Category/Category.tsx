@@ -33,7 +33,7 @@ export const Category: React.FC<Prop> = (props) => {
 
     return (
         <div className="Category" key={ category.name + "Container" } >
-            <div className="CategoryName" key={ category.name } onClick={ onClick }>
+            <div className="CategoryName transition-colors" key={ category.name } onClick={ onClick }>
                 <span>{ prettyName }</span>
                 <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0' : 'transition-transform rotate-180' }/>
             </div>
