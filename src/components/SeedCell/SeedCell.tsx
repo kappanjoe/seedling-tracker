@@ -40,13 +40,13 @@ export const SeedCell: React.FC<Prop> = (props) => {
                 <span className='SeedName'>{ deco.name }:</span>
                 <CountSpan count={ currentCount } max={ max }/>
             </div>
-            <div className='CheckboxBlock'>
+            <div className='CheckboxBlock transition-colors'>
                 { colors.map((key: string) => {
                     // console.log(key + " " + seed.colors[key as keyof colors]);
                     var checked: string = deco.colors[key as keyof colors]!;
                     if (checked === "nil") {
                         return (
-                            <div className='blankDiv' key={ Math.random() }></div>
+                            <div className='blankDiv transition-colors' key={ Math.random() }></div>
                         )
                     }
                     

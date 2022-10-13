@@ -1,7 +1,7 @@
 import React, { useState, MouseEvent } from 'react';
 import { decoration, category } from '../../App';
 import { SeedCell } from '../../components/SeedCell';
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
+import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
 interface Prop {
     index: number;
@@ -29,14 +29,15 @@ export const Category: React.FC<Prop> = (props) => {
     for (let i of category.values) {
         seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i } bigCountHandler={ bigCountHandler }/>);
     }
+    let catHeight = seedCells.length * 24
 
     return (
         <div className="Category" key={ category.name + "Container" } >
             <div className="CategoryName" key={ category.name } onClick={ onClick }>
                 <span>{ prettyName }</span>
-                <ChevronRightIcon className={ isOpen? 'rotate-90-transform' : '' } />
+                <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0' : 'transition-transform rotate-180' }/>
             </div>
-            <div className={ isOpen? 'SeedsOpen' : 'SeedsClosed' } key={ category.name + "Seeds" }>
+            <div className={ isOpen? 'transition-all scale-y-100 origin-top' : `transition-all scale-y-0 h-0 origin-top` } key={ category.name + "Seeds" }>
                 { seedCells }
             </div>
         </div>

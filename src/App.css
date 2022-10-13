@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --bg-color: #f9f8f3;
   --text-color: midnightblue;
@@ -81,29 +85,37 @@
 }
 
 .Toolbar {
-  display: table;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: var(--bg-color);
   width: min(450pt, 100%);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 0 auto;
+  padding: 4pt 0 6pt 0;
   font-weight: 800;
   font-size: calc(24px + 2vmin);
   color: var(--text-color);
 }
 
 .Title {
-  display: table-cell;
-  margin-left: auto;
-  margin-right: auto;
+  grid-column-start: 2;
+  display: inline-block;
 }
 
-.TBarItem {
-  display: table-cell;
+.Menu {
+  display: inline-block;
   padding-left: 8pt;
   padding-right: 8pt;
+  margin-left: auto;
+  margin-right: 8pt;
 }
 
-.TBarItem > p > svg {
-  width: 16pt;
+.Menu > p > svg {
+  display: inline-block;
+  width: calc(8pt + 2vmin);
 }
 
 .App-body {
@@ -119,7 +131,7 @@
 .Category {
   display: flex;
   flex-direction: column;
-  margin: 8pt 12pt 8pt 12pt;
+  margin: 4pt 12pt 4pt 12pt;
   height: fit-content;
 }
 
@@ -127,7 +139,7 @@
   display: flex;
   text-align: left;
   margin-bottom: 4pt;
-  padding-bottom: 4pt;
+  padding-bottom: 2pt;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: var(--border-color);
@@ -142,18 +154,6 @@
   display:  block;
   width: 12pt;
   margin-left: auto;
-}
-
-.rotate-90-transform {
-  rotate: 90deg;
-}
-
-.SeedsOpen {
-  display: block;
-}
-
-.SeedsClosed {
-  display: none;
 }
 
 .SeedCell {
@@ -187,8 +187,8 @@
   grid-template-columns: repeat(auto-fill, 35pt);
   grid-template-rows: 2;
   row-gap: 6pt;
-  margin-top: 6pt;
-  padding-bottom: 6pt;
+  margin-top: 4pt;
+  padding-bottom: 2pt;
 }
 
 .CheckboxBlock > div {
@@ -196,8 +196,8 @@
   flex-direction: column-reverse;
   align-items: center;
   margin: 0pt 3pt 0pt 3pt;
-  padding: 6pt;
-  border-radius: 6pt;
+  padding: 8pt;
+  border-radius: 8pt;
 }
 
 .redChecked {

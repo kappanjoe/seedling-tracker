@@ -33,17 +33,13 @@ export const Toolbar: React.FC<Prop> = (props) => {
 	// };
 	
 	return (
-		<header className='Toolbar'>
-			<div className='TBarItem'>
-			  	<p>
-			  	</p>
-			</div>
+		<header className='Toolbar transition-colors'>
 			<div className='Title'>
 			  	<p>
 					<span>Deco Tracker</span>
 			  	</p>
 			</div>
-			<div className='TBarItem'>
+			<div className='Menu'>
 			  	<p>
 					<AdjustmentsHorizontalIcon onClick={ switchThemeOld }/>
 			  	</p>

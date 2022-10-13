@@ -45,7 +45,7 @@ export const Checkbox: React.FC<Prop> = (props) => {
     }
     
     return ( 
-        <div className={ boolString(checked)? keyName + 'Checked' : keyName + 'Unchecked' } key= { keyName } onClick={ clickHandler }>
+        <div className={ boolString(checked)? keyName + 'Checked transition-colors' : keyName + 'Unchecked transition-colors' } key= { keyName } onClick={ clickHandler }>
             {/* <span className={ key + "Name" }>{ key }</span> */}
             <input
                 type="checkbox"

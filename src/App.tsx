@@ -36,30 +36,32 @@ function App() {
 
 	// Set themeing
 	// Get stored preference or use system pref
-	let sysThemeDark: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches;
 	var preference: string;
-	if (localStorage.getItem("theme")) {
+	if ("theme" in localStorage) {
 		preference = localStorage.getItem("theme")!;
 	} else {
 		preference = "system";
 	}
 	// Enable theme switching and assign current pref to bgColor
 	const [themeMode, setThemeMode] = useState(preference);
+	console.log()
 	var bgColor: string;
   	if (themeMode === 'system') {
-		if (sysThemeDark) {
-			bgColor = "#f9f8f3";
-		} else {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setThemeMode('dark')
 			bgColor = "#191919";
+		} else {
+			setThemeMode('light')
+			bgColor = "#f9f8f3";
 		}
 	} else if (themeMode === 'dark') {
-			bgColor = "#f9f8f3";
+		bgColor = "#191919";
 	} else {
-			bgColor = "#191919";
+		bgColor = "#f9f8f3";
 	}
 
 	function switchTheme() {
-    		const newTheme = themeMode === 'light'? 'dark' : 'light';
+    	const newTheme = themeMode === 'light'? 'dark' : 'light';
 		setThemeMode(newTheme);
 		localStorage.setItem("theme", newTheme);
 	}
@@ -70,26 +72,25 @@ function App() {
 	}
 
 	//-- INITIAL CHECKS --//
-	if (!localStorage.getItem("decorations")) {
+	if (!("decorations" in localStorage)) {
 		console.log("Decorations item undefined.");
 		// Current version of storage not implemented
-		if (localStorage.getItem("seeds")) {
-		console.log("Version 0.4 or earlier - upgrading");
-		// Version 0.4 or earlier of storage exists; upgrade version
-		storage = JSON.parse(localStorage.getItem("seeds")!);
-		upgradeStorage();
+		if ("seeds" in localStorage) {
+			console.log("Version 0.4 or earlier - upgrading");
+			// Version 0.4 or earlier of storage exists; upgrade version
+			storage = JSON.parse(localStorage.getItem("seeds")!);
+			upgradeStorage();
 		} else {
-		console.log("No storage found - quietly initializing");
-		// No version of storage exists; initialize with current version
-		initializeStorage();
+			console.log("No storage found - quietly initializing");
+			// No version of storage exists; initialize with current version
+			initializeStorage();
 		}
-	} else if (localStorage.getItem("info")) {
-		console.log("Version 0.5 or later");
+	} else if ("info" in localStorage) {
 		// Recent version of storage (0.5 or later) implemented; load and update version if not current
 		loadStorage();
 		if (storage.info.seedsVersion < info.seedsVersion || storage.info.appVersion < info.appVersion) {
-		console.log("New version available - upgrading");
-		upgradeStorage();
+			console.log("New version available - upgrading");
+			upgradeStorage();
 		}
 	} else {
 		// Data incompatible; reinitialize
@@ -113,25 +114,23 @@ function App() {
 	function upgradeStorage() {
 		// Check for "decorations" to avoid overwriting
 		if (!storage.decorations) {
-		// Reformat version < 0.4 (if exists) to include "nil" values for all unused colors
-		if (storage.decorTypes) {
-			storage.decorTypes.forEach( (x: decoration) => {
-			for (let each of colors) {
-				if (x.colors[each as keyof colors] === undefined) {
-				x.colors[each as keyof colors] = "nil";
-				}
+			// Reformat version < 0.4 (if exists) to include "nil" values for all unused colors
+			if (storage.decorTypes) {
+				storage.decorTypes.forEach( (x: decoration) => {
+					for (let each of colors) {
+						if (x.colors[each as keyof colors] === undefined) {
+							x.colors[each as keyof colors] = "nil";
+						}
+					}
+				});
 			}
-			});
-		}
-		reinitDecorArray(storage.decorTypes);
+			reinitDecorArray(storage.decorTypes);
 		} else {
-		reinitDecorArray(storage.decorations);
+			reinitDecorArray(storage.decorations);
 		}
 		// Save all values to localStorage and remove old version; initialize "categories" if v0.5 or v0.6
 		localStorage.removeItem("seeds");
-		if (storage.info.seedsVersion < 0.7) {
 		localStorage.setItem("categories", JSON.stringify(categories));
-		}
 		localStorage.setItem("info", JSON.stringify(info));
 		localStorage.setItem("decorations", JSON.stringify(storage.decorations));
 		window.location.reload();
@@ -142,14 +141,14 @@ function App() {
 		// Create temporary decor array and fill with existing values from outdated version or default values from current
 		var tempDecor: decoration[] = [];
 		decorations.forEach( (x: decoration) => {
-		let i = source.findIndex( (y: decoration) => {
-			return y.name === x.name;
-		});
-		if (i >= 0) {
-			tempDecor.push(source[i]);
-		} else {
-			tempDecor.push(x);
-		}
+			let i = source.findIndex( (y: decoration) => {
+				return y.name === x.name;
+			});
+			if (i >= 0) {
+				tempDecor.push(source[i]);
+			} else {
+				tempDecor.push(x);
+			}
 		})
 		// Assign tempDecor to storage.decorations
 		storage.decorations = tempDecor;
@@ -193,7 +192,7 @@ function App() {
 	}
 
 	return (
-		<div className="App" data-theme={ themeMode }>
+		<div className="App transition-colors" data-theme={ themeMode }>
 		<meta name="theme-color" content={ bgColor }/>
 		<Toolbar switchThemeOld={ switchTheme }/>
 		<div className='App-body'>

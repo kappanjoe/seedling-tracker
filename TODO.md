@@ -16,11 +16,17 @@
   - [x] 100% completionist totals (counting every possible variation)
   - [x] Overall Total display
   - [x] "Completed!" element
+  - [ ] Show total count for category when collapsed
 - [x] Dark Mode
-- [ ] Animations
+- [ ] Transitions
+  - [x] Collapsing categories
+  - [x] Dark Mode/Light Mode toggle
+  - [ ] Completed counts
 - [ ] Detail views?
 - [x] Toolbar
-- [ ] Menu for options (Dark mode, count type, color labels/accessibility)
+- [ ] Menu for options (Dark mode, count type, color labels/accessibility, collapse all)
 
 ## Bugs
-- N/A
+### Transitions
+  - [ ] Collapsing categories doesn't animate change in space between categories
+  - [ ] Transition between dark and light mode doesn't animate color for blank checkboxes
