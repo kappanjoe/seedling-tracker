@@ -97,59 +97,6 @@
   width: calc(8pt + 2vmin);
 }
 
-.guideGrid {
-  display: grid;
-  background-color: var(--bg-color);
-  position: sticky;
-  top: calc(48px + 3vmin);
-  z-index: 20;
-  grid-template-columns: repeat(auto-fill, 35pt);
-  grid-template-rows: 2;
-  row-gap: 6pt;
-  margin: 8pt 12pt 2pt 12pt;
-  padding-bottom: 8pt;
-  min-width: 30pt;
-  max-width: 450pt;
-}
-
-.guideGrid > div {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  margin: 0pt 3pt 0pt 3pt;
-  padding: 0pt 8pt 2pt 8pt;
-  border-radius: 8pt;
-}
-
-.redGuide {
-  color: var(--red-text);
-  background-color: var(--red-unchecked);
-}
-.yellowGuide {
-  color: var(--yellow-text);
-  background-color: var(--yellow-unchecked);
-}
-.blueGuide {
-  color: var(--blue-text);
-  background-color: var(--blue-unchecked);
-}
-.whiteGuide {
-  color: var(--white-text);
-  background-color: var(--white-unchecked);
-}
-.purpleGuide {
-  color: var(--purple-text);
-  background-color: var(--purple-unchecked);
-}
-.greyGuide {
-  color: var(--grey-text);
-  background-color: var(--grey-unchecked);
-}
-.pinkGuide {
-  color: var(--pink-text);
-  background-color: var(--pink-unchecked);
-}
-
 .App-body {
   display: flex;
   flex-direction: column;
@@ -175,7 +122,6 @@
   border-bottom-width: 1px;
   border-bottom-color: var(--border-color);
   position: sticky;
-  /* top: calc(83px + 3vmin); */
   top: calc(48px + 3vmin);
   z-index: 9;
   background-color: var(--bg-color);
@@ -305,6 +251,62 @@
 
 .blankDiv {
   background-color: var(--blank-div);
+}
+
+.guideGrid {
+  display: grid;
+  background-color: var(--bg-color);
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: var(--border-color);
+  grid-template-columns: repeat(auto-fill, 35pt);
+  grid-template-rows: 2;
+  row-gap: 6pt;
+  margin: 8pt 12pt 2pt 12pt;
+  padding: 6pt 0pt 6pt 0pt;
+  min-width: 30pt;
+  max-width: 450pt;
+}
+
+.guideGrid > div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin: 0pt 3pt 0pt 3pt;
+  padding: 0pt 8pt 2pt 8pt;
+  border-radius: 8pt;
+}
+
+.redGuide {
+  color: var(--red-text);
+  background-color: var(--red-unchecked);
+}
+.yellowGuide {
+  color: var(--yellow-text);
+  background-color: var(--yellow-unchecked);
+}
+.blueGuide {
+  color: var(--blue-text);
+  background-color: var(--blue-unchecked);
+}
+.whiteGuide {
+  color: var(--white-text);
+  background-color: var(--white-unchecked);
+}
+.purpleGuide {
+  color: var(--purple-text);
+  background-color: var(--purple-unchecked);
+}
+.greyGuide {
+  color: var(--grey-text);
+  background-color: var(--grey-unchecked);
+}
+.pinkGuide {
+  color: var(--pink-text);
+  background-color: var(--pink-unchecked);
 }
 
 .Version-info {

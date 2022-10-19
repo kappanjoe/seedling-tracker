@@ -198,7 +198,6 @@ function App() {
 			<Toolbar switchThemeOld={ switchTheme }/>
 			<div className='App-body'>
 				<CountSpan count={ currentFullCount } max={ fullMax }/>
-				{/* <GuideGrid/> */}
 				{ categories.map( (category) => {
 					return <Category
 							key={ category.name }
@@ -207,6 +206,7 @@ function App() {
 							decorations={ storage.decorations }
 							bigCountHandler={ bigCountHandler }/>;
 				})}
+				<GuideGrid/>
 				<span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
 			</div>
 		</div>

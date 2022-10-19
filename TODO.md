@@ -8,7 +8,7 @@
 - [x] Data structure updates/versioning
   - [x] Bus Stop
   - [x] Theme Park B
-- [ ] Color labels/color-blind accessibility
+- [x] Color labels/color-blind accessibility
 - [x] Coloring based on checkbox state
 - [x] Collapsible category headers
 - [ ] Current total counts
