@@ -4,6 +4,7 @@ import { Category } from './components/Category';
 import structure from './seeds.json';
 import { CountSpan } from './components/CountSpan';
 import { Toolbar } from './components/Toolbar';
+import { GuideGrid } from './components/GuideGrid';
 
 export type decoration = {
 	// Names must be unique!!
@@ -181,32 +182,33 @@ function App() {
 	function bigCountHandler() {
 		var count = 0;
 		(storage.decorations as decoration[]).forEach( (deco) => {
-		Object.keys(deco.colors).forEach( (color) => {
-			let value = deco.colors[color as keyof colors];
-			if (value === "on") {
-			count++;
-			}
-		})
+			Object.keys(deco.colors).forEach( (color) => {
+				let value = deco.colors[color as keyof colors];
+				if (value === "on") {
+					count++;
+				}
+			})
 		});
 		setCurrentFullCount(count);
 	}
 
 	return (
 		<div className="App transition-colors" data-theme={ themeMode }>
-		<meta name="theme-color" content={ bgColor }/>
-		<Toolbar switchThemeOld={ switchTheme }/>
-		<div className='App-body'>
-			<CountSpan count={ currentFullCount } max={ fullMax }/>
-			{ categories.map( (category) => {
-				return <Category
-						key={ category.name }
-						index={ categories.indexOf(category) }
-						categories={ storage.categories }
-						decorations={ storage.decorations }
-						bigCountHandler={ bigCountHandler }/>;
-			})}
-			<span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
-		</div>
+			<meta name="theme-color" content={ bgColor }/>
+			<Toolbar switchThemeOld={ switchTheme }/>
+			<div className='App-body'>
+				<CountSpan count={ currentFullCount } max={ fullMax }/>
+				{/* <GuideGrid/> */}
+				{ categories.map( (category) => {
+					return <Category
+							key={ category.name }
+							index={ categories.indexOf(category) }
+							categories={ storage.categories }
+							decorations={ storage.decorations }
+							bigCountHandler={ bigCountHandler }/>;
+				})}
+				<span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
+			</div>
 		</div>
 	)
 };

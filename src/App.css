@@ -8,35 +8,35 @@
   --border-color: lightgrey;
   --completed-color: lightgreen;
 
-  --red-unchecked: rgb(250, 222, 220);
+  --red-unchecked: rgba(235, 110, 85, 0.2);
   --red-checked: rgb(235, 110, 85);
   --red-text: rgb(120, 8, 0);
 
-  --yellow-unchecked: rgb(250, 248, 210);
+  --yellow-unchecked: rgba(250, 230, 90, 0.2);
   --yellow-checked: rgb(250, 230, 90);
   --yellow-text: rgb(126, 101, 30);
 
-  --blue-unchecked: rgb(230, 245, 255);
+  --blue-unchecked: rgba(70, 160, 250, 0.2);
   --blue-checked: rgb(70, 160, 250);
   --blue-text: rgb(0, 51, 86);
 
-  --white-unchecked: rgb(240, 240, 245);
+  --white-unchecked: rgba(256, 256, 256, 0.3);
   --white-checked: white;
   --white-text: rgb(77, 77, 77);
 
-  --purple-unchecked: rgb(240, 235, 255);
+  --purple-unchecked: rgba(170, 110, 240, 0.2);
   --purple-checked: rgb(170, 110, 240);
   --purple-text: rgb(39, 0, 157);
 
-  --grey-unchecked: rgb(230, 230, 230);
+  --grey-unchecked: rgba(94, 94, 94, 0.2);
   --grey-checked: rgb(94, 94, 94);
   --grey-text: rgb(42, 42, 42);
 
-  --pink-unchecked: rgb(255, 240, 245);
+  --pink-unchecked: rgba(240, 150, 210, 0.2);
   --pink-checked: rgb(240, 150, 210);
   --pink-text: rgb(149, 43, 146);
 
-  --blank-div: rgb(245, 245, 245);
+  --blank-div: rgb(240, 240, 240);
 }
 
 [data-theme="dark"] {
@@ -45,34 +45,13 @@
   --border-color: rgb(80, 80, 80);
   --completed-color: rgb(21, 115, 55);
 
-  --red-unchecked: rgba(235, 110, 85, 0.3);
-  --red-checked: rgb(235, 110, 85);
   --red-text: rgb(250, 222, 220);
-
-  --yellow-unchecked: rgba(250, 230, 90, 0.3);
-  --yellow-checked: rgb(250, 230, 90);
   --yellow-text: rgb(250, 247, 210);
-
-  --blue-unchecked: rgba(70, 160, 250, 0.3);
-  --blue-checked: rgb(70, 160, 250);
   --blue-text: rgb(230, 245, 255);
-
-  --white-unchecked: rgba(240, 240, 240, 0.3);
-  --white-checked: rgb(240, 240, 240);
   --white-text: rgb(240, 240, 245);
-
-  --purple-unchecked: rgba(170, 110, 240, 0.3);
-  --purple-checked: rgb(170, 110, 240);
   --purple-text: rgb(240, 235, 255);
-
-  --grey-unchecked: rgba(130, 130, 130, 0.3);
-  --grey-checked: rgb(130, 130, 130);
   --grey-text: rgb(230, 230, 230);
-
-  --pink-unchecked: rgba(240, 150, 210, 0.3);
-  --pink-checked: rgb(240, 150, 210);
   --pink-text: rgb(255, 240, 245);
-
   --blank-div: rgb(45, 45, 45);
 }
 
@@ -118,6 +97,59 @@
   width: calc(8pt + 2vmin);
 }
 
+.guideGrid {
+  display: grid;
+  background-color: var(--bg-color);
+  position: sticky;
+  top: calc(48px + 3vmin);
+  z-index: 20;
+  grid-template-columns: repeat(auto-fill, 35pt);
+  grid-template-rows: 2;
+  row-gap: 6pt;
+  margin: 8pt 12pt 2pt 12pt;
+  padding-bottom: 8pt;
+  min-width: 30pt;
+  max-width: 450pt;
+}
+
+.guideGrid > div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin: 0pt 3pt 0pt 3pt;
+  padding: 0pt 8pt 2pt 8pt;
+  border-radius: 8pt;
+}
+
+.redGuide {
+  color: var(--red-text);
+  background-color: var(--red-unchecked);
+}
+.yellowGuide {
+  color: var(--yellow-text);
+  background-color: var(--yellow-unchecked);
+}
+.blueGuide {
+  color: var(--blue-text);
+  background-color: var(--blue-unchecked);
+}
+.whiteGuide {
+  color: var(--white-text);
+  background-color: var(--white-unchecked);
+}
+.purpleGuide {
+  color: var(--purple-text);
+  background-color: var(--purple-unchecked);
+}
+.greyGuide {
+  color: var(--grey-text);
+  background-color: var(--grey-unchecked);
+}
+.pinkGuide {
+  color: var(--pink-text);
+  background-color: var(--pink-unchecked);
+}
+
 .App-body {
   display: flex;
   flex-direction: column;
@@ -143,7 +175,8 @@
   border-bottom-width: 1px;
   border-bottom-color: var(--border-color);
   position: sticky;
-  top: calc(46px + 3vmin);
+  /* top: calc(83px + 3vmin); */
+  top: calc(48px + 3vmin);
   z-index: 9;
   background-color: var(--bg-color);
 }
@@ -275,7 +308,7 @@
 }
 
 .Version-info {
-  margin-top: 12pt;
+  margin: 12pt;
   font-size: 10pt;
   font-weight: 300;
 }

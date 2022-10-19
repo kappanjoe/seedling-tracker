@@ -29,7 +29,6 @@ export const Category: React.FC<Prop> = (props) => {
     for (let i of category.values) {
         seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i } bigCountHandler={ bigCountHandler }/>);
     }
-    let catHeight = seedCells.length * 24
 
     return (
         <div className="Category" key={ category.name + "Container" } >
