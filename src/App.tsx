@@ -111,6 +111,14 @@ function App() {
 		window.location.reload();
 	}
 
+	// Load storage to populate UI
+	function loadStorage() {
+		storage = structure as structure;
+		storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
+		storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
+		storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
+	}
+
 	// Upgrade older version of storage to current version
 	function upgradeStorage() {
 		// Check for "decorations" to avoid overwriting
@@ -129,9 +137,27 @@ function App() {
 		} else {
 			reinitDecorArray(storage.decorations);
 		}
-		// Save all values to localStorage and remove old version; initialize "categories" if v0.5 or v0.6
+		// Initialize Categories in localStorage or Reinit with saved open states
+		if (!storage.categories) {
+			localStorage.setItem("categories", JSON.stringify(categories));
+		} else {
+			var tempCats = categories;
+			storage.categories.forEach( (x: category) => {
+				let j = tempCats.findIndex( (y: category) => {
+					if (x.name === y.name) {
+						return true;
+					} else {
+						return false;
+					}
+				});
+				if (j >= 0) {
+					tempCats[j].isOpen = x.isOpen
+				}
+			})
+			localStorage.setItem("categories", JSON.stringify(tempCats));
+		}
+		// Save all values to localStorage and remove old version
 		localStorage.removeItem("seeds");
-		localStorage.setItem("categories", JSON.stringify(categories));
 		localStorage.setItem("info", JSON.stringify(info));
 		localStorage.setItem("decorations", JSON.stringify(storage.decorations));
 		window.location.reload();
@@ -153,14 +179,6 @@ function App() {
 		})
 		// Assign tempDecor to storage.decorations
 		storage.decorations = tempDecor;
-	}
-
-	// Load storage to populate UI
-	function loadStorage() {
-		storage = structure as structure;
-		storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
-		storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
-		storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
 	}
 
 	// Calculate full count of decorations
@@ -195,9 +213,10 @@ function App() {
 	return (
 		<div className="App transition-colors" data-theme={ themeMode }>
 			<meta name="theme-color" content={ bgColor }/>
+			<meta name="viewport" content="width=device-width, maximum-scale=1.0, viewport-fit=cover"/>
 			<Toolbar switchThemeOld={ switchTheme }/>
 			<div className='App-body'>
-				<CountSpan count={ currentFullCount } max={ fullMax }/>
+				<CountSpan count={ currentFullCount } max={ fullMax } category={ false }/>
 				{ categories.map( (category) => {
 					return <Category
 							key={ category.name }

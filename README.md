@@ -1,4 +1,4 @@
-# Deco Tracker v1.08
+# Deco Tracker v1.11
 Deco Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written with TypeScript and was bootstrapped with Create React App. A special thanks goes to M & J for beta testing and suggesting new features!
 
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
@@ -12,8 +12,15 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 ## Changelog
 
+### v1.11
+- Updated app icon
+- Adjusted placement of color labels to stay within safe area
+- Category totals are now displayed when collapsed
+- Category collapse states are saved when updating
+
 ### v1.08
 - Added color labels for accessbility
+- Checkbox colors adjusted for consistency and performance
 
 ### v1.02
 - Fixed bug where checkbox placeholders didn't transition smoothly between Dark/Light mode

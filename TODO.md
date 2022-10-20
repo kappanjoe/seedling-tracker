@@ -16,7 +16,7 @@
   - [x] 100% completionist totals (counting every possible variation)
   - [x] Overall Total display
   - [x] "Completed!" element
-  - [ ] Show total count for category when collapsed
+  - [x] Show total count for category when collapsed
 - [x] Dark Mode
 - [x] Transitions
   - [x] Collapsing categories
@@ -27,6 +27,11 @@
 - [ ] Menu for options (Dark mode, count type, color labels/accessibility, collapse all)
 
 ## Bugs
+### JSON Handling
+  - [x] Category collapsed state reset when updating localStorage to new version
 ### Transitions
   - [ ] Collapsing categories doesn't animate change in space between categories
   - [x] Transition between dark and light mode doesn't animate color for checkbox placeholders
+### Other UI
+  - [ ] Single-pixel white border sometimes visible at bottom of page
+    - Disappears when some number of categories are collapsed

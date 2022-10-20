@@ -38,7 +38,7 @@ export const SeedCell: React.FC<Prop> = (props) => {
         <div className={ 'SeedCell' } key={ "Cell-" + index }>
             <div className='SeedInfo'>
                 <span className='SeedName'>{ deco.name }:</span>
-                <CountSpan count={ currentCount } max={ max }/>
+                <CountSpan count={ currentCount } max={ max } category={ false }/>
             </div>
             <div className='CheckboxBlock transition-colors'>
                 { colors.map((key: string) => {

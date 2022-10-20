@@ -1,7 +1,8 @@
 import React, { useState, MouseEvent } from 'react';
-import { decoration, category } from '../../App';
+import { decoration, category, colors } from '../../App';
 import { SeedCell } from '../../components/SeedCell';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import { CountSpan } from '../CountSpan';
 
 interface Prop {
     index: number;
@@ -30,10 +31,28 @@ export const Category: React.FC<Prop> = (props) => {
         seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i } bigCountHandler={ bigCountHandler }/>);
     }
 
+    // Count category totals
+    function countCategory() {
+        var current = 0;
+        var maxCount = 0;
+        for (let i of category.values) {
+            for (let j of Object.keys(decorations[i].colors)) {
+                if (decorations[i].colors[j as keyof colors] === "on") {
+                    current++;
+                    maxCount++;
+                } else if (decorations[i].colors[j as keyof colors] === "off") {
+                    maxCount++;
+                }
+            }
+        }
+        return <CountSpan count={ current } max={ maxCount } category={ true }/>;
+    }
+
     return (
         <div className="Category" key={ category.name + "Container" } >
             <div className="CategoryName transition-colors" key={ category.name } onClick={ onClick }>
                 <span>{ prettyName }</span>
+                { isOpen? null : countCategory() }
                 <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0' : 'transition-transform rotate-180' }/>
             </div>
             <div className={ isOpen? 'transition-all scale-y-100 origin-top' : `transition-all scale-y-0 h-0 origin-top` } key={ category.name + "Seeds" }>

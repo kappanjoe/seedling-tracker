@@ -154,6 +154,7 @@
 
 .ColorCount {
   margin-left: 8pt;
+  font-weight: 200 !important;
 }
 
 .ColorComplete {
@@ -161,6 +162,8 @@
   margin-right: 8pt;
   padding: 1pt 6pt 1pt 6pt;
   border-radius: 8pt;
+  line-height: auto;
+  font-weight: 200 !important;
   background-color: var(--completed-color);
 }
 
@@ -266,7 +269,7 @@
   grid-template-rows: 2;
   row-gap: 6pt;
   margin: 8pt 12pt 2pt 12pt;
-  padding: 6pt 0pt 6pt 0pt;
+  padding: 6pt 0pt max(6pt, env(safe-area-inset-bottom)) 0pt;
   min-width: 30pt;
   max-width: 450pt;
 }
