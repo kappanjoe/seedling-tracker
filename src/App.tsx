@@ -45,7 +45,6 @@ function App() {
 	}
 	// Enable theme switching and assign current pref to bgColor
 	const [themeMode, setThemeMode] = useState(preference);
-	console.log()
 	var bgColor: string;
   	if (themeMode === 'system') {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -135,6 +134,13 @@ function App() {
 			}
 			reinitDecorArray(storage.decorTypes);
 		} else {
+			// Fix Jack-O'-Lantern decoration name spacing typo
+			let i = storage.decorations.findIndex( (x: decoration) => {
+				return x.name === "Jack-O' -Lantern";
+			})
+			if (i >= 0) {
+				storage.decorations[i].name = "Jack-O'-Lantern";
+			}
 			reinitDecorArray(storage.decorations);
 		}
 		// Initialize Categories in localStorage or Reinit with saved open states
@@ -144,11 +150,7 @@ function App() {
 			var tempCats = categories;
 			storage.categories.forEach( (x: category) => {
 				let j = tempCats.findIndex( (y: category) => {
-					if (x.name === y.name) {
-						return true;
-					} else {
-						return false;
-					}
+					return x.name === y.name;
 				});
 				if (j >= 0) {
 					tempCats[j].isOpen = x.isOpen
@@ -210,8 +212,10 @@ function App() {
 		setCurrentFullCount(count);
 	}
 
+	document.documentElement.setAttribute('data-theme', themeMode);
+
 	return (
-		<div className="App transition-colors" data-theme={ themeMode }>
+		<div className="App transition-colors">
 			<meta name="theme-color" content={ bgColor }/>
 			<meta name="viewport" content="width=device-width, maximum-scale=1.0, viewport-fit=cover"/>
 			<Toolbar switchThemeOld={ switchTheme }/>

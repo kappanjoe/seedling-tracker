@@ -4,7 +4,10 @@
 - [x] Set up Github Pages
 - [x] Update favicon, app icon, etc.
 
-## Features
+## PWA
+- [ ] Installation prompt
+
+## General Features
 - [x] Data structure updates/versioning
   - [x] Bus Stop
   - [x] Theme Park B
@@ -33,5 +36,5 @@
   - [ ] Collapsing categories doesn't animate change in space between categories
   - [x] Transition between dark and light mode doesn't animate color for checkbox placeholders
 ### Other UI
-  - [ ] Single-pixel white border sometimes visible at bottom of page
-    - Disappears when some number of categories are collapsed
+  - [x] Single-pixel white border sometimes visible at bottom of page
+  - [x] "Jack-O' -Lantern" name spacing typo

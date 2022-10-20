@@ -1,8 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --bg-color: #f9f8f3;
+  --text-color: midnightblue;
+  --border-color: lightgrey;
+  --completed-color: lightgreen;
+
+  --red-unchecked: rgba(235, 110, 85, 0.2);
+  --red-checked: rgb(235, 110, 85);
+  --red-text: rgb(120, 8, 0);
+
+  --yellow-unchecked: rgba(250, 230, 90, 0.2);
+  --yellow-checked: rgb(250, 230, 90);
+  --yellow-text: rgb(126, 101, 30);
+
+  --blue-unchecked: rgba(70, 160, 250, 0.2);
+  --blue-checked: rgb(70, 160, 250);
+  --blue-text: rgb(0, 51, 86);
+
+  --white-unchecked: rgba(256, 256, 256, 0.3);
+  --white-checked: white;
+  --white-text: rgb(77, 77, 77);
+
+  --purple-unchecked: rgba(170, 110, 240, 0.2);
+  --purple-checked: rgb(170, 110, 240);
+  --purple-text: rgb(39, 0, 157);
+
+  --grey-unchecked: rgba(94, 94, 94, 0.2);
+  --grey-checked: rgb(94, 94, 94);
+  --grey-text: rgb(42, 42, 42);
+
+  --pink-unchecked: rgba(240, 150, 210, 0.2);
+  --pink-checked: rgb(240, 150, 210);
+  --pink-text: rgb(149, 43, 146);
+
+  --blank-div: rgb(240, 240, 240);
+}
+
+[data-theme="dark"] {
+  --bg-color: #191919;
+  --text-color: lightgrey;
+  --border-color: rgb(80, 80, 80);
+  --completed-color: rgb(21, 115, 55);
+
+  --red-text: rgb(250, 222, 220);
+  --yellow-text: rgb(250, 247, 210);
+  --blue-text: rgb(230, 245, 255);
+  --white-text: rgb(240, 240, 245);
+  --purple-text: rgb(240, 235, 255);
+  --grey-text: rgb(230, 230, 230);
+  --pink-text: rgb(255, 240, 245);
+  --blank-div: rgb(40, 40, 40);
+}
 
 body {
+  background-color: var(--bg-color);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

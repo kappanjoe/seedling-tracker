@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 0.8,
-        "appVersion": 1.11
+        "seedsVersion": 0.9,
+        "appVersion": 1.12
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -494,7 +494,7 @@
             "group": null
         },
         {
-            "name": "Jack-O' -Lantern",
+            "name": "Jack-O'-Lantern",
             "catInd": 21,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",

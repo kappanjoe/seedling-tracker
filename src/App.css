@@ -2,58 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-color: #f9f8f3;
-  --text-color: midnightblue;
-  --border-color: lightgrey;
-  --completed-color: lightgreen;
-
-  --red-unchecked: rgba(235, 110, 85, 0.2);
-  --red-checked: rgb(235, 110, 85);
-  --red-text: rgb(120, 8, 0);
-
-  --yellow-unchecked: rgba(250, 230, 90, 0.2);
-  --yellow-checked: rgb(250, 230, 90);
-  --yellow-text: rgb(126, 101, 30);
-
-  --blue-unchecked: rgba(70, 160, 250, 0.2);
-  --blue-checked: rgb(70, 160, 250);
-  --blue-text: rgb(0, 51, 86);
-
-  --white-unchecked: rgba(256, 256, 256, 0.3);
-  --white-checked: white;
-  --white-text: rgb(77, 77, 77);
-
-  --purple-unchecked: rgba(170, 110, 240, 0.2);
-  --purple-checked: rgb(170, 110, 240);
-  --purple-text: rgb(39, 0, 157);
-
-  --grey-unchecked: rgba(94, 94, 94, 0.2);
-  --grey-checked: rgb(94, 94, 94);
-  --grey-text: rgb(42, 42, 42);
-
-  --pink-unchecked: rgba(240, 150, 210, 0.2);
-  --pink-checked: rgb(240, 150, 210);
-  --pink-text: rgb(149, 43, 146);
-
-  --blank-div: rgb(240, 240, 240);
-}
-
-[data-theme="dark"] {
-  --bg-color: #191919;
-  --text-color: lightgrey;
-  --border-color: rgb(80, 80, 80);
-  --completed-color: rgb(21, 115, 55);
-
-  --red-text: rgb(250, 222, 220);
-  --yellow-text: rgb(250, 247, 210);
-  --blue-text: rgb(230, 245, 255);
-  --white-text: rgb(240, 240, 245);
-  --purple-text: rgb(240, 235, 255);
-  --grey-text: rgb(230, 230, 230);
-  --pink-text: rgb(255, 240, 245);
-  --blank-div: rgb(45, 45, 45);
-}
+@import './index.css';
 
 .App {
   background-color: var(--bg-color);
@@ -73,9 +22,9 @@
   background-color: var(--bg-color);
   width: min(450pt, 100%);
   margin: 0 auto 0 auto;
-  padding: 4pt 0 6pt 0;
+  padding: max(4pt, env(safe-area-inset-top)) 0 6pt 0;
   font-weight: 800;
-  font-size: calc(24px + 2vmin);
+  font-size: calc(20pt + 2vmin);
   color: var(--text-color);
 }
 
@@ -100,7 +49,7 @@
 .App-body {
   display: flex;
   flex-direction: column;
-  margin: 10pt auto;
+  margin: 10pt auto 10pt;
   min-width: 30pt;
   max-width: 450pt;
   color: var(--text-color);
@@ -119,10 +68,10 @@
   margin-bottom: 4pt;
   padding-bottom: 2pt;
   border-bottom-style: solid;
-  border-bottom-width: 1px;
+  border-bottom-width: 1pt;
   border-bottom-color: var(--border-color);
   position: sticky;
-  top: calc(48px + 3vmin);
+  top: calc(39pt + 3vmin);
   z-index: 9;
   background-color: var(--bg-color);
 }
@@ -263,7 +212,7 @@
   bottom: 0;
   z-index: 20;
   border-top-style: solid;
-  border-top-width: 1px;
+  border-top-width: 1pt;
   border-top-color: var(--border-color);
   grid-template-columns: repeat(auto-fill, 35pt);
   grid-template-rows: 2;

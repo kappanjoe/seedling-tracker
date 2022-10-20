@@ -53,9 +53,9 @@ export const Category: React.FC<Prop> = (props) => {
             <div className="CategoryName transition-colors" key={ category.name } onClick={ onClick }>
                 <span>{ prettyName }</span>
                 { isOpen? null : countCategory() }
-                <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0' : 'transition-transform rotate-180' }/>
+                <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0 transform-gpu' : 'transition-transform rotate-180 transform-gpu' }/>
             </div>
-            <div className={ isOpen? 'transition-all scale-y-100 origin-top' : `transition-all scale-y-0 h-0 origin-top` } key={ category.name + "Seeds" }>
+            <div className={ isOpen? 'transition-all origin-top transform-gpu' : 'transition-all scale-y-0 h-0 origin-top transform-gpu' } key={ category.name + "Seeds" }>
                 { seedCells }
             </div>
         </div>
