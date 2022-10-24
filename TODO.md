@@ -15,7 +15,7 @@
 - [x] Coloring based on checkbox state
 - [x] Collapsible category headers
 - [ ] Current total counts
-  - [ ] "Official" totals (i.e., how they're counted in-game without counting some variations)
+  - [ ] "Game" totals (i.e., how they're counted in-game without counting some variations)
   - [x] 100% completionist totals (counting every possible variation)
   - [x] Overall Total display
   - [x] "Completed!" element
@@ -27,13 +27,17 @@
   - [x] Completed counts
 - [ ] Detail views?
 - [x] Toolbar
-- [ ] Menu for options (Dark mode, count type, color labels/accessibility, collapse all)
+- [x] Menu for options
+  - [x] Theme mode
+  - [ ] Count type
+  - [x] Color labels
+  - [ ] Collapse/open all
 
 ## Bugs
 ### JSON Handling
   - [x] Category collapsed state reset when updating localStorage to new version
 ### Transitions
-  - [ ] Collapsing categories doesn't animate change in space between categories
+  - [ ] ~~Collapsing categories doesn't animate change in space between categories~~ Out of scope; requires additional JS
   - [x] Transition between dark and light mode doesn't animate color for checkbox placeholders
 ### Other UI
   - [x] Single-pixel white border sometimes visible at bottom of page

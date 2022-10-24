@@ -12,6 +12,11 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 ## Changelog
 
+<details>
+
+### v1.2
+- Button in toolbar now opens preferences menu with options to set theme (dark mode, etc.), hide color labels, etc.
+
 ### v1.12
 - Window background color now matches color-scheme
 - Removed unnecessary space in "Jack-O' -Lantern" in seeds.json (version 0.9)
@@ -59,6 +64,8 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 - Added storage checks and updating
 - Added new decoration type 'Bus Stop'
 - Added missing decoration type 'Theme Park B'
+
+</details>
 
 ## TODO:
 

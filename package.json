@@ -1,9 +1,10 @@
 {
   "name": "deco-tracker",
   "homepage": "https://kappanjoe.github.io/seedling-tracker/",
-  "version": "1.12",
+  "version": "1.2",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.11",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

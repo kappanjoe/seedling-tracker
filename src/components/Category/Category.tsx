@@ -1,8 +1,9 @@
 import React, { useState, MouseEvent } from 'react';
 import { decoration, category, colors } from '../../App';
-import { SeedCell } from '../../components/SeedCell';
-import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import { SeedCell } from '../SeedCell';
 import { CountSpan } from '../CountSpan';
+import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import { Transition } from '@headlessui/react';
 
 interface Prop {
     index: number;
@@ -52,12 +53,30 @@ export const Category: React.FC<Prop> = (props) => {
         <div className="Category" key={ category.name + "Container" } >
             <div className="CategoryName transition-colors" key={ category.name } onClick={ onClick }>
                 <span>{ prettyName }</span>
-                { isOpen? null : countCategory() }
+                <Transition
+                    show={ !isOpen }
+                    enter="transition-all origin-bottom"
+                    enterFrom="scale-y-0"
+                    enterTo="scale-y-100"
+                    leave="transition-all origin-bottom"
+                    leaveFrom="scale-y-100"
+                    leaveTo="scale-y-0">
+                        { countCategory() }
+                </Transition>
                 <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0 transform-gpu' : 'transition-transform rotate-180 transform-gpu' }/>
             </div>
-            <div className={ isOpen? 'transition-all origin-top transform-gpu' : 'transition-all scale-y-0 h-0 origin-top transform-gpu' } key={ category.name + "Seeds" }>
-                { seedCells }
-            </div>
+            <Transition
+                show={ isOpen }
+                enter="transition-all origin-top transform-gpu"
+                enterFrom="scale-y-0"
+                enterTo="scale-y-100"
+                leave="transition-all origin-top tranform-gpu"
+                leaveFrom="scale-y-100"
+                leaveTo="scale-y-0">
+                    <div key={ category.name + "Seeds" }>
+                        { seedCells }
+                    </div>
+            </Transition>
         </div>
     );
 }

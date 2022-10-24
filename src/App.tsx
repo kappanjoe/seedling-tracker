@@ -30,78 +30,64 @@ export type category = {
 	isOpen: boolean;
 };
 
+class Preferences {
+	theme: string;
+	labelsOn: boolean;
+	
+	constructor() {
+		this.theme = "system";
+		this.labelsOn = true;
+	}
+};
+
 function App() {
 	const { info, colors, categories, decorations } = structure;
 	type structure = typeof structure;
 	var storage: structure | any;
-
-	// Set themeing
-	// Get stored preference or use system pref
-	var preference: string;
-	if ("theme" in localStorage) {
-		preference = localStorage.getItem("theme")!;
-	} else {
-		preference = "system";
-	}
-	// Enable theme switching and assign current pref to bgColor
-	const [themeMode, setThemeMode] = useState(preference);
-	var bgColor: string;
-  	if (themeMode === 'system') {
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			setThemeMode('dark')
-			bgColor = "#191919";
-		} else {
-			setThemeMode('light')
-			bgColor = "#f9f8f3";
-		}
-	} else if (themeMode === 'dark') {
-		bgColor = "#191919";
-	} else {
-		bgColor = "#f9f8f3";
-	}
-
-	function switchTheme() {
-    	const newTheme = themeMode === 'light'? 'dark' : 'light';
-		setThemeMode(newTheme);
-		localStorage.setItem("theme", newTheme);
-	}
-	//---- Theme should move from toggle to selection with three options: system, dark, light
-	function changeTheme(to: string = themeMode) {
-		setThemeMode(to);
-		localStorage.setItem("theme", to);
-	}
+	var userPrefs = new Preferences();
 
 	//-- INITIAL CHECKS --//
+		// Seeds = { Info, Categories, Decorations ... }
 	if (!("decorations" in localStorage)) {
 		console.log("Decorations item undefined.");
-		// Current version of storage not implemented
+		// Current version of seeds not implemented
 		if ("seeds" in localStorage) {
 			console.log("Version 0.4 or earlier - upgrading");
-			// Version 0.4 or earlier of storage exists; upgrade version
+			// Version 0.4 or earlier of seeds exists; upgrade version
 			storage = JSON.parse(localStorage.getItem("seeds")!);
-			upgradeStorage();
+			upgradeSeeds();
 		} else {
-			console.log("No storage found - quietly initializing");
-			// No version of storage exists; initialize with current version
-			initializeStorage();
+			console.log("No seeds found - quietly initializing");
+			// No version of seeds exists; initialize with current version
+			initializeSeeds();
 		}
 	} else if ("info" in localStorage) {
-		// Recent version of storage (0.5 or later) implemented; load and update version if not current
+		// Recent version of seeds (0.5 or later) implemented; load and update version if not current
+		// Initialize userPrefs if not stored
+		if (!("userPrefs" in localStorage)) {
+			localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+		}
+		if ("theme" in localStorage) {
+			userPrefs.theme = localStorage.getItem("theme")!;
+			localStorage.removeItem("theme");
+			localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+		}
+		
 		loadStorage();
 		if (storage.info.seedsVersion < info.seedsVersion || storage.info.appVersion < info.appVersion) {
 			console.log("New version available - upgrading");
-			upgradeStorage();
+			upgradeSeeds();
 		}
 	} else {
 		// Data incompatible; reinitialize
 		alert("Could not load saved data. Reinitializing.");
-		initializeStorage();
+		initializeSeeds();
 	}
 	//-- END INITIAL CHECKS --//
 
 
-	// Initialize storage with current version and reload
-	function initializeStorage() {
+	// Initialize seeds with current version and reload
+	function initializeSeeds() {
 		localStorage.clear();
 		localStorage.setItem("info", JSON.stringify(info));
 		localStorage.setItem("decorations", JSON.stringify(decorations));
@@ -110,16 +96,8 @@ function App() {
 		window.location.reload();
 	}
 
-	// Load storage to populate UI
-	function loadStorage() {
-		storage = structure as structure;
-		storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
-		storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
-		storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
-	}
-
-	// Upgrade older version of storage to current version
-	function upgradeStorage() {
+	// Upgrade older version of seeds to current version
+	function upgradeSeeds() {
 		// Check for "decorations" to avoid overwriting
 		if (!storage.decorations) {
 			// Reformat version < 0.4 (if exists) to include "nil" values for all unused colors
@@ -132,7 +110,7 @@ function App() {
 					}
 				});
 			}
-			reinitDecorArray(storage.decorTypes);
+			reinitDecorations(storage.decorTypes);
 		} else {
 			// Fix Jack-O'-Lantern decoration name spacing typo
 			let i = storage.decorations.findIndex( (x: decoration) => {
@@ -141,7 +119,7 @@ function App() {
 			if (i >= 0) {
 				storage.decorations[i].name = "Jack-O'-Lantern";
 			}
-			reinitDecorArray(storage.decorations);
+			reinitDecorations(storage.decorations);
 		}
 		// Initialize Categories in localStorage or Reinit with saved open states
 		if (!storage.categories) {
@@ -166,7 +144,7 @@ function App() {
 	}
 
 	// Reinitialize decorations array
-	function reinitDecorArray(source: decoration[]) {
+	function reinitDecorations(source: decoration[]) {
 		// Create temporary decor array and fill with existing values from outdated version or default values from current
 		var tempDecor: decoration[] = [];
 		decorations.forEach( (x: decoration) => {
@@ -181,6 +159,32 @@ function App() {
 		})
 		// Assign tempDecor to storage.decorations
 		storage.decorations = tempDecor;
+	}
+
+	// Load storage to populate UI
+	function loadStorage() {
+		storage = structure as structure;
+		storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
+		storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
+		storage.categories = JSON.parse(localStorage.getItem("categories")!) as typeof categories;
+		userPrefs = JSON.parse(localStorage.getItem("userPrefs")!) as Preferences;
+	}
+
+	// Enable theme switching and assign current pref to bgColor
+	var themePref: string = userPrefs.theme;
+	const [themeMode, setThemeMode] = useState(themePref);
+
+	var bgColor: string;
+  	if (themeMode === 'system') {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			bgColor = "#191919";
+		} else {
+			bgColor = "#f9f8f3";
+		}
+	} else if (themeMode === 'dark') {
+		bgColor = "#191919";
+	} else {
+		bgColor = "#f9f8f3";
 	}
 
 	// Calculate full count of decorations
@@ -198,7 +202,6 @@ function App() {
 		})
 	});
 	const [currentFullCount, setCurrentFullCount] = useState(fullCount);
-
 	function bigCountHandler() {
 		var count = 0;
 		(storage.decorations as decoration[]).forEach( (deco) => {
@@ -212,13 +215,27 @@ function App() {
 		setCurrentFullCount(count);
 	}
 
-	document.documentElement.setAttribute('data-theme', themeMode);
+	// Store current visibility state of color labels guide
+	const [labelsOn, setLabelsOn] = useState(userPrefs.labelsOn as boolean)
+	function saveLabels() {
+		userPrefs.labelsOn = !labelsOn;
+		localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+	}
+
+	// Theme should be one of three options: "light", "dark", or "system"
+	function saveTheme(newTheme: string) {
+		setThemeMode(newTheme);
+		userPrefs.theme = newTheme;
+		localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
+	}
+
+	document.documentElement.setAttribute('data-theme', themeMode == 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : themeMode);
 
 	return (
 		<div className="App transition-colors">
 			<meta name="theme-color" content={ bgColor }/>
 			<meta name="viewport" content="width=device-width, maximum-scale=1.0, viewport-fit=cover"/>
-			<Toolbar switchThemeOld={ switchTheme }/>
+			<Toolbar labelState={ [labelsOn, setLabelsOn] } labelHandler={ saveLabels } themeState={ themeMode } themeHandler={ saveTheme }/>
 			<div className='App-body'>
 				<CountSpan count={ currentFullCount } max={ fullMax } category={ false }/>
 				{ categories.map( (category) => {
@@ -229,7 +246,7 @@ function App() {
 							decorations={ storage.decorations }
 							bigCountHandler={ bigCountHandler }/>;
 				})}
-				<GuideGrid/>
+				<GuideGrid visibility={ labelsOn }/>
 				<span className='Version-info'>App: v{ info.appVersion } - Seeds: v{ info.seedsVersion }</span>
 			</div>
 		</div>

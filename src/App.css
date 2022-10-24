@@ -17,7 +17,7 @@
   grid-template-columns: 1fr auto 1fr;
   justify-items: center;
   position: sticky;
-  z-index: 10;
+  z-index: 20;
   top: 0;
   background-color: var(--bg-color);
   width: min(450pt, 100%);
@@ -41,9 +41,28 @@
   margin-right: 8pt;
 }
 
-.Menu > p > svg {
+.Menu > div > button > svg {
   display: inline-block;
   width: calc(8pt + 2vmin);
+}
+
+.PopoverMenu {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  z-index: 10;
+}
+
+.PopoverBackdrop {
+  background-color: var(--backdrop-color);
+  z-index: -10;
+}
+
+.ListboxContainer > button {
+  background-color: var(--lbox-color);
+}
+
+.ListboxContainer > ul {
+  background-color: var(--lbox-color);
 }
 
 .App-body {
@@ -72,7 +91,7 @@
   border-bottom-color: var(--border-color);
   position: sticky;
   top: calc(39pt + 3vmin);
-  z-index: 9;
+  z-index: 5;
   background-color: var(--bg-color);
 }
 
@@ -139,65 +158,53 @@
 }
 
 .redChecked {
-  color: var(--red-text);
+  
   background-color: var(--red-checked);
 }
 .redUnchecked {
-  color: var(--red-text);
+  
   background-color: var(--red-unchecked);
 }
 
 .yellowChecked {
-  color: var(--yellow-text);
   background-color: var(--yellow-checked);
 }
 .yellowUnchecked {
-  color: var(--yellow-text);
   background-color: var(--yellow-unchecked);
 }
 
 .blueChecked {
-  color: var(--blue-text);
   background-color: var(--blue-checked);
 }
 .blueUnchecked {
-  color: var(--blue-text);
   background-color: var(--blue-unchecked);
 }
 
 .whiteChecked {
-  color: var(--white-text);
   background-color: var(--white-checked);
 }
 .whiteUnchecked {
-  color: var(--white-text);
   background-color: var(--white-unchecked);
 }
 
 .purpleChecked {
-  color: var(--purple-text);
   background-color: var(--purple-checked);
 }
 .purpleUnchecked {
-  color: var(--purple-text);
   background-color: var(--purple-unchecked);
 }
 
 .greyChecked {
-  color: var(--grey-text);
   background-color: var(--grey-checked);
 }
 .greyUnchecked {
-  color: var(--grey-text);
   background-color: var(--grey-unchecked);
 }
 
 .pinkChecked {
-  color: var(--pink-text);
   background-color: var(--pink-checked);
 }
 .pinkUnchecked {
-  color: var(--pink-text);
   background-color: var(--pink-unchecked);
 }
 
@@ -210,7 +217,7 @@
   background-color: var(--bg-color);
   position: sticky;
   bottom: 0;
-  z-index: 20;
+  z-index: 8;
   border-top-style: solid;
   border-top-width: 1pt;
   border-top-color: var(--border-color);
@@ -230,34 +237,29 @@
   margin: 0pt 3pt 0pt 3pt;
   padding: 0pt 8pt 2pt 8pt;
   border-radius: 8pt;
+  font-weight: 400;
+  color: var(--text-color);
 }
 
 .redGuide {
-  color: var(--red-text);
   background-color: var(--red-unchecked);
 }
 .yellowGuide {
-  color: var(--yellow-text);
   background-color: var(--yellow-unchecked);
 }
 .blueGuide {
-  color: var(--blue-text);
   background-color: var(--blue-unchecked);
 }
 .whiteGuide {
-  color: var(--white-text);
   background-color: var(--white-unchecked);
 }
 .purpleGuide {
-  color: var(--purple-text);
   background-color: var(--purple-unchecked);
 }
 .greyGuide {
-  color: var(--grey-text);
   background-color: var(--grey-unchecked);
 }
 .pinkGuide {
-  color: var(--pink-text);
   background-color: var(--pink-unchecked);
 }
 
