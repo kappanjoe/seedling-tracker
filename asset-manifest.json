@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/seedling-tracker/static/css/main.782f2e1a.css",
-    "main.js": "/seedling-tracker/static/js/main.23a00c3b.js",
-    "static/js/787.f34337b0.chunk.js": "/seedling-tracker/static/js/787.f34337b0.chunk.js",
+    "main.css": "/seedling-tracker/static/css/main.ff5661a3.css",
+    "main.js": "/seedling-tracker/static/js/main.7507ff5b.js",
+    "static/js/787.91989a6a.chunk.js": "/seedling-tracker/static/js/787.91989a6a.chunk.js",
     "index.html": "/seedling-tracker/index.html",
-    "main.782f2e1a.css.map": "/seedling-tracker/static/css/main.782f2e1a.css.map",
-    "main.23a00c3b.js.map": "/seedling-tracker/static/js/main.23a00c3b.js.map",
-    "787.f34337b0.chunk.js.map": "/seedling-tracker/static/js/787.f34337b0.chunk.js.map"
+    "main.ff5661a3.css.map": "/seedling-tracker/static/css/main.ff5661a3.css.map",
+    "main.7507ff5b.js.map": "/seedling-tracker/static/js/main.7507ff5b.js.map",
+    "787.91989a6a.chunk.js.map": "/seedling-tracker/static/js/787.91989a6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.782f2e1a.css",
-    "static/js/main.23a00c3b.js"
+    "static/css/main.ff5661a3.css",
+    "static/js/main.7507ff5b.js"
   ]
 }
