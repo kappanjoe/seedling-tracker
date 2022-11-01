@@ -15,7 +15,7 @@ export const Checkbox: React.FC<Prop> = (props) => {
     const { index, keyName, smallCountHandler, updateFullCount } = props;
     var decorations = props.decorations;
     
-    // Save checkbox state to respective value in storage
+    // Save checkbox state to respective value in localStorage
     function updateValue(value: string) {
         decorations[index].colors[keyName as keyof colors] = value;
         localStorage.setItem("decorations", JSON.stringify(decorations));

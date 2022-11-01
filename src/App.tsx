@@ -85,7 +85,7 @@ class Structure implements Indexable {
 
 function App() {
 	const { info, colors, categories, groups, decorations } = new Structure();
-	var storage: Structure | any;
+	var userMem: Structure | any;
 	var userPrefs = new Preferences();
 
 	//-- INITIAL CHECKS --//
@@ -96,7 +96,7 @@ function App() {
 		if ("seeds" in localStorage) {
 			console.log("Version 0.4 or earlier - upgrading");
 			// Version 0.4 or earlier of seeds exists; upgrade version
-			storage = JSON.parse(localStorage.getItem("seeds")!);
+			userMem = JSON.parse(localStorage.getItem("seeds")!);
 			upgradeSeeds();
 		} else {
 			console.log("No seeds found - quietly initializing");
@@ -122,7 +122,7 @@ function App() {
 		}
 		
 		loadStorage();
-		if (storage.info.seedsVersion < info.seedsVersion || storage.info.appVersion < info.appVersion) {
+		if (userMem.info.seedsVersion < info.seedsVersion || userMem.info.appVersion < info.appVersion) {
 			console.log("New version available - upgrading");
 			upgradeSeeds();
 		}
@@ -149,10 +149,10 @@ function App() {
 	// Upgrade older version of seeds to current version
 	function upgradeSeeds() {
 		// Check for "decorations" to avoid overwriting
-		if (!storage.decorations) {
+		if (!userMem.decorations) {
 			// Reformat version < 0.4 (if exists) to include "nil" values for all unused colors
-			if (storage.decorTypes) {
-				storage.decorTypes.forEach( (x: decoration) => {
+			if (userMem.decorTypes) {
+				userMem.decorTypes.forEach( (x: decoration) => {
 					for (let each of colors) {
 						if (x.colors[each as keyof colors] === undefined) {
 							x.colors[each as keyof colors] = "nil";
@@ -160,23 +160,23 @@ function App() {
 					}
 				});
 			}
-			reinitDecorations(storage.decorTypes);
+			reinitDecorations(userMem.decorTypes);
 		} else {
 			// Fix Jack-O'-Lantern decoration name spacing typo
-			let i = storage.decorations.findIndex( (x: decoration) => {
+			let i = userMem.decorations.findIndex( (x: decoration) => {
 				return x.name === "Jack-O' -Lantern";
 			});
 			if (i >= 0) {
-				storage.decorations[i].name = "Jack-O'-Lantern";
+				userMem.decorations[i].name = "Jack-O'-Lantern";
 			}
-			reinitDecorations(storage.decorations);
+			reinitDecorations(userMem.decorations);
 		}
 		// Initialize new Categories in localStorage or Reinit with new + saved open states
-		if (!storage.categories) {
+		if (!userMem.categories) {
 			localStorage.setItem("categories", JSON.stringify(categories));
 		} else {
 			var tempCats = categories;
-			storage.categories.forEach( (x: category) => {
+			userMem.categories.forEach( (x: category) => {
 				let j = tempCats.findIndex( (y: category) => {
 					return x.name === y.name;
 				});
@@ -187,12 +187,12 @@ function App() {
 			localStorage.setItem("categories", JSON.stringify(tempCats));
 		}
 		// Initialize new Groups in localStorage or Reinit with new + saved group values
-		if (!storage.groups) {
+		if (!userMem.groups) {
 			localStorage.setItem("groups", JSON.stringify(groups));
 		} else {
 			var tempGroups = new Groups();
-			Object.keys(storage.groups).forEach( (x) => {
-				tempGroups[x as keyof Groups] = storage.groups[x as keyof Groups];
+			Object.keys(userMem.groups).forEach( (x) => {
+				tempGroups[x as keyof Groups] = userMem.groups[x as keyof Groups];
 			});
 			localStorage.setItem("groups", JSON.stringify(tempGroups));
 		}
@@ -210,7 +210,7 @@ function App() {
 		// Save all values to localStorage and remove old version
 		localStorage.removeItem("seeds");
 		localStorage.setItem("info", JSON.stringify(info));
-		localStorage.setItem("decorations", JSON.stringify(storage.decorations));
+		localStorage.setItem("decorations", JSON.stringify(userMem.decorations));
 		window.location.reload();
 	}
 
@@ -235,17 +235,17 @@ function App() {
 				tempDecor.push(x);
 			}
 		})
-		// Assign tempDecor to storage.decorations
-		storage.decorations = tempDecor;
+		// Assign tempDecor to userMem.decorations
+		userMem.decorations = tempDecor;
 	}
 
-	// Load storage to populate UI
+	// Load userMem to populate UI
 	function loadStorage() {
-		storage = new Structure();
-		storage.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
-		storage.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
-		storage.categories = JSON.parse(localStorage.getItem("categories")!);
-		storage.groups = JSON.parse(localStorage.getItem("groups")!);
+		userMem = new Structure();
+		userMem.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
+		userMem.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
+		userMem.categories = JSON.parse(localStorage.getItem("categories")!);
+		userMem.groups = JSON.parse(localStorage.getItem("groups")!);
 		userPrefs = JSON.parse(localStorage.getItem("userPrefs")!);
 	}
 
@@ -284,7 +284,7 @@ function App() {
 			// Create temporary store based on empty state
 			let tempGroups = new Groups();
 			// Iterate over every decor
-			(storage.decorations as decoration[]).forEach( (deco) => {
+			(userMem.decorations as decoration[]).forEach( (deco) => {
 				// Run if decor belongs to a group
 				if (deco.group != null) {
 					Object.keys(deco.colors).forEach( (color) => {
@@ -323,7 +323,7 @@ function App() {
 			localStorage.setItem("groups", JSON.stringify(tempGroups));
 		} else {
 		// Run using 100% completionist count (default)
-			(storage.decorations as decoration[]).forEach( (deco) => {
+			(userMem.decorations as decoration[]).forEach( (deco) => {
 				Object.keys(deco.colors).forEach( (color) => {
 					let value = deco.colors[color as keyof colors];
 					if (value === "on") {
@@ -383,8 +383,8 @@ function App() {
 					return <Category
 							key={ category.name }
 							index={ categories.indexOf(category) }
-							categories={ storage.categories }
-							decorations={ storage.decorations }
+							categories={ userMem.categories }
+							decorations={ userMem.decorations }
 							updateFullCount={ updateFullCount }/>;
 				})}
 				<GuideGrid visibility={ labelsOn }/>
