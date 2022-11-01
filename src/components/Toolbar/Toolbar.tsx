@@ -13,14 +13,18 @@ interface Prop {
 	// confirmDelete?: () => void;
 	labelState: [boolean, Dispatch<any>];
 	labelHandler: () => void;
+	countMethodState: [boolean, Dispatch<any>];
+	countMethodHandler: () => void;
 	themeState: string;
 	themeHandler: (_: string) => void;
 }
 
 export const Toolbar: React.FC<Prop> = (props) => {
-	const { labelState, labelHandler, themeState, themeHandler } = props;
+	const { labelState, labelHandler, countMethodState, countMethodHandler, themeState, themeHandler } = props;
 	const labelsOn = labelState[0];
 	const setLabelsOn = labelState[1];
+	const useInGameCount = countMethodState[0];
+	const setUseInGameCount = countMethodState[1];
 	
 	// function toggleSelect() {
 	// 	if (selectMode.toggled) {
@@ -151,16 +155,18 @@ export const Toolbar: React.FC<Prop> = (props) => {
 											</div>
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
 												<p className="flex shrink-0 items-center justify-center text-gray-300">
-													Game count - coming soon
+													Use game-based counting
 												</p>
 												<Switch
-													checked={ false }
-													className={ `${false ? 'bg-emerald-600' : 'bg-gray-300'}
+													checked={ useInGameCount }
+													onChange={ setUseInGameCount }
+													onClick={ countMethodHandler }
+													className={ `${useInGameCount ? 'bg-emerald-600' : 'bg-gray-300'}
 														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
 														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
 													<span className='sr-only'>Enable game count</span>
 													<span aria-hidden="true"
-														className={`${false ? 'translate-x-[20pt]' : 'translate-x-0'}
+														className={`${useInGameCount ? 'translate-x-[20pt]' : 'translate-x-0'}
 															pointer-events-none inline-block h-[21pt] w-[21pt] transform
 															rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
 												</Switch>

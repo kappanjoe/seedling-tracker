@@ -15,7 +15,8 @@
 - [x] Coloring based on checkbox state
 - [x] Collapsible category headers
 - [ ] Current total counts
-  - [ ] "Game" totals (i.e., how they're counted in-game without counting some variations)
+  - [x] "Game" totals (i.e., how they're counted in-game without counting some variations)
+  - [ ] Show small "game" counts for specific groupings
   - [x] 100% completionist totals (counting every possible variation)
   - [x] Overall Total display
   - [x] "Completed!" element
@@ -29,9 +30,11 @@
 - [x] Toolbar
 - [x] Menu for options
   - [x] Theme mode
-  - [ ] Count type
+  - [x] Count type
   - [x] Color labels
-  - [ ] Collapse/open all
+- [ ] Collapse/open all
+- [ ] Load/Save to Base64
+- [ ] Compare with friends
 
 ## Bugs
 ### JSON Handling

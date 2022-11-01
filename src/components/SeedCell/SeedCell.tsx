@@ -7,11 +7,11 @@ import structure from '../../seeds.json';
 interface Prop {
     index: number;
     decorations: decoration[];
-    bigCountHandler: () => void;
+    updateFullCount: () => void;
 };
 
 export const SeedCell: React.FC<Prop> = (props) => {
-    var { index, decorations, bigCountHandler } = props;
+    var { index, decorations, updateFullCount } = props;
     const colors = structure.colors;
     var deco = decorations[index];
 
@@ -57,7 +57,7 @@ export const SeedCell: React.FC<Prop> = (props) => {
                                 keyName= { key }
                                 key= { key }
                                 smallCountHandler= { refreshCount }
-                                bigCountHandler= { bigCountHandler }/>;
+                                updateFullCount= { updateFullCount }/>;
                 })}
             </div>
         </div>

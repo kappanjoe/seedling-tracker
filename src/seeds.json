@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 0.92,
-        "appVersion": 1.2
+        "seedsVersion": 1.0,
+        "appVersion": 1.3
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -43,11 +43,15 @@
         },
         "hanafuda": {
             "red": "off", "yellow": "off", "blue": "off",
-                "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
+            "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
         },
         "sticker": {
             "red": "off", "yellow": "off", "blue": "off",
             "white": "off", "purple": "off", "grey": "off", "pink": "off"
+        },
+        "themepark": {
+            "red": "off", "yellow": "off", "blue": "off",
+            "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
         }
     },
     "decorations": [
@@ -473,7 +477,7 @@
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
-            "group": null
+            "group": "themepark"
         },
         {
             "name": "Theme Park Ticket B",
@@ -482,7 +486,7 @@
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
-            "group": null
+            "group": "themepark"
         },
         {
             "name": "Paper Bus",

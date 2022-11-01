@@ -7,12 +7,12 @@ interface Prop {
     checkState: string;
     keyName: string;
     smallCountHandler: (value: number) => void;
-    bigCountHandler: () => void;
+    updateFullCount: () => void;
 };
 
 export const Checkbox: React.FC<Prop> = (props) => {
     const [checked, setChecked] = useState(props.checkState);
-    const { index, keyName, smallCountHandler, bigCountHandler } = props;
+    const { index, keyName, smallCountHandler, updateFullCount } = props;
     var decorations = props.decorations;
     
     // Save checkbox state to respective value in storage
@@ -25,8 +25,7 @@ export const Checkbox: React.FC<Prop> = (props) => {
             if (decorations[index].colors[x as keyof colors] === "on") { count++; } 
         });
         smallCountHandler(count);
-        bigCountHandler();
-
+        updateFullCount();
         setChecked(value);
     }
 

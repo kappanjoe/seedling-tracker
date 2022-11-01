@@ -1,4 +1,4 @@
-# Deco Tracker v1.2
+# Deco Tracker v1.3
 Deco Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written with TypeScript and was bootstrapped with Create React App. A special thanks goes to M & J for beta testing and suggesting new features!
 
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
@@ -13,6 +13,11 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 ## Changelog
 
 <details>
+
+### v1.3
+- Added new "1st Anniversary Snack" decor
+- Updated `seeds.json` to version 1.0 (full schema for groupings and current decor)
+- You can now turn on game-based counting using the prefs menu to check if your Deco Tracker totals match your game!
 
 ### v1.2
 - Button in toolbar now opens preferences menu with options to set theme (dark mode, etc.), hide color labels, etc.
