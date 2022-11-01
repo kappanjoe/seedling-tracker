@@ -229,7 +229,7 @@ function App() {
 		localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
 	}
 
-	document.documentElement.setAttribute('data-theme', themeMode == 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : themeMode);
+	document.documentElement.setAttribute('data-theme', themeMode === 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : themeMode);
 
 	return (
 		<div className="App transition-colors">
