@@ -28,6 +28,14 @@
   color: var(--text-color);
 }
 
+.IOButtonWrapper {
+  display: inline-block;
+  padding-left: 8pt;
+  padding-right: 8pt;
+  margin-left: 8pt;
+  margin-right: auto;
+}
+
 .Title {
   grid-column-start: 2;
   display: inline-block;
@@ -41,23 +49,27 @@
   margin-right: 8pt;
 }
 
-.Menu > div > button > svg {
+.Menu > div > button > svg, .IOButton > button > svg {
   display: inline-block;
   width: calc(8pt + 2vmin);
 }
 
-.PopoverMenu {
+.DialogBox > textarea {
+  background-color: var(--lbox-color);
+}
+
+.PopoverMenu, .DialogBox {
   background-color: var(--bg-color);
   color: var(--text-color);
   z-index: 10;
 }
 
-.PopoverBackdrop {
+.PopoverBackdrop, .DialogBackdrop {
   background-color: var(--backdrop-color);
   z-index: -10;
 }
 
-.ListboxContainer > button {
+.ListboxContainer > button, .ButtonContainer > button {
   background-color: var(--lbox-color);
 }
 

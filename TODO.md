@@ -33,7 +33,7 @@
   - [x] Count type
   - [x] Color labels
 - [ ] Collapse/open all
-- [ ] Load/Save to Base64
+- [x] Load/Save to Base64
 - [ ] Compare with friends
 
 ## Bugs

@@ -62,7 +62,7 @@ class Groups implements Indexable {
 	}
 }
 
-class Structure implements Indexable {
+export class Structure implements Indexable {
 	[key: string]: any;
 	info: {
 		seedsVersion: number;
@@ -320,7 +320,8 @@ function App() {
 					}
 				});
 			});
-			localStorage.setItem("groups", JSON.stringify(tempGroups));
+			userMem.groups = tempGroups;
+			localStorage.setItem("groups", JSON.stringify(userMem.groups));
 		} else {
 		// Run using 100% completionist count (default)
 			(userMem.decorations as decoration[]).forEach( (deco) => {
@@ -376,7 +377,8 @@ function App() {
 			 themeState={ themeMode }
 			 themeHandler={ saveTheme }
 			 countMethodState={ [useInGameCount, setUseInGameCount] }
-			 countMethodHandler={ saveCountMethod }/>
+			 countMethodHandler={ saveCountMethod }
+			 userMem={ userMem }/>
 			<div className='App-body'>
 				<CountSpan count={ currentFullCount } max={ fullMax } category={ false }/>
 				{ categories.map( (category) => {

@@ -1,50 +1,31 @@
 import React, { Dispatch, Fragment } from 'react';
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/20/solid';
 import { Popover, Switch, Listbox, Transition } from '@headlessui/react';
+import { ImportExport } from '../ImportExport';
+import { Structure } from '../../App';
 
 interface Prop {
-	// changeTheme: (to: String) => void;
-	// switchThemeOld: () => void;
-	// onSelectToggled?: () => void;
-	// selectMode: {
-	// 	toggled: boolean,
-	// 	buttonText: string,
-	// };
-	// confirmDelete?: () => void;
 	labelState: [boolean, Dispatch<any>];
 	labelHandler: () => void;
 	countMethodState: [boolean, Dispatch<any>];
 	countMethodHandler: () => void;
 	themeState: string;
 	themeHandler: (_: string) => void;
+	userMem: Structure;
 }
 
 export const Toolbar: React.FC<Prop> = (props) => {
-	const { labelState, labelHandler, countMethodState, countMethodHandler, themeState, themeHandler } = props;
+	const { labelState, labelHandler, countMethodState, countMethodHandler, themeState, themeHandler, userMem } = props;
 	const labelsOn = labelState[0];
 	const setLabelsOn = labelState[1];
 	const useInGameCount = countMethodState[0];
 	const setUseInGameCount = countMethodState[1];
 	
-	// function toggleSelect() {
-	// 	if (selectMode.toggled) {
-	// 		selectMode.toggled = false;
-	// 		selectMode.buttonText = 'Edit';
-	// 		onSelectToggled && onSelectToggled();
-	// 	} else {
-	// 		/* To-Do: show sorting handles */
-	// 		selectMode.toggled = true;
-	// 		selectMode.buttonText = 'Done';
-	// 		onSelectToggled && onSelectToggled();
-	// 	}
-	// };
-	
-	// const deleteVis = {
-	// 	display: (selectMode.toggled ? 'table-cell' : 'none'),
-	// };
-	
 	return (
 		<header className='Toolbar transition-colors'>
+			<div className='IOButtonWrapper'>
+				<ImportExport userMem={ userMem }/>
+			</div>
 			<div className='Title'>
 			  	<p>
 					<span>Deco Tracker</span>
@@ -76,7 +57,7 @@ export const Toolbar: React.FC<Prop> = (props) => {
 							leaveFrom="opacity-100 translate-y-0"
 							leaveTo="opacity-0 translate-y-1">
 								<Popover.Panel className="transition-colors absolute left-1/2 mt-8 w-screen max-w-sm -translate-x-1/2 transform px-4 text-base font-medium">
-									<div className="PopoverMenu transition-colors overflow-hidden rounded-lg shadow-lg">
+									<div className="PopoverMenu transition-colors overflow-hidden rounded-lg shadow-xl">
 										<div className= "relative grid gap-8 p-7">
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
 												<p className="flex shrink-0 items-center justify-center">
@@ -87,7 +68,7 @@ export const Toolbar: React.FC<Prop> = (props) => {
 													onChange={ themeHandler }>
 													<div className={ 'ListboxContainer relative ml-auto' }>
 														<Listbox.Button
-															className={ 'transition-colors relative w-40 cursor-default rounded-lg py-2 pl-3 pr-10 text-left shadow-md' }>
+															className={ 'transition-colors relative w-40 rounded-lg py-2 pl-3 pr-10 text-left shadow-md' }>
 																{ themeState[0].toUpperCase() + themeState.slice(1) }
 														</Listbox.Button>
 														<Transition
