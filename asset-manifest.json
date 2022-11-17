@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/seedling-tracker/static/css/main.d4c42c94.css",
-    "main.js": "/seedling-tracker/static/js/main.adecdf08.js",
+    "main.css": "/seedling-tracker/static/css/main.49b402eb.css",
+    "main.js": "/seedling-tracker/static/js/main.fa03f6be.js",
     "static/js/787.91989a6a.chunk.js": "/seedling-tracker/static/js/787.91989a6a.chunk.js",
     "index.html": "/seedling-tracker/index.html",
-    "main.d4c42c94.css.map": "/seedling-tracker/static/css/main.d4c42c94.css.map",
-    "main.adecdf08.js.map": "/seedling-tracker/static/js/main.adecdf08.js.map",
+    "main.49b402eb.css.map": "/seedling-tracker/static/css/main.49b402eb.css.map",
+    "main.fa03f6be.js.map": "/seedling-tracker/static/js/main.fa03f6be.js.map",
     "787.91989a6a.chunk.js.map": "/seedling-tracker/static/js/787.91989a6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4c42c94.css",
-    "static/js/main.adecdf08.js"
+    "static/css/main.49b402eb.css",
+    "static/js/main.fa03f6be.js"
   ]
 }
