@@ -135,7 +135,7 @@ export const Toolbar: React.FC<Prop> = (props) => {
 												</Switch>
 											</div>
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
-												<p className="flex shrink-0 items-center justify-center text-gray-300">
+												<p className="flex shrink-0 items-center justify-center">
 													Use game-based counting
 												</p>
 												<Switch

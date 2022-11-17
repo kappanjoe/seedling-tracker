@@ -1,4 +1,4 @@
-# Deco Tracker v1.4
+# Deco Tracker v1.5
 Deco Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written with TypeScript and was bootstrapped with Create React App. A special thanks goes to M & J for beta testing and suggesting new features!
 
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
@@ -13,6 +13,11 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 ## Changelog
 
 <details>
+
+### v1.5
+- Added new "Koppaite Space Suit" decor
+- Overall total count now sticks under toolbar
+- Fixed a bug where the label for the game-based count setting was styled with the wrong text color
 
 ### v1.4
 - Added Import/Export function for transferring data between devices, backing up data in a text file, etc.
@@ -50,7 +55,7 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 ### v0.9
 - Dark Mode now supported! Tap/click the moon in the upper right to switch themes.
-- Overall Total count is now displayed.
+- Overall total count is now displayed.
 - More checkboxes now fit on one line for compatibility with smaller screens.
 
 ### v0.8

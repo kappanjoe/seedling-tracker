@@ -22,7 +22,7 @@
   background-color: var(--bg-color);
   width: min(450pt, 100%);
   margin: 0 auto 0 auto;
-  padding: max(4pt, env(safe-area-inset-top)) 0 6pt 0;
+  padding: max(4pt, env(safe-area-inset-top)) 0 2pt 0;
   font-weight: 800;
   font-size: calc(20pt + 2vmin);
   color: var(--text-color);
@@ -87,6 +87,13 @@
   font-weight: 200;
 }
 
+.App-body > .ColorCount {
+  position: sticky;
+  top: calc(35pt + 3vmin);
+  z-index: 10;
+  background-color: var(--bg-color);
+}
+
 .Category {
   display: flex;
   flex-direction: column;
@@ -102,7 +109,7 @@
   border-bottom-width: 1pt;
   border-bottom-color: var(--border-color);
   position: sticky;
-  top: calc(39pt + 3vmin);
+  top: calc(50pt + 3vmin);
   z-index: 5;
   background-color: var(--bg-color);
 }
