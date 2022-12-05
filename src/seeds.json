@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.01,
-        "appVersion": 1.5
+        "seedsVersion": 1.1,
+        "appVersion": 1.51
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -32,6 +32,7 @@
         { "name": "Roadside", "values": [37, 38, 39, 40], "isOpen": true },
         { "name": "Sushi-Restaurant", "values": [41], "isOpen": true },
         { "name": "Mountain", "values": [42], "isOpen": true },
+        { "name": "Stadium", "values": [52], "isOpen": true },
         { "name": "Weather", "values": [43, 44, 45], "isOpen": true },
         { "name": "Theme-Park", "values": [46, 47], "isOpen": true },
         { "name": "Bus-Stop", "values": [48], "isOpen": true }
@@ -445,7 +446,7 @@
         },
         {
             "name": "Leaf Hat A",
-            "catInd": 25,
+            "catInd": 26,
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -454,7 +455,7 @@
         },
         {
             "name": "Leaf Hat B",
-            "catInd": 25,
+            "catInd": 26,
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -463,7 +464,7 @@
         },
         {
             "name": "Leaf Hat C",
-            "catInd": 25,
+            "catInd": 27,
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -472,7 +473,7 @@
         },
         {
             "name": "Theme Park Ticket A",
-            "catInd": 26,
+            "catInd": 27,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -481,7 +482,7 @@
         },
         {
             "name": "Theme Park Ticket B",
-            "catInd": 26,
+            "catInd": 27,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -490,7 +491,7 @@
         },
         {
             "name": "Paper Bus",
-            "catInd": 27,
+            "catInd": 28,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -518,6 +519,15 @@
         {
             "name": "Koppaite Space Suit",
             "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            },
+            "group": null
+        },
+        {
+            "name": "Ball Keychain",
+            "catInd": 25,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
