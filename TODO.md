@@ -35,6 +35,7 @@
 - [ ] Collapse/open all
 - [x] Load/Save to Base64
 - [ ] Compare with friends
+- [ ] Duplicate seed/pikmin deletion suggestions
 
 ## Bugs
 ### JSON Handling

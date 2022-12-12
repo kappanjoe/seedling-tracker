@@ -109,13 +109,14 @@ export const ImportExport: React.FC<Prop> = (props) => {
 
 									<div className='mt-2'>
 										<p className='text-sm'>
-											Import/export decoration save data for backup or transfer. User preferences will not be saved (e.g., count method setting).
+											To Export decoration save data for backup or transfer, press "Export" to copy data to clipboard.
+											To Import data, paste into box below and press "Import." User preferences (e.g., count method setting) will be reset on Import.
 										</p>
 									</div>
 
 									<textarea
 										className="mt-4 p-2 w-full h-40 rounded-md resize-none"
-										placeholder="Paste data here for import..."
+										placeholder="Paste data here for Import..."
 										onChange={ updateImportText }
 									/>
 
