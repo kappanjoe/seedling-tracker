@@ -41,7 +41,7 @@
 ### JSON Handling
   - [x] Category collapsed state reset when updating localStorage to new version
 ### Transitions
-  - [ ] ~~Collapsing categories doesn't animate change in space between categories~~ Out of scope; requires additional JS
+  - [ ] Collapsing categories doesn't animate change in space between categories
   - [x] Transition between dark and light mode doesn't animate color for checkbox placeholders
 ### Other UI
   - [x] Single-pixel white border sometimes visible at bottom of page
