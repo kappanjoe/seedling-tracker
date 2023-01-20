@@ -3,12 +3,20 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
 
+## Features
+- Track every decoration you've registered, including variations not counted by the game (such as the Hanafuda designs, or the new Lunar New Year Ornament yearly variations)
+- Count the total number of decorations you've registered, with or without including each variation (game-based count does not include variations)
+- Choose between Light Mode or Dark Mode, or use your device's system default
+- Import/Export your saved data for sharing or transferring between browsers/devices
+- Display a reference guide for easier distinction between colors
+
 ## How to Use
 
 1. Visit [Deco Tracker web app](https://kappanjoe.github.io/seedling-tracker/)
-2. Check boxes for the colors of pikmin you have collected. All known variations are to be included.
+2. Check the corresponding colored boxes for the decorations you've collected.
+3. Collect all the decorations! :D
 
-**Note:** JavaScript must be enabled in your browser. Your collection status will auto-save every time you check or uncheck a box. Wiping your browser's cookies or local storage will remove the save file. Deco Tracker is still under development. Bugs *will* occur. :)
+**Note:** JavaScript must be enabled in your browser. Your collection status will auto-save every time you check or uncheck a box. Wiping your browser's local storage will delete the saved information.
 
 ## Changelog
 
@@ -93,10 +101,6 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 - Added missing decoration type 'Theme Park B'
 
 </details>
-
-## TODO:
-
-The to-do list has moved [here](/TODO.md).
 
 ## Create React App:
 
