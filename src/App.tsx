@@ -53,12 +53,14 @@ class Groups implements Indexable {
 	hanafuda: colors;
 	sticker: colors;
 	themepark: colors;
+	lunar: colors;
 
 	constructor() {
 		this.chef = JSON.parse(JSON.stringify(structure.groups.chef));
 		this.hanafuda = JSON.parse(JSON.stringify(structure.groups.hanafuda));
 		this.sticker = JSON.parse(JSON.stringify(structure.groups.sticker));
 		this.themepark = JSON.parse(JSON.stringify(structure.groups.themepark));
+		this.lunar = JSON.parse(JSON.stringify(structure.groups.lunar));
 	}
 }
 
@@ -168,6 +170,13 @@ function App() {
 			});
 			if (i >= 0) {
 				userMem.decorations[i].name = "Jack-O'-Lantern";
+			}
+			// Append 2022 to existing Lunar New Year Ornament decoration
+			let j = userMem.decorations.findIndex( (x: decoration) => {
+				return x.name === "Lunar New Year Ornament";
+			});
+			if (j >= 0) {
+				userMem.decorations[j].name = "Lunar New Year Ornament 2022";
 			}
 			reinitDecorations(userMem.decorations);
 		}
