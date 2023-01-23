@@ -43,6 +43,8 @@
 ### Transitions
   - [ ] Collapsing categories doesn't animate change in space between categories
   - [x] Transition between dark and light mode doesn't animate color for checkbox placeholders
+### Import/Export
+  - [ ] Importing new data may initially display count using method that is not set in preferences (resolves when setting is changed)
 ### Other UI
   - [x] Single-pixel white border sometimes visible at bottom of page
   - [x] "Jack-O' -Lantern" name spacing typo

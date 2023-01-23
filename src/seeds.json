@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.20,
-        "appVersion": 1.56
+        "seedsVersion": 1.21,
+        "appVersion": 1.57
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -51,10 +51,6 @@
             "white": "off", "purple": "off", "grey": "off", "pink": "off"
         },
         "themepark": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-        },
-        "lunar": {
             "red": "off", "yellow": "off", "blue": "off",
             "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
         }
@@ -319,7 +315,7 @@
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
-            "group": "lunar"
+            "group": null
         },
         {
             "name": "Chess Piece",
@@ -563,7 +559,7 @@
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
-            "group": "lunar"
+            "group": null
         }
     ]
 }

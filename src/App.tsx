@@ -53,14 +53,12 @@ class Groups implements Indexable {
 	hanafuda: colors;
 	sticker: colors;
 	themepark: colors;
-	lunar: colors;
 
 	constructor() {
 		this.chef = JSON.parse(JSON.stringify(structure.groups.chef));
 		this.hanafuda = JSON.parse(JSON.stringify(structure.groups.hanafuda));
 		this.sticker = JSON.parse(JSON.stringify(structure.groups.sticker));
 		this.themepark = JSON.parse(JSON.stringify(structure.groups.themepark));
-		this.lunar = JSON.parse(JSON.stringify(structure.groups.lunar));
 	}
 }
 

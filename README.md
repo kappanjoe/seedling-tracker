@@ -1,10 +1,10 @@
-# Deco Tracker v1.56
+# Deco Tracker v1.57
 Deco Tracker is a tool for keeping tabs on which decorations you've collected in the mobile game 'Pikmin Bloom.' It's written with TypeScript and was bootstrapped with Create React App. A special thanks goes to M & J for beta testing and suggesting new features!
 
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
 
 ## Features
-- Track every decoration you've registered, including variations not counted by the game (such as the Hanafuda designs, or the new Lunar New Year Ornament yearly variations)
+- Track every decoration you've registered, including variations not counted by the game (such as the hanafuda card designs or shiny chef hats)
 - Count the total number of decorations you've registered, with or without including each variation (game-based count does not include variations)
 - Choose between Light Mode or Dark Mode, or use your device's system default
 - Import/Export your saved data for sharing or transferring between browsers/devices
@@ -21,6 +21,9 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 ## Changelog
 
 <details>
+
+### v1.57
+- Update Lunar New Year Ornament variations to be counted separately when the count method used in-game is selected
 
 ### v1.56
 - Added "Lunar New Year Ornament 2023" decor variation
