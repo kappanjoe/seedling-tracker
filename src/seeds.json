@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.21,
-        "appVersion": 1.57
+        "seedsVersion": 1.22,
+        "appVersion": 1.58
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -28,7 +28,7 @@
         { "name": "Clothes-Store", "values": [23], "isOpen": true },
         { "name": "Park", "values": [24, 25], "isOpen": true },
         { "name": "Library/Bookstore", "values": [26], "isOpen": true },
-        { "name": "Special", "values": [27, 28, 55, 29, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54], "isOpen": true },
+        { "name": "Special", "values": [27, 28, 55, 29, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56], "isOpen": true },
         { "name": "Roadside", "values": [37, 38, 39, 40], "isOpen": true },
         { "name": "Sushi-Restaurant", "values": [41], "isOpen": true },
         { "name": "Mountain", "values": [42], "isOpen": true },
@@ -558,6 +558,15 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            },
+            "group": null
+        },
+        {
+            "name": "Present Sticker",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             },
             "group": null
         }
