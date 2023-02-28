@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.23,
-        "appVersion": 1.59
+        "seedsVersion": 1.24,
+        "appVersion": 1.591
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -432,7 +432,7 @@
             "catInd": 23,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
-                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             },
             "group": null
         },

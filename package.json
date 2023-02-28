@@ -1,7 +1,7 @@
 {
   "name": "deco-tracker",
   "homepage": "https://kappanjoe.github.io/seedling-tracker/",
-  "version": "1.59",
+  "version": "1.591",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.3",

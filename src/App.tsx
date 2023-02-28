@@ -237,6 +237,11 @@ function App() {
 				if (source[i].catInd !== x.catInd) {
 					source[i].catInd = x.catInd;
 				}
+				Object.keys(x.colors).forEach( (z: string) => {
+					if (x.colors[z as keyof colors] !== "nil" && source[i].colors[z as keyof colors] === "nil") {
+						source[i].colors[z as keyof colors] = "off";
+					}
+				});
 				tempDecor.push(source[i]);
 			} else {
 				tempDecor.push(x);
