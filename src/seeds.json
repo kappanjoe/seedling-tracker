@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.24,
-        "appVersion": 1.591
+        "seedsVersion": 1.26,
+        "appVersion": 1.6
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -28,8 +28,8 @@
         { "name": "Clothes-Store", "values": [23], "isOpen": true },
         { "name": "Park", "values": [24, 25], "isOpen": true },
         { "name": "Library/Bookstore", "values": [26], "isOpen": true },
-        { "name": "Special", "values": [27, 28, 55, 29, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56], "isOpen": true },
-        { "name": "Roadside", "values": [37, 38, 39, 40], "isOpen": true },
+        { "name": "Special", "values": [27, 28, 55, 29, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56, 59], "isOpen": true },
+        { "name": "Roadside", "values": [37, 38, 39, 40, 58], "isOpen": true },
         { "name": "Sushi-Restaurant", "values": [41], "isOpen": true },
         { "name": "Mountain", "values": [42], "isOpen": true },
         { "name": "Stadium", "values": [52], "isOpen": true },
@@ -574,6 +574,24 @@
         {
             "name": "Pizza",
             "catInd": 29,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Coin",
+            "catInd": 22,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Easter Egg",
+            "catInd": 21,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
