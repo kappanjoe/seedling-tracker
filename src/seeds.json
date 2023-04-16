@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.26,
-        "appVersion": 1.6
+        "seedsVersion": 1.27,
+        "appVersion": 1.61
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -36,7 +36,8 @@
         { "name": "Weather", "values": [43, 44, 45], "isOpen": true },
         { "name": "Theme-Park", "values": [46, 47], "isOpen": true },
         { "name": "Bus-Stop", "values": [48], "isOpen": true },
-        { "name": "Italian-Restaurant", "values": [57], "isOpen": true }
+        { "name": "Italian-Restaurant", "values": [57], "isOpen": true },
+        { "name": "Ramen-Shop", "values": [60], "isOpen": true }
     ],
     "groups": {
         "chef": {
@@ -595,6 +596,15 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Ramen Keychain",
+            "catInd": 30,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         }
