@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.291,
-        "appVersion": 1.64
+        "seedsVersion": 1.30,
+        "appVersion": 1.65
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -37,7 +37,8 @@
         { "name": "Theme-Park", "values": [46, 47], "isOpen": true },
         { "name": "Bus-Stop", "values": [48], "isOpen": true },
         { "name": "Italian-Restaurant", "values": [57], "isOpen": true },
-        { "name": "Ramen-Shop", "values": [60], "isOpen": true }
+        { "name": "Ramen-Shop", "values": [60], "isOpen": true },
+        { "name": "Bridge", "values": [63], "isOpen": true }
     ],
     "groups": {
         "chef": {
@@ -623,6 +624,15 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            },
+            "group": null
+        },
+        {
+            "name": "Bridge Badge",
+            "catInd": 31,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             },
             "group": null
         }
