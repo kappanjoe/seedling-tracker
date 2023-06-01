@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.30,
-        "appVersion": 1.65
+        "seedsVersion": 1.31,
+        "appVersion": 1.651
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -333,8 +333,8 @@
             "name": "Fingerboard",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "nil",
-                "white": "nil", "purple": "off", "grey": "nil", "pink": "off"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             },
             "group": null
         },
