@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": 1.31,
-        "appVersion": 1.651
+        "seedsVersion": 1.32,
+        "appVersion": 1.66
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -9,7 +9,7 @@
     "categories": [
         { "name": "Restaurant", "values": [0, 1], "isOpen": true },
         { "name": "Café", "values": [2], "isOpen": true },
-        { "name": "Sweetshop", "values": [3], "isOpen": true },
+        { "name": "Sweetshop", "values": [3, 64], "isOpen": true },
         { "name": "Movie-Theatre", "values": [4], "isOpen": true },
         { "name": "Pharmacy", "values": [5], "isOpen": true },
         { "name": "Zoo", "values": [6], "isOpen": true },
@@ -633,6 +633,15 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            },
+            "group": null
+        },
+        {
+            "name": "Donut",
+            "catInd": 2,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             },
             "group": null
         }
