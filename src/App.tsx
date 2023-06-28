@@ -3,12 +3,13 @@ import { CategoryView } from './components/CategoryView';
 import { CountSpan } from './components/CountSpan';
 import { Toolbar } from './components/Toolbar';
 import { GuideGrid } from './components/GuideGrid';
+import { ColorState, Groups, Preferences, Structure } from './types/classes.d';
 import structure from './seeds.json';
 import './App.css';
 
 
 function App() {
-	const { info, colors, categories, groups, decorations } = new Structure();
+	const { info, colors, categories, groups, decorations } = new Structure(structure);
 	var userMem: Structure | any;
 	var userPrefs = new Preferences();
 
@@ -74,12 +75,12 @@ function App() {
 	function upgradeSeeds() {
 		// Check for "decorations" to avoid overwriting
 		if (!userMem.decorations) {
-			// Reformat version < 0.4 (if exists) to include "nil" values for all unused colors
+			// Reformat version < 0.4 (if exists) to include ColorState.Nil values for all unused colors
 			if (userMem.decorTypes) {
 				userMem.decorTypes.forEach( (x: Decoration) => {
 					for (let each of colors) {
 						if (x.colors[each as keyof ColorSet] === undefined) {
-							x.colors[each as keyof ColorSet] = "nil";
+							x.colors[each as keyof ColorSet] = ColorState.Nil;
 						}
 					}
 				});
@@ -112,13 +113,13 @@ function App() {
 					"name": "Chess Piece (Black)",
 					"catInd": 21,
 					"colors": {
-						"red": "off", "yellow": userMem.decorations[k].colors.yellow, "blue": "off",
-						"white": "off", "purple": userMem.decorations[k].colors.purple, "grey": "off", "pink": "off"
+						"red": ColorState.Off, "yellow": userMem.decorations[k].colors.yellow, "blue": ColorState.Off,
+						"white": ColorState.Off, "purple": userMem.decorations[k].colors.purple, "grey": ColorState.Off, "pink": ColorState.Off
 					},
 					"group": null
 				});
-				userMem.decorations[k].colors.yellow = "off";
-				userMem.decorations[k].colors.purple = "off";
+				userMem.decorations[k].colors.yellow = ColorState.Off;
+				userMem.decorations[k].colors.purple = ColorState.Off;
 			}
 
 			reinitDecorations(userMem.decorations);
@@ -142,7 +143,7 @@ function App() {
 		if (!userMem.groups) {
 			localStorage.setItem("groups", JSON.stringify(groups));
 		} else {
-			var tempGroups = new Groups();
+			var tempGroups = new Groups(structure.groups);
 			Object.keys(userMem.groups).forEach( (x) => {
 				tempGroups[x as keyof Groups] = userMem.groups[x as keyof Groups];
 			});
@@ -183,8 +184,8 @@ function App() {
 					source[i].catInd = x.catInd;
 				}
 				Object.keys(x.colors).forEach( (z: string) => {
-					if (x.colors[z as keyof ColorSet] !== "nil" && source[i].colors[z as keyof ColorSet] === "nil") {
-						source[i].colors[z as keyof ColorSet] = "off";
+					if (x.colors[z as keyof ColorSet] !== ColorState.Nil && source[i].colors[z as keyof ColorSet] === ColorState.Nil) {
+						source[i].colors[z as keyof ColorSet] = ColorState.Off;
 					}
 				});
 				tempDecor.push(source[i]);
@@ -198,7 +199,7 @@ function App() {
 
 	// Load userMem to populate UI
 	function loadStorage() {
-		userMem = new Structure();
+		userMem = new Structure(structure);
 		userMem.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
 		userMem.decorations = JSON.parse(localStorage.getItem("decorations")!) as Decoration[];
 		userMem.categories = JSON.parse(localStorage.getItem("categories")!);
@@ -238,10 +239,10 @@ function App() {
 		(userMem.decorations as Decoration[]).forEach( (deco) => {
 			Object.keys(deco.colors).forEach( (color) => {
 				let value = deco.colors[color as keyof ColorSet];
-				if (value === "on") {
+				if (value === ColorState.On) {
 					count++;
 					max++;
-				} else if (value === "off") {
+				} else if (value === ColorState.Off) {
 					max++;
 				}
 			})

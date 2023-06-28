@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { decoration, colors } from '../../App';
 import { Checkbox } from '../Checkbox';
 import { CountSpan } from '../CountSpan';
 import structure from '../../seeds.json';
 
-interface Prop {
+interface Props {
     index: number;
-    decorations: decoration[];
+    decorations: Decoration[];
     updateFullCount: () => void;
 };
 
-export const SeedCell: React.FC<Prop> = (props) => {
+export const SeedCell: React.FC<Props> = (props) => {
     var { index, decorations, updateFullCount } = props;
     const colors = structure.colors;
     var deco = decorations[index];
@@ -19,7 +18,7 @@ export const SeedCell: React.FC<Prop> = (props) => {
     var count = 0;
     var max = 0;
     Object.keys(deco.colors).forEach( (color) => {
-        let value = deco.colors[color as keyof colors];
+        let value = deco.colors[color as keyof ColorSet];
         if (value === "off") {
             max++;
         } else if (value === "on") {
@@ -43,13 +42,13 @@ export const SeedCell: React.FC<Prop> = (props) => {
             <div className='CheckboxBlock transition-colors'>
                 { colors.map((key: string) => {
                     // console.log(key + " " + seed.colors[key as keyof colors]);
-                    var checked: string = deco.colors[key as keyof colors]!;
+                    var checked: string = deco.colors[key as keyof ColorSet]!;
                     if (checked === "nil") {
                         return (
                             <div className='blankDiv transition-colors' key={ key }></div>
                         )
                     }
-                    
+
                     return <Checkbox
                                 index= { index }
                                 decorations= { decorations }

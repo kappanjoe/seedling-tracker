@@ -4,14 +4,14 @@ import { CountSpan } from '../CountSpan';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import { Transition } from '@headlessui/react';
 
-interface Prop {
+interface Props {
     index: number;
     categories: Category[];
     decorations: Decoration[];
     updateFullCount: () => void;
 };
 
-export const CategoryView: React.FC<Prop> = (props) => {
+export const CategoryView: React.FC<Props> = (props) => {
     const { index, decorations, updateFullCount } = props;
     var categories = props.categories;
     let category = categories[index]

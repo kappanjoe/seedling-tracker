@@ -1,28 +1,28 @@
 import React, { useState, MouseEvent } from 'react';
-import { decoration, colors } from '../../App';
+import { ColorState } from '../../types/classes.d';
 
-interface Prop {
+interface Props {
     index: number;
-    decorations: decoration[];
+    decorations: Decoration[];
     checkState: string;
     keyName: string;
     smallCountHandler: (value: number) => void;
     updateFullCount: () => void;
 };
 
-export const Checkbox: React.FC<Prop> = (props) => {
+export const Checkbox: React.FC<Props> = (props) => {
     const [checked, setChecked] = useState(props.checkState);
     const { index, keyName, smallCountHandler, updateFullCount } = props;
     var decorations = props.decorations;
-    
+
     // Save checkbox state to respective value in localStorage
-    function updateValue(value: string) {
-        decorations[index].colors[keyName as keyof colors] = value;
+    function updateValue(value: ColorState) {
+        decorations[index].colors[keyName as keyof ColorSet] = value;
         localStorage.setItem("decorations", JSON.stringify(decorations));
 
         let count = 0;
         Object.keys(decorations[index].colors).forEach( (x) => {
-            if (decorations[index].colors[x as keyof colors] === "on") { count++; } 
+            if (decorations[index].colors[x as keyof ColorSet] === "on") { count++; }
         });
         smallCountHandler(count);
         updateFullCount();
@@ -37,13 +37,13 @@ export const Checkbox: React.FC<Prop> = (props) => {
     // Click handler to allow checkbox parent to update state, effectively increasing tap target
     function clickHandler(event: MouseEvent) {
         if ((event.currentTarget.firstChild! as HTMLInputElement).checked) {
-            updateValue("off")
+            updateValue(ColorState.Off)
         } else {
-            updateValue("on")
+            updateValue(ColorState.On)
         }
     }
-    
-    return ( 
+
+    return (
         <div className={ boolString(checked)? keyName + 'Checked transition-colors' : keyName + 'Unchecked transition-colors' } key= { keyName } onClick={ clickHandler }>
             <input
                 type="checkbox"
@@ -51,9 +51,9 @@ export const Checkbox: React.FC<Prop> = (props) => {
                 className={ keyName + "Checkbox" }
                 onChange={ (event) => {
                     if (event.target.checked) {
-                        updateValue("on");
+                        updateValue(ColorState.On);
                     } else {
-                        updateValue("off");
+                        updateValue(ColorState.Off);
                     }
                 }}
                 key={ keyName + "Checkbox" }/>

@@ -142,8 +142,3 @@ Deco Tracker is a tool for keeping tabs on which decorations you've collected in
 - Added missing decoration type 'Theme Park B'
 
 </details>
-
-## Create React App:
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Information on how to run and build this project locally can be found [here](/CREATE-REACT.md).
