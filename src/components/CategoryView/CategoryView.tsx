@@ -1,5 +1,4 @@
 import React, { useState, MouseEvent } from 'react';
-import { decoration, category, colors } from '../../App';
 import { SeedCell } from '../SeedCell';
 import { CountSpan } from '../CountSpan';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
@@ -7,12 +6,12 @@ import { Transition } from '@headlessui/react';
 
 interface Prop {
     index: number;
-    categories: category[];
-    decorations: decoration[];
+    categories: Category[];
+    decorations: Decoration[];
     updateFullCount: () => void;
 };
 
-export const Category: React.FC<Prop> = (props) => {
+export const CategoryView: React.FC<Prop> = (props) => {
     const { index, decorations, updateFullCount } = props;
     var categories = props.categories;
     let category = categories[index]
@@ -25,7 +24,7 @@ export const Category: React.FC<Prop> = (props) => {
         localStorage.setItem("categories", JSON.stringify(categories));
         setIsOpen(!isOpen);
     }
-    
+
     // Create array to populate category with appropriate decoration types
     let seedCells: JSX.Element[] = [];
     for (let i of category.values) {
@@ -38,10 +37,10 @@ export const Category: React.FC<Prop> = (props) => {
         var maxCount = 0;
         for (let i of category.values) {
             for (let j of Object.keys(decorations[i].colors)) {
-                if (decorations[i].colors[j as keyof colors] === "on") {
+                if (decorations[i].colors[j as keyof ColorSet] === "on") {
                     current++;
                     maxCount++;
-                } else if (decorations[i].colors[j as keyof colors] === "off") {
+                } else if (decorations[i].colors[j as keyof ColorSet] === "off") {
                     maxCount++;
                 }
             }
