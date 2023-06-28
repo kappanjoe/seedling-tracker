@@ -24,7 +24,7 @@ export type colors = {
 	pink: string;
 };
 
-export type category = { 
+export type category = {
 	name: string;
 	values: number[];
 	isOpen: boolean;
@@ -39,7 +39,7 @@ class Preferences implements Indexable {
 	theme: string;
 	labelsOn: boolean;
 	useInGameCount: boolean;
-	
+
 	constructor() {
 		this.theme = "system";
 		this.labelsOn = true;
@@ -120,7 +120,7 @@ function App() {
 		if (!("groups" in localStorage)) {
 			localStorage.setItem("groups", JSON.stringify(groups));
 		}
-		
+
 		loadStorage();
 		if (userMem.info.seedsVersion < info.seedsVersion || userMem.info.appVersion < info.appVersion) {
 			console.log("New version available - upgrading");
@@ -169,6 +169,7 @@ function App() {
 			if (i >= 0) {
 				userMem.decorations[i].name = "Jack-O'-Lantern";
 			}
+
 			// Append 2022 to existing Lunar New Year Ornament decoration
 			let j = userMem.decorations.findIndex( (x: decoration) => {
 				return x.name === "Lunar New Year Ornament";
@@ -176,6 +177,26 @@ function App() {
 			if (j >= 0) {
 				userMem.decorations[j].name = "Lunar New Year Ornament 2022";
 			}
+
+			// Separate Chess Piece decor by Black/White
+			let k = userMem.decorations.findIndex( (x: decoration) => {
+				return x.name === "Chess Piece";
+			});
+			if (k >= 0) {
+				userMem.decorations[k].name = "Chess Piece (White)";
+				userMem.decorations.push({
+					"name": "Chess Piece (Black)",
+					"catInd": 21,
+					"colors": {
+						"red": "off", "yellow": userMem.decorations[k].colors.yellow, "blue": "off",
+						"white": "off", "purple": userMem.decorations[k].colors.purple, "grey": "off", "pink": "off"
+					},
+					"group": null
+				});
+				userMem.decorations[k].colors.yellow = "off";
+				userMem.decorations[k].colors.purple = "off";
+			}
+
 			reinitDecorations(userMem.decorations);
 		}
 		// Initialize new Categories in localStorage or Reinit with new + saved open states
@@ -290,7 +311,7 @@ function App() {
 	function countDecor() {
 		var count = 0;
 		var max = 0;
-		
+
 		// Run using count based on in-game methods
 		if (userPrefs.useInGameCount) {
 			// Create temporary store based on empty state
