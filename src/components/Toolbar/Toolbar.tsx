@@ -7,20 +7,16 @@ import { Structure } from '../../App';
 interface Prop {
 	labelState: [boolean, Dispatch<any>];
 	labelHandler: () => void;
-	countMethodState: [boolean, Dispatch<any>];
-	countMethodHandler: () => void;
 	themeState: string;
 	themeHandler: (_: string) => void;
 	userMem: Structure;
 }
 
 export const Toolbar: React.FC<Prop> = (props) => {
-	const { labelState, labelHandler, countMethodState, countMethodHandler, themeState, themeHandler, userMem } = props;
+	const { labelState, labelHandler, themeState, themeHandler, userMem } = props;
 	const labelsOn = labelState[0];
 	const setLabelsOn = labelState[1];
-	const useInGameCount = countMethodState[0];
-	const setUseInGameCount = countMethodState[1];
-	
+
 	return (
 		<header className='Toolbar transition-colors'>
 			<div className='IOButtonWrapper'>
@@ -63,7 +59,7 @@ export const Toolbar: React.FC<Prop> = (props) => {
 												<p className="flex shrink-0 items-center justify-center">
 													Theme mode
 												</p>
-												<Listbox 
+												<Listbox
 													value={ themeState }
 													onChange={ themeHandler }>
 													<div className={ 'ListboxContainer relative ml-auto' }>
@@ -114,7 +110,7 @@ export const Toolbar: React.FC<Prop> = (props) => {
 																</Listbox.Options>
 														</Transition>
 													</div>
-												</Listbox>	
+												</Listbox>
 											</div>
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
 												<p className="flex shrink-0 items-center justify-center">
@@ -132,24 +128,6 @@ export const Toolbar: React.FC<Prop> = (props) => {
 															className={`${labelsOn ? 'translate-x-[20pt]' : 'translate-x-0'}
 																pointer-events-none inline-block h-[21pt] w-[21pt] transform
 																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
-												</Switch>
-											</div>
-											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
-												<p className="flex shrink-0 items-center justify-center">
-													Use game-based counting
-												</p>
-												<Switch
-													checked={ useInGameCount }
-													onChange={ setUseInGameCount }
-													onClick={ countMethodHandler }
-													className={ `${useInGameCount ? 'bg-emerald-600' : 'bg-gray-300'}
-														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
-														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
-													<span className='sr-only'>Enable game count</span>
-													<span aria-hidden="true"
-														className={`${useInGameCount ? 'translate-x-[20pt]' : 'translate-x-0'}
-															pointer-events-none inline-block h-[21pt] w-[21pt] transform
-															rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
 												</Switch>
 											</div>
 										</div>

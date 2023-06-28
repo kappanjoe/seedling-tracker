@@ -38,7 +38,6 @@ class Preferences implements Indexable {
 	[key: string]: string | boolean;
 	theme: string;
 	labelsOn: boolean;
-	useInGameCount: boolean;
 
 	constructor() {
 		this.theme = "system";
@@ -307,68 +306,22 @@ function App() {
 	}
 
 	// Store currently selected counting method && handle full counting of all seeds using either complete or in-game methods
-	const [useInGameCount, setUseInGameCount] = useState(userPrefs.useInGameCount as boolean);
 	function countDecor() {
 		var count = 0;
 		var max = 0;
 
-		// Run using count based on in-game methods
-		if (userPrefs.useInGameCount) {
-			// Create temporary store based on empty state
-			let tempGroups = new Groups();
-			// Iterate over every decor
-			(userMem.decorations as decoration[]).forEach( (deco) => {
-				// Run if decor belongs to a group
-				if (deco.group != null) {
-					Object.keys(deco.colors).forEach( (color) => {
-						let value = deco.colors[color as keyof colors];
-						if (value === "on") {
-							// Change to "on" for whichever colors are collected for respective group
-							tempGroups[deco.group as keyof Groups][color as keyof colors] = "on";
-						}
-					});
-				} else {
-				// Run if decor is not in a group
-					Object.keys(deco.colors).forEach( (color) => {
-						let value = deco.colors[color as keyof colors];
-						if (value === "on") {
-							count++;
-							max++;
-						} else if (value === "off") {
-							max++;
-						}
-					});
+		(userMem.decorations as decoration[]).forEach( (deco) => {
+			Object.keys(deco.colors).forEach( (color) => {
+				let value = deco.colors[color as keyof colors];
+				if (value === "on") {
+					count++;
+					max++;
+				} else if (value === "off") {
+					max++;
 				}
-			});
-			// Count any colors indicated as "on" for each group
-			Object.keys(tempGroups).forEach( (group) => {
-				let groupColors = tempGroups[group as keyof Groups];
-				Object.keys(groupColors).forEach( (color) => {
-					let value = groupColors[color as keyof colors];
-					if (value === "on") {
-						count++;
-						max++;
-					} else if (value === "off") {
-						max++;
-					}
-				});
-			});
-			userMem.groups = tempGroups;
-			localStorage.setItem("groups", JSON.stringify(userMem.groups));
-		} else {
-		// Run using 100% completionist count (default)
-			(userMem.decorations as decoration[]).forEach( (deco) => {
-				Object.keys(deco.colors).forEach( (color) => {
-					let value = deco.colors[color as keyof colors];
-					if (value === "on") {
-						count++;
-						max++;
-					} else if (value === "off") {
-						max++;
-					}
-				})
-			});
-		}
+			})
+		});
+
 		return [count, max];
 	}
 
@@ -382,13 +335,6 @@ function App() {
 		let [newCount, newMax] = countDecor();
 		setCurrentFullCount(newCount);
 		setFullMax(newMax);
-	}
-
-	// Store currently selected counting method
-	function saveCountMethod() {
-		userPrefs.useInGameCount = !useInGameCount;
-		localStorage.setItem("userPrefs", JSON.stringify(userPrefs));
-		updateFullCount();
 	}
 
 	// Store current visibility state of color labels guide
@@ -409,8 +355,6 @@ function App() {
 			 labelHandler={ saveLabels }
 			 themeState={ themeMode }
 			 themeHandler={ saveTheme }
-			 countMethodState={ [useInGameCount, setUseInGameCount] }
-			 countMethodHandler={ saveCountMethod }
 			 userMem={ userMem }/>
 			<div className='App-body'>
 				<CountSpan count={ currentFullCount } max={ fullMax } category={ false }/>
