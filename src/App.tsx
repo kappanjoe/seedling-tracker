@@ -1,86 +1,11 @@
-import { useState } from 'react';
-import './App.css';
-import { Category } from './components/Category';
-import structure from './seeds.json';
+import React, { useState } from 'react';
+import { CategoryView } from './components/CategoryView';
 import { CountSpan } from './components/CountSpan';
 import { Toolbar } from './components/Toolbar';
 import { GuideGrid } from './components/GuideGrid';
+import structure from './seeds.json';
+import './App.css';
 
-export type decoration = {
-	// Names must be unique!!
-	name: string;
-	catInd: number;
-	colors: colors;
-	group: string | null;
-};
-
-export type colors = {
-	red: string;
-	yellow: string;
-	blue: string;
-	white: string;
-	purple: string;
-	grey: string;
-	pink: string;
-};
-
-export type category = {
-	name: string;
-	values: number[];
-	isOpen: boolean;
-};
-
-interface Indexable {
-	[key: string]: any
-}
-
-class Preferences implements Indexable {
-	[key: string]: string | boolean;
-	theme: string;
-	labelsOn: boolean;
-
-	constructor() {
-		this.theme = "system";
-		this.labelsOn = true;
-		this.useInGameCount = false;
-	}
-};
-
-class Groups implements Indexable {
-	[key: string]: colors;
-	chef: colors;
-	hanafuda: colors;
-	sticker: colors;
-	themepark: colors;
-
-	constructor() {
-		this.chef = JSON.parse(JSON.stringify(structure.groups.chef));
-		this.hanafuda = JSON.parse(JSON.stringify(structure.groups.hanafuda));
-		this.sticker = JSON.parse(JSON.stringify(structure.groups.sticker));
-		this.themepark = JSON.parse(JSON.stringify(structure.groups.themepark));
-	}
-}
-
-export class Structure implements Indexable {
-	[key: string]: any;
-	info: {
-		seedsVersion: number;
-		appVersion: number;
-	};
-	colors: Array<string>;
-	categories: Array<category>;
-	groups: Groups;
-	decorations: Array<decoration>;
-
-	constructor() {
-		this.info = JSON.parse(JSON.stringify(structure.info));
-		this.colors = JSON.parse(JSON.stringify(structure.colors));
-		this.categories = JSON.parse(JSON.stringify(structure.categories));
-		this.groups = JSON.parse(JSON.stringify(structure.groups));
-		this.decorations = JSON.parse(JSON.stringify(structure.decorations));
-	}
-
-}
 
 function App() {
 	const { info, colors, categories, groups, decorations } = new Structure();
@@ -151,10 +76,10 @@ function App() {
 		if (!userMem.decorations) {
 			// Reformat version < 0.4 (if exists) to include "nil" values for all unused colors
 			if (userMem.decorTypes) {
-				userMem.decorTypes.forEach( (x: decoration) => {
+				userMem.decorTypes.forEach( (x: Decoration) => {
 					for (let each of colors) {
-						if (x.colors[each as keyof colors] === undefined) {
-							x.colors[each as keyof colors] = "nil";
+						if (x.colors[each as keyof ColorSet] === undefined) {
+							x.colors[each as keyof ColorSet] = "nil";
 						}
 					}
 				});
@@ -162,7 +87,7 @@ function App() {
 			reinitDecorations(userMem.decorTypes);
 		} else {
 			// Fix Jack-O'-Lantern decoration name spacing typo
-			let i = userMem.decorations.findIndex( (x: decoration) => {
+			let i = userMem.decorations.findIndex( (x: Decoration) => {
 				return x.name === "Jack-O' -Lantern";
 			});
 			if (i >= 0) {
@@ -170,7 +95,7 @@ function App() {
 			}
 
 			// Append 2022 to existing Lunar New Year Ornament decoration
-			let j = userMem.decorations.findIndex( (x: decoration) => {
+			let j = userMem.decorations.findIndex( (x: Decoration) => {
 				return x.name === "Lunar New Year Ornament";
 			});
 			if (j >= 0) {
@@ -178,7 +103,7 @@ function App() {
 			}
 
 			// Separate Chess Piece decor by Black/White
-			let k = userMem.decorations.findIndex( (x: decoration) => {
+			let k = userMem.decorations.findIndex( (x: Decoration) => {
 				return x.name === "Chess Piece";
 			});
 			if (k >= 0) {
@@ -203,8 +128,8 @@ function App() {
 			localStorage.setItem("categories", JSON.stringify(categories));
 		} else {
 			var tempCats = categories;
-			userMem.categories.forEach( (x: category) => {
-				let j = tempCats.findIndex( (y: category) => {
+			userMem.categories.forEach( (x: Category) => {
+				let j = tempCats.findIndex( (y: Category) => {
 					return x.name === y.name;
 				});
 				if (j >= 0) {
@@ -242,11 +167,11 @@ function App() {
 	}
 
 	// Reinitialize decorations array
-	function reinitDecorations(source: decoration[]) {
+	function reinitDecorations(source: Decoration[]) {
 		// Create temporary decor array and fill with existing values from outdated version or default values from current
-		var tempDecor: decoration[] = [];
-		decorations.forEach( (x: decoration) => {
-			let i = source.findIndex( (y: decoration) => {
+		var tempDecor: Decoration[] = [];
+		decorations.forEach( (x: Decoration) => {
+			let i = source.findIndex( (y: Decoration) => {
 				return y.name === x.name;
 			});
 			if (i >= 0) {
@@ -258,8 +183,8 @@ function App() {
 					source[i].catInd = x.catInd;
 				}
 				Object.keys(x.colors).forEach( (z: string) => {
-					if (x.colors[z as keyof colors] !== "nil" && source[i].colors[z as keyof colors] === "nil") {
-						source[i].colors[z as keyof colors] = "off";
+					if (x.colors[z as keyof ColorSet] !== "nil" && source[i].colors[z as keyof ColorSet] === "nil") {
+						source[i].colors[z as keyof ColorSet] = "off";
 					}
 				});
 				tempDecor.push(source[i]);
@@ -275,7 +200,7 @@ function App() {
 	function loadStorage() {
 		userMem = new Structure();
 		userMem.info = JSON.parse(localStorage.getItem("info")!) as typeof info;
-		userMem.decorations = JSON.parse(localStorage.getItem("decorations")!) as decoration[];
+		userMem.decorations = JSON.parse(localStorage.getItem("decorations")!) as Decoration[];
 		userMem.categories = JSON.parse(localStorage.getItem("categories")!);
 		userMem.groups = JSON.parse(localStorage.getItem("groups")!);
 		userPrefs = JSON.parse(localStorage.getItem("userPrefs")!);
@@ -310,9 +235,9 @@ function App() {
 		var count = 0;
 		var max = 0;
 
-		(userMem.decorations as decoration[]).forEach( (deco) => {
+		(userMem.decorations as Decoration[]).forEach( (deco) => {
 			Object.keys(deco.colors).forEach( (color) => {
-				let value = deco.colors[color as keyof colors];
+				let value = deco.colors[color as keyof ColorSet];
 				if (value === "on") {
 					count++;
 					max++;
@@ -359,7 +284,7 @@ function App() {
 			<div className='App-body'>
 				<CountSpan count={ currentFullCount } max={ fullMax } category={ false }/>
 				{ categories.map( (category) => {
-					return <Category
+					return <CategoryView
 							key={ category.name }
 							index={ categories.indexOf(category) }
 							categories={ userMem.categories }
