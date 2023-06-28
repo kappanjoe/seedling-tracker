@@ -177,11 +177,11 @@
 }
 
 .redChecked {
-  
+
   background-color: var(--red-checked);
 }
 .redUnchecked {
-  
+
   background-color: var(--red-unchecked);
 }
 
@@ -287,28 +287,3 @@
   font-size: 10pt;
   font-weight: 300;
 }
-
-/* .CheckboxBlock > div > span {
-  display: inline;
-  margin: 0pt 2pt 4pt 2pt;
-} */
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
