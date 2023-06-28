@@ -1,14 +1,13 @@
 import React, { useState, Fragment } from 'react';
 import { ArrowDownTrayIcon } from '@heroicons/react/20/solid';
 import { Dialog, Transition } from '@headlessui/react';
-import { Structure } from '../../App';
-import { Convert } from '../../seeds-structure';
+import { Structure } from '../../types/classes.d';
 
-interface Prop {
+interface Props {
 	userMem: Structure;
 }
 
-export const ImportExport: React.FC<Prop> = (props) => {
+export const ImportExport: React.FC<Props> = (props) => {
 	const { userMem } = props;
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +46,7 @@ export const ImportExport: React.FC<Prop> = (props) => {
 		const base64String = base64.decode(utf8String);
 
 		try {
-			const newUserMem = Convert.toUserMem(utf8.decode(base64String));
+			const newUserMem: Structure = JSON.parse(utf8.decode(base64String));
 
 			localStorage.clear();
 			localStorage.setItem("info", JSON.stringify(newUserMem.info));
@@ -64,7 +63,7 @@ export const ImportExport: React.FC<Prop> = (props) => {
 			}, 2000);
 		}
 	}
-	
+
 	return (
 		<>
 			<div className ="IOButton">

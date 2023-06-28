@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface Prop {
+interface Props {
 	visibility: boolean;
 };
 
-export const GuideGrid: React.FC<Prop> = (props) => {
+export const GuideGrid: React.FC<Props> = (props) => {
 	let { visibility } = props
 
 	if (visibility) {

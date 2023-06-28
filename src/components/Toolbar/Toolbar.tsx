@@ -2,9 +2,9 @@ import React, { Dispatch, Fragment } from 'react';
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/20/solid';
 import { Popover, Switch, Listbox, Transition } from '@headlessui/react';
 import { ImportExport } from '../ImportExport';
-import { Structure } from '../../App';
+import { Structure } from '../../types/classes.d';
 
-interface Prop {
+interface Props {
 	labelState: [boolean, Dispatch<any>];
 	labelHandler: () => void;
 	themeState: string;
@@ -12,7 +12,7 @@ interface Prop {
 	userMem: Structure;
 }
 
-export const Toolbar: React.FC<Prop> = (props) => {
+export const Toolbar: React.FC<Props> = (props) => {
 	const { labelState, labelHandler, themeState, themeHandler, userMem } = props;
 	const labelsOn = labelState[0];
 	const setLabelsOn = labelState[1];

@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface Prop {
+interface Props {
     count: number;
     max: number;
     category: boolean;
 };
 
-export const CountSpan: React.FC<Prop> = (props) => {
+export const CountSpan: React.FC<Props> = (props) => {
     const { count, max, category } = props;
     var countClass = "";
     var countText = "";
