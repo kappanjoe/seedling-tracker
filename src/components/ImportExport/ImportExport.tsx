@@ -2,8 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { ArrowDownTrayIcon } from '@heroicons/react/20/solid';
 import { Dialog, Transition } from '@headlessui/react';
 import { useSeedContext } from '../../contexts';
-import { Structure } from '../../types/classes.d';
-import structure from '../../seeds.json';
+import { Preferences } from '../../types/classes.d';
 
 interface Props {
 
@@ -26,10 +25,9 @@ export const ImportExport: React.FC<Props> = () => {
 	let utf8 = require('utf8');
 	
 	async function pasteUserMemToClipboard() {
-		let userMem: Structure = {
-			...structure,
+		let userMem = {
 			colors: colors,
-			decoration: decorations,
+			decorations: decorations,
 			categories: categories,
 			userPrefs: preferences
 		};
@@ -59,7 +57,7 @@ export const ImportExport: React.FC<Props> = () => {
 			localStorage.clear();
 			localStorage.setItem("decorations", JSON.stringify(newUserMem.decorations));
 			localStorage.setItem("categories", JSON.stringify(newUserMem.categories));
-			localStorage.setItem("userPrefs", JSON.stringify(newUserMem.userPrefs));
+			localStorage.setItem("userPrefs", JSON.stringify(newUserMem.userPrefs ?? new Preferences()));
 			window.location.reload();
 		}
 		catch (e: any) {

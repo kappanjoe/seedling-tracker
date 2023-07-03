@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useEffect, useState, MouseEvent } from 'react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import { Transition } from '@headlessui/react';
 import { useSeedContext } from '../../contexts';
@@ -11,16 +11,16 @@ interface Props {
 
 export const CategoryView: React.FC<Props> = (props) => {
     const { index } = props;
-    const { decorations, categories } = useSeedContext();
-    let category = categories[index]
+    const { decorations, categories, saveCats } = useSeedContext();
+    const category = categories[index];
     const [isOpen, setIsOpen] = useState(category.isOpen);
     const prettyName = category.name.replace("-", " ");
 
     // Save category visibility state to localStorage
     function onClick(event: MouseEvent) {
-        categories[index].isOpen = !isOpen;
-        localStorage.setItem("categories", JSON.stringify(categories));
-        setIsOpen(!isOpen);
+        let newCats = [...categories];
+        newCats[index].isOpen = !isOpen;
+        saveCats(newCats);
     }
 
     // Create array to populate category with appropriate decoration types
@@ -46,6 +46,12 @@ export const CategoryView: React.FC<Props> = (props) => {
         return <CountSpan count={ current } max={ maxCount } category={ true }/>;
     }
 
+    useEffect(() => {
+        let updatedCat = categories[index];
+        setIsOpen(updatedCat.isOpen);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [categories]);
+
     return (
         <div className="Category" key={ category.name + "Container" } >
             <div className="CategoryName transition-colors" key={ category.name } onClick={ onClick }>
@@ -60,7 +66,7 @@ export const CategoryView: React.FC<Props> = (props) => {
                     leaveTo="scale-y-0">
                         { countCategory() }
                 </Transition>
-                <ChevronUpIcon className={ isOpen? 'transition-transform rotate-0 transform-gpu' : 'transition-transform rotate-180 transform-gpu' }/>
+                <ChevronUpIcon className={ isOpen ? 'transition-transform rotate-0 transform-gpu' : 'transition-transform rotate-180 transform-gpu' }/>
             </div>
             <Transition
                 show={ isOpen }

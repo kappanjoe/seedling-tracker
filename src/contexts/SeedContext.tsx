@@ -22,6 +22,7 @@ export const SeedContextProvider = ({ children }: Props) => {
 	const [colors, setColors] = useState(structure.colors as Colors);
 	const [decorations, setDecorations] = useState(structure.decorations as Decoration[]);
 	// TODO: Change decorations from Array to Object
+	// TODO: Use isLoading state to avoid rendering unloaded decos/cats
 	const [preferences, setPreferences] = useState(new Preferences());
 
 	// Initialize seeds with current version and reload
@@ -41,7 +42,7 @@ export const SeedContextProvider = ({ children }: Props) => {
 				return targetCat.name === sourceCat.name;
 			});
 			if (i >= 0) {
-				workingCats[i].isOpen = sourceCat.isOpen
+				workingCats[i].values = sourceCat.values
 			}
 		});
 		return workingCats;
