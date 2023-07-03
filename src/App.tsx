@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSeedContext } from './contexts';
 import { CategoryView } from './components/CategoryView';
 import { CountSpan } from './components/CountSpan';
@@ -11,27 +11,28 @@ import './App.css';
 
 function App() {
 	const { categories, decorations, preferences } = useSeedContext();
+	let [seedCount, setSeedCount] = useState(0);
+	let [seedMax, setSeedMax] = useState(structure.decorations.length);
 
 	var bgColor: string;
-  	if (preferences.themeMode === 'system') {
+  	if (preferences.theme === 'system') {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			bgColor = "#191919";
 		} else {
 			bgColor = "#f9f8f3";
 		}
-	} else if (preferences.themeMode === 'dark') {
+	} else if (preferences.theme === 'dark') {
 		bgColor = "#191919";
 	} else {
 		bgColor = "#f9f8f3";
 	}
 
-	// Store currently selected counting method && handle full counting of all seeds using either complete or in-game methods
-	function countDecor() {
-		var count = 0;
-		var max = 0;
+	useEffect(() => {
+		let count = 0;
+		let max = 0;
 
-		(decorations).forEach( (deco) => {
-			Object.keys(deco.colors).forEach( (color) => {
+		(decorations).forEach((deco) => {
+			Object.keys(deco.colors).forEach((color) => {
 				let value = deco.colors[color as keyof ColorSet];
 				if (value === ColorState.On) {
 					count++;
@@ -42,22 +43,14 @@ function App() {
 			})
 		});
 
-		return [count, max];
-	}
+		setSeedCount(count);
+		setSeedMax(max);
 
-	// Run initial count
-	let [initCount, initMax] = countDecor();
-	const [currentFullCount, setCurrentFullCount] = useState(initCount);
-	const [fullMax, setFullMax] = useState(initMax);
+	}, [decorations]);
 
-	// Update count on changes to any checkboxes
-	function updateFullCount() {
-		let [newCount, newMax] = countDecor();
-		setCurrentFullCount(newCount);
-		setFullMax(newMax);
-	}
-
-	document.documentElement.setAttribute('data-theme', preferences.themeMode === 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : preferences.themeMode);
+	useEffect(() => {
+		document.documentElement.setAttribute('data-theme', preferences.theme === 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : preferences.theme);
+	}, [preferences]);
 
 	return (
 		<div className="App transition-colors">
@@ -65,12 +58,11 @@ function App() {
 			<meta name="viewport" content="width=device-width, maximum-scale=1.0, viewport-fit=cover"/>
 			<Toolbar/>
 			<div className='App-body'>
-				<CountSpan count={ currentFullCount } max={ fullMax } category={ false }/>
+				<CountSpan count={ seedCount } max={ seedMax } category={ false }/>
 				{ categories.map( (category) => {
 					return <CategoryView
 							key={ category.name }
-							index={ categories.indexOf(category) }
-							updateFullCount={ updateFullCount }/>;
+							index={ categories.indexOf(category) }/>;
 				})}
 				<GuideGrid visibility={ preferences.labelsOn }/>
 				<span className='Version-info'>App: v{ structure.info.appVersion } - Seeds: v{ structure.info.seedsVersion }</span>

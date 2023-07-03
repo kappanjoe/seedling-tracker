@@ -7,11 +7,10 @@ import { CountSpan } from '../CountSpan';
 
 interface Props {
     index: number;
-    updateFullCount: () => void;
 };
 
 export const CategoryView: React.FC<Props> = (props) => {
-    const { index, updateFullCount } = props;
+    const { index } = props;
     const { decorations, categories } = useSeedContext();
     let category = categories[index]
     const [isOpen, setIsOpen] = useState(category.isOpen);
@@ -27,7 +26,7 @@ export const CategoryView: React.FC<Props> = (props) => {
     // Create array to populate category with appropriate decoration types
     let seedCells: JSX.Element[] = [];
     for (let i of category.values) {
-        seedCells.push(<SeedCell index={ i } key={ i } updateFullCount={ updateFullCount }/>);
+        seedCells.push(<SeedCell index={ i } key={ i }/>);
     }
 
     // Count category totals

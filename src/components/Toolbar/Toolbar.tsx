@@ -7,19 +7,19 @@ import { ImportExport } from '../ImportExport';
 interface Props {
 
 }
-// FIXME: Changes to preferences don't render or save to localStorage
+
 export const Toolbar: React.FC<Props> = () => {
-	const { preferences, setPreferences } = useSeedContext();
+	const { preferences, savePrefs } = useSeedContext();
 
 	function saveLabels() {
-		setPreferences({
+		savePrefs({
 			...preferences,
 			labelsOn: !preferences.labelsOn
 		});
 	}
 
 	function saveTheme(newTheme: string) {
-		setPreferences({
+		savePrefs({
 			...preferences,
 			theme: newTheme
 		});
