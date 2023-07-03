@@ -1,31 +1,23 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useEffect, useState, MouseEvent } from 'react';
 import { useSeedContext } from '../../contexts';
 import { ColorState } from '../../types/classes.d';
 
 interface Props {
     index: number;
-    checkState: string;
     keyName: string;
-    smallCountHandler: (value: number) => void;
 };
 
 export const Checkbox: React.FC<Props> = (props) => {
-    const [checked, setChecked] = useState(props.checkState);
-    const { index, keyName, smallCountHandler } = props;
+    const [checked, setChecked] = useState(ColorState.Off);
+    const { index, keyName } = props;
     const { decorations, saveDecos } = useSeedContext();
 
     // Save checkbox state to respective value in localStorage
     function updateValue(value: ColorState) {
-        let newDecos = decorations;
+        let newDecos = [...decorations];
         newDecos[index].colors[keyName as keyof ColorSet] = value;
-        saveDecos(newDecos);
-
-        let count = 0;
-        Object.keys(decorations[index].colors).forEach( (x) => {
-            if (decorations[index].colors[x as keyof ColorSet] === "on") { count++; }
-        });
-        smallCountHandler(count);
         setChecked(value);
+        saveDecos(newDecos);
     }
 
     // Convert string to boolean for updating checkbox state
@@ -41,6 +33,11 @@ export const Checkbox: React.FC<Props> = (props) => {
             updateValue(ColorState.On)
         }
     }
+
+    useEffect(() => {
+        setChecked(decorations[index].colors[keyName as keyof ColorSet]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [decorations]);
 
     return (
         <div className={ boolString(checked)? keyName + 'Checked transition-colors' : keyName + 'Unchecked transition-colors' } key= { keyName } onClick={ clickHandler }>
