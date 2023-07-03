@@ -1,9 +1,9 @@
 import React, { useState, MouseEvent } from 'react';
+import { useSeedContext } from '../../contexts';
 import { ColorState } from '../../types/classes.d';
 
 interface Props {
     index: number;
-    decorations: Decoration[];
     checkState: string;
     keyName: string;
     smallCountHandler: (value: number) => void;
@@ -13,13 +13,13 @@ interface Props {
 export const Checkbox: React.FC<Props> = (props) => {
     const [checked, setChecked] = useState(props.checkState);
     const { index, keyName, smallCountHandler, updateFullCount } = props;
-    var decorations = props.decorations;
+    const { decorations } = useSeedContext();
 
     // Save checkbox state to respective value in localStorage
     function updateValue(value: ColorState) {
         decorations[index].colors[keyName as keyof ColorSet] = value;
         localStorage.setItem("decorations", JSON.stringify(decorations));
-
+        // TODO: move this kind of logic into context as "saveDecorations" function, wrapping/replacing setDecorations react dispatch thing
         let count = 0;
         Object.keys(decorations[index].colors).forEach( (x) => {
             if (decorations[index].colors[x as keyof ColorSet] === "on") { count++; }

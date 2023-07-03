@@ -1,15 +1,19 @@
 import React, { useState, Fragment } from 'react';
 import { ArrowDownTrayIcon } from '@heroicons/react/20/solid';
 import { Dialog, Transition } from '@headlessui/react';
+import { useSeedContext } from '../../contexts';
 import { Structure } from '../../types/classes.d';
+import structure from '../../seeds.json';
 
 interface Props {
-	userMem: Structure;
+
 }
 
-export const ImportExport: React.FC<Props> = (props) => {
-	const { userMem } = props;
-
+export const ImportExport: React.FC<Props> = () => {
+	const { colors, decorations, categories, preferences } = useSeedContext();
+	const [importDidError, setImportDidError] = useState(false);
+	const [importText, setImportText] = useState("");
+	const [isCopied, setIsCopied] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	function closeModal() {
 		setIsOpen(false);
@@ -20,9 +24,15 @@ export const ImportExport: React.FC<Props> = (props) => {
 
 	let base64 = require('base-64');
 	let utf8 = require('utf8');
-
-	const [isCopied, setIsCopied] = useState(false);
+	
 	async function pasteUserMemToClipboard() {
+		let userMem: Structure = {
+			...structure,
+			colors: colors,
+			decoration: decorations,
+			categories: categories,
+			userPrefs: preferences
+		};
 		const bytes = utf8.encode(JSON.stringify(userMem));
 		const b64String = base64.encode(bytes);
 
@@ -36,8 +46,6 @@ export const ImportExport: React.FC<Props> = (props) => {
 		});
 	}
 
-	const [importText, setImportText] = useState("");
-	const [importDidError, setImportDidError] = useState(false);
 	function updateImportText(event: any) {
 		setImportText(event.target.value);
 	}
@@ -46,13 +54,12 @@ export const ImportExport: React.FC<Props> = (props) => {
 		const base64String = base64.decode(utf8String);
 
 		try {
-			const newUserMem: Structure = JSON.parse(utf8.decode(base64String));
+			const newUserMem = JSON.parse(utf8.decode(base64String));
 
 			localStorage.clear();
-			localStorage.setItem("info", JSON.stringify(newUserMem.info));
 			localStorage.setItem("decorations", JSON.stringify(newUserMem.decorations));
 			localStorage.setItem("categories", JSON.stringify(newUserMem.categories));
-			localStorage.setItem("groups", JSON.stringify(newUserMem.groups));
+			localStorage.setItem("userPrefs", JSON.stringify(newUserMem.userPrefs));
 			window.location.reload();
 		}
 		catch (e: any) {

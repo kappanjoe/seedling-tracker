@@ -1,22 +1,21 @@
 import React, { useState, MouseEvent } from 'react';
-import { SeedCell } from '../SeedCell';
-import { CountSpan } from '../CountSpan';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import { Transition } from '@headlessui/react';
+import { useSeedContext } from '../../contexts';
+import { SeedCell } from '../SeedCell';
+import { CountSpan } from '../CountSpan';
 
 interface Props {
     index: number;
-    categories: Category[];
-    decorations: Decoration[];
     updateFullCount: () => void;
 };
 
 export const CategoryView: React.FC<Props> = (props) => {
-    const { index, decorations, updateFullCount } = props;
-    var categories = props.categories;
+    const { index, updateFullCount } = props;
+    const { decorations, categories } = useSeedContext();
     let category = categories[index]
-    const prettyName = category.name.replace("-", " ");
     const [isOpen, setIsOpen] = useState(category.isOpen);
+    const prettyName = category.name.replace("-", " ");
 
     // Save category visibility state to localStorage
     function onClick(event: MouseEvent) {
@@ -28,7 +27,7 @@ export const CategoryView: React.FC<Props> = (props) => {
     // Create array to populate category with appropriate decoration types
     let seedCells: JSX.Element[] = [];
     for (let i of category.values) {
-        seedCells.push(<SeedCell index={ i } decorations={ decorations } key={ i } updateFullCount={ updateFullCount }/>);
+        seedCells.push(<SeedCell index={ i } key={ i } updateFullCount={ updateFullCount }/>);
     }
 
     // Count category totals
