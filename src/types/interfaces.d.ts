@@ -3,8 +3,12 @@ declare interface Indexable {
 };
 
 declare interface ISeedContext {
-	info: Indexable,
-	decorations: Decoration[],
 	categories: Category[],
-	groups: Group[]
+	setCategories: React.Dispatch<SetStateAction<Category[]>>,
+	colors: Colors,
+	setColors: React.Dispatch<SetStateAction<Colors>>,
+	decorations: Decoration[],
+	setDecorations: React.Dispatch<SetStateAction<Decoration[]>>,
+	preferences: Preferences,
+	setPreferences: React.Dispatch<SetStateAction<Preferences>>
 };

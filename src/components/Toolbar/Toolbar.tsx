@@ -1,26 +1,34 @@
-import React, { Dispatch, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/20/solid';
 import { Popover, Switch, Listbox, Transition } from '@headlessui/react';
+import { useSeedContext } from '../../contexts';
 import { ImportExport } from '../ImportExport';
-import { Structure } from '../../types/classes.d';
 
 interface Props {
-	labelState: [boolean, Dispatch<any>];
-	labelHandler: () => void;
-	themeState: string;
-	themeHandler: (_: string) => void;
-	userMem: Structure;
-}
 
-export const Toolbar: React.FC<Props> = (props) => {
-	const { labelState, labelHandler, themeState, themeHandler, userMem } = props;
-	const labelsOn = labelState[0];
-	const setLabelsOn = labelState[1];
+}
+// FIXME: Changes to preferences don't render or save to localStorage
+export const Toolbar: React.FC<Props> = () => {
+	const { preferences, setPreferences } = useSeedContext();
+
+	function saveLabels() {
+		setPreferences({
+			...preferences,
+			labelsOn: !preferences.labelsOn
+		});
+	}
+
+	function saveTheme(newTheme: string) {
+		setPreferences({
+			...preferences,
+			theme: newTheme
+		});
+	}
 
 	return (
 		<header className='Toolbar transition-colors'>
 			<div className='IOButtonWrapper'>
-				<ImportExport userMem={ userMem }/>
+				<ImportExport/>
 			</div>
 			<div className='Title'>
 			  	<p>
@@ -60,12 +68,12 @@ export const Toolbar: React.FC<Props> = (props) => {
 													Theme mode
 												</p>
 												<Listbox
-													value={ themeState }
-													onChange={ themeHandler }>
+													value={ preferences.theme }
+													onChange={ saveTheme }>
 													<div className={ 'ListboxContainer relative ml-auto' }>
 														<Listbox.Button
 															className={ 'transition-colors relative w-40 rounded-lg py-2 pl-3 pr-10 text-left shadow-md' }>
-																{ themeState[0].toUpperCase() + themeState.slice(1) }
+																{ preferences.theme[0].toUpperCase() + preferences.theme.slice(1) }
 														</Listbox.Button>
 														<Transition
 															as={Fragment}
@@ -117,15 +125,14 @@ export const Toolbar: React.FC<Props> = (props) => {
 													Color labels
 												</p>
 												<Switch
-													checked={ labelsOn }
-													onChange={ setLabelsOn }
-													onClick={ labelHandler }
-													className={ `${labelsOn ? 'bg-emerald-600' : 'bg-gray-300'}
+													checked={ preferences.labelsOn }
+													onClick={ saveLabels }
+													className={ `${preferences.labelsOn ? 'bg-emerald-600' : 'bg-gray-300'}
 														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
 														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
 														<span className='sr-only'>Display color labels</span>
 														<span aria-hidden="true"
-															className={`${labelsOn ? 'translate-x-[20pt]' : 'translate-x-0'}
+															className={`${preferences.labelsOn ? 'translate-x-[20pt]' : 'translate-x-0'}
 																pointer-events-none inline-block h-[21pt] w-[21pt] transform
 																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
 												</Switch>

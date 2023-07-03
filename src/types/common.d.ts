@@ -4,6 +4,10 @@ declare type Category = {
 	isOpen: boolean;
 };
 
+declare type Colors = [
+	"red", "yellow", "blue", "white", "purple", "grey", "pink"
+];
+
 declare type ColorSet = {
 	red: ColorState;
 	yellow: ColorState;
@@ -19,7 +23,6 @@ declare type Decoration = {
 	name: string;
 	catInd: number;
 	colors: ColorSet;
-	group: string | null;
 };
 
 declare type Info = {

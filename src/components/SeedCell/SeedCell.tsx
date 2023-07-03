@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import { useSeedContext } from '../../contexts';
 import { Checkbox } from '../Checkbox';
 import { CountSpan } from '../CountSpan';
 import structure from '../../seeds.json';
 
 interface Props {
     index: number;
-    decorations: Decoration[];
     updateFullCount: () => void;
 };
 
 export const SeedCell: React.FC<Props> = (props) => {
-    var { index, decorations, updateFullCount } = props;
-    const colors = structure.colors;
+    var { index, updateFullCount } = props;
+    const { decorations } = useSeedContext();
     var deco = decorations[index];
+    const colors = structure.colors;
 
     // Initialize counts
     var count = 0;
@@ -51,7 +52,6 @@ export const SeedCell: React.FC<Props> = (props) => {
 
                     return <Checkbox
                                 index= { index }
-                                decorations= { decorations }
                                 checkState= { checked }
                                 keyName= { key }
                                 key= { key }

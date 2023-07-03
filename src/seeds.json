@@ -40,24 +40,6 @@
         { "name": "Ramen-Shop", "values": [60], "isOpen": true },
         { "name": "Bridge", "values": [63], "isOpen": true }
     ],
-    "groups": {
-        "chef": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "off", "purple": "off", "grey": "off", "pink": "off"
-        },
-        "hanafuda": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-        },
-        "sticker": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "off", "purple": "off", "grey": "off", "pink": "off"
-        },
-        "themepark": {
-            "red": "off", "yellow": "off", "blue": "off",
-            "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-        }
-    },
     "decorations": [
         {
             "name": "Chef Hat",
@@ -65,8 +47,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": "chef"
+            }
         },
         {
             "name": "Chef Hat (Shiny)",
@@ -74,8 +55,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": "chef"
+            }
         },
         {
             "name": "Coffee Cup",
@@ -83,8 +63,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Macaron",
@@ -92,8 +71,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Popcorn Snack",
@@ -101,8 +79,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Toothbrush",
@@ -110,8 +87,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Dandelion",
@@ -119,8 +95,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Stag Beetle",
@@ -128,8 +103,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Acorn",
@@ -137,8 +111,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Fishing Lure",
@@ -146,8 +119,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Stamp",
@@ -155,8 +127,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Picture Frame",
@@ -164,8 +135,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Toy Airplane",
@@ -173,8 +143,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Paper Train",
@@ -182,8 +151,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Ticket",
@@ -191,8 +159,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Shell",
@@ -200,8 +167,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Burger",
@@ -209,8 +175,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Bottle Cap",
@@ -218,8 +183,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Snack",
@@ -227,8 +191,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Mushroom",
@@ -236,8 +199,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Banana",
@@ -245,8 +207,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Baguette",
@@ -254,8 +215,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Scissors",
@@ -263,8 +223,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Hair Tie",
@@ -272,8 +231,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Clover",
@@ -281,8 +239,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "4-Leaf Clover",
@@ -290,8 +247,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Tiny Book",
@@ -299,8 +255,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Mario Hat",
@@ -308,8 +263,7 @@
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Lunar New Year Ornament 2022",
@@ -317,8 +271,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Chess Piece (White)",
@@ -326,8 +279,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Fingerboard",
@@ -335,8 +287,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Hanafuda A",
@@ -344,8 +295,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-            },
-            "group": "hanafuda"
+            }
         },
         {
             "name": "Hanafuda B",
@@ -354,8 +304,7 @@
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
 
-            },
-            "group": "hanafuda"
+            }
         },
         {
             "name": "Hanafuda C",
@@ -363,8 +312,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-            },
-            "group": "hanafuda"
+            }
         },
         {
             "name": "Hanafuda D",
@@ -372,8 +320,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-            },
-            "group": "hanafuda"
+            }
         },
         {
             "name": "Hanafuda E",
@@ -381,8 +328,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-            },
-            "group": "hanafuda"
+            }
         },
         {
             "name": "Hanafuda F",
@@ -390,8 +336,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-            },
-            "group": "hanafuda"
+            }
         },
         {
             "name": "Sticker (Green)",
@@ -399,8 +344,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": "sticker"
+            }
         },
         {
             "name": "Sticker (Blue)",
@@ -408,8 +352,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": "sticker"
+            }
         },
         {
             "name": "Sticker (Orange)",
@@ -417,8 +360,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": "sticker"
+            }
         },
         {
             "name": "Sticker (Winter)",
@@ -426,8 +368,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": "sticker"
+            }
         },
         {
             "name": "Sushi",
@@ -435,8 +376,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Mountain Pin Badge",
@@ -444,8 +384,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Leaf Hat A",
@@ -453,8 +392,7 @@
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Leaf Hat B",
@@ -462,8 +400,7 @@
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Leaf Hat C",
@@ -471,8 +408,7 @@
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Theme Park Ticket A",
@@ -480,8 +416,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": "themepark"
+            }
         },
         {
             "name": "Theme Park Ticket B",
@@ -489,8 +424,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": "themepark"
+            }
         },
         {
             "name": "Paper Bus",
@@ -498,8 +432,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Jack-O'-Lantern",
@@ -507,8 +440,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "1st Anniversary Snack",
@@ -516,8 +448,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Koppaite Space Suit",
@@ -525,8 +456,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Ball Keychain",
@@ -534,8 +464,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Mitten",
@@ -543,8 +472,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "2023 Glasses",
@@ -552,8 +480,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Lunar New Year Ornament 2023",
@@ -561,8 +488,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Present Sticker",
@@ -570,8 +496,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Pizza",
@@ -579,8 +504,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Coin",
@@ -588,8 +512,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Easter Egg",
@@ -597,8 +520,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Ramen Keychain",
@@ -606,8 +528,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Present Sticker (Gold)",
@@ -615,8 +536,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Sneaker Keychain",
@@ -624,8 +544,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Bridge Badge",
@@ -633,8 +552,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
-            },
-            "group": null
+            }
         },
         {
             "name": "Donut",
@@ -642,8 +560,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         },
         {
             "name": "Chess Piece (Black)",
@@ -651,8 +568,7 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            },
-            "group": null
+            }
         }
     ]
 }
