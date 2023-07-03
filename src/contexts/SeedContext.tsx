@@ -4,13 +4,13 @@ import structure from '../seeds.json';
 
 export const SeedContext = createContext<ISeedContext>({
 	categories: structure.categories,
-	setCategories: () => {},
+	saveCats: () => {},
 	colors: structure.colors as Colors,
 	setColors: () => {},
 	decorations: structure.decorations,
-	setDecorations: () => {},
+	saveDecos: () => {},
 	preferences: Preferences,
-	setPreferences: () => {}
+	savePrefs: () => {}
 });
 
 interface Props {
@@ -32,6 +32,24 @@ export const SeedContextProvider = ({ children }: Props) => {
 		localStorage.setItem("userPrefs", JSON.stringify(preferences));
 		console.log("Initialization completed");
 		window.location.reload();
+	};
+
+	const updateCats = (inputCats: Category[]) => {
+		let workingCats = inputCats;
+		categories.forEach( (sourceCat: Category) => {
+			let i = workingCats.findIndex( (targetCat: Category) => {
+				return targetCat.name === sourceCat.name;
+			});
+			if (i >= 0) {
+				workingCats[i].isOpen = sourceCat.isOpen
+			}
+		});
+		return workingCats;
+	};
+
+	const saveCats = (inputCats: Category[]) => {
+		setCategories(inputCats);
+		localStorage.setItem("categories", JSON.stringify(inputCats));
 	};
 
 	const updateDecos = (inputDecos: Decoration[]) => {
@@ -98,17 +116,9 @@ export const SeedContextProvider = ({ children }: Props) => {
 		return workingDecos;
 	};
 
-	const updateCats = (inputCats: Category[]) => {
-		let workingCats = inputCats;
-		categories.forEach( (sourceCat: Category) => {
-			let i = workingCats.findIndex( (targetCat: Category) => {
-				return targetCat.name === sourceCat.name;
-			});
-			if (i >= 0) {
-				workingCats[i].isOpen = sourceCat.isOpen
-			}
-		});
-		return workingCats;
+	const saveDecos = (inputDecos: Decoration[]) => {
+		setDecorations(inputDecos);
+		localStorage.setItem("decorations", JSON.stringify(inputDecos));
 	};
 
 	const updatePrefs = (inputPrefs: Preferences) => {
@@ -117,6 +127,11 @@ export const SeedContextProvider = ({ children }: Props) => {
 			workingPrefs[x] = inputPrefs[x];
 		});
 		return workingPrefs;
+	};
+
+	const savePrefs = (inputPrefs: Preferences) => {
+		setPreferences(inputPrefs);
+		localStorage.setItem("userPrefs", JSON.stringify(inputPrefs));
 	};
 
 	const loadLocalStorage = async () => {
@@ -168,10 +183,11 @@ export const SeedContextProvider = ({ children }: Props) => {
 
 			loadLocalStorage();
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 
-	return <SeedContext.Provider value={{ categories, setCategories, colors, setColors, decorations, setDecorations, preferences, setPreferences }}>
+	return <SeedContext.Provider value={{ categories, saveCats, colors, setColors, decorations, saveDecos, preferences, savePrefs }}>
 		{ children }
 	</SeedContext.Provider>;
 };

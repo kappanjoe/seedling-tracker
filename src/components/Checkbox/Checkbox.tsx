@@ -7,25 +7,24 @@ interface Props {
     checkState: string;
     keyName: string;
     smallCountHandler: (value: number) => void;
-    updateFullCount: () => void;
 };
 
 export const Checkbox: React.FC<Props> = (props) => {
     const [checked, setChecked] = useState(props.checkState);
-    const { index, keyName, smallCountHandler, updateFullCount } = props;
-    const { decorations } = useSeedContext();
+    const { index, keyName, smallCountHandler } = props;
+    const { decorations, saveDecos } = useSeedContext();
 
     // Save checkbox state to respective value in localStorage
     function updateValue(value: ColorState) {
-        decorations[index].colors[keyName as keyof ColorSet] = value;
-        localStorage.setItem("decorations", JSON.stringify(decorations));
-        // TODO: move this kind of logic into context as "saveDecorations" function, wrapping/replacing setDecorations react dispatch thing
+        let newDecos = decorations;
+        newDecos[index].colors[keyName as keyof ColorSet] = value;
+        saveDecos(newDecos);
+
         let count = 0;
         Object.keys(decorations[index].colors).forEach( (x) => {
             if (decorations[index].colors[x as keyof ColorSet] === "on") { count++; }
         });
         smallCountHandler(count);
-        updateFullCount();
         setChecked(value);
     }
 

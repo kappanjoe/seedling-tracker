@@ -4,11 +4,11 @@ declare interface Indexable {
 
 declare interface ISeedContext {
 	categories: Category[],
-	setCategories: React.Dispatch<SetStateAction<Category[]>>,
+	saveCats: function,
 	colors: Colors,
 	setColors: React.Dispatch<SetStateAction<Colors>>,
 	decorations: Decoration[],
-	setDecorations: React.Dispatch<SetStateAction<Decoration[]>>,
+	saveDecos: function,
 	preferences: Preferences,
-	setPreferences: React.Dispatch<SetStateAction<Preferences>>
+	savePrefs: function
 };
