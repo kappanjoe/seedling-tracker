@@ -27,5 +27,6 @@ export class Preferences implements Indexable {
 export enum ColorState {
 	Nil = "nil",
 	Off = "off",
+	Seed = "seed",
 	On = "on"
 };

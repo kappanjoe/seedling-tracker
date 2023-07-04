@@ -3,6 +3,7 @@ import { useSeedContext } from '../../contexts';
 import { Checkbox } from '../Checkbox';
 import { CountSpan } from '../CountSpan';
 import structure from '../../seeds.json';
+import { ColorState } from '../../types/classes.d';
 
 interface Props {
     index: number;
@@ -22,9 +23,9 @@ export const SeedCell: React.FC<Props> = (props) => {
         let max = 0;
         Object.keys(deco.colors).forEach( (color) => {
             let value = deco.colors[color as keyof ColorSet];
-            if (value === "off") {
+            if (value === ColorState.Off) {
                 max++;
-            } else if (value === "on") {
+            } else if (value === ColorState.On || value === ColorState.Seed) {
                 count++;
                 max++;
             }

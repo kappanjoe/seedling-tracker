@@ -4,6 +4,7 @@ import { Transition } from '@headlessui/react';
 import { useSeedContext } from '../../contexts';
 import { SeedCell } from '../SeedCell';
 import { CountSpan } from '../CountSpan';
+import { ColorState }  from '../../types/classes.d';
 
 interface Props {
     index: number;
@@ -35,10 +36,10 @@ export const CategoryView: React.FC<Props> = (props) => {
         var maxCount = 0;
         for (let i of category.values) {
             for (let j of Object.keys(decorations[i].colors)) {
-                if (decorations[i].colors[j as keyof ColorSet] === "on") {
+                if (decorations[i].colors[j as keyof ColorSet] === ColorState.On || decorations[i].colors[j as keyof ColorSet] === ColorState.Seed) {
                     current++;
                     maxCount++;
-                } else if (decorations[i].colors[j as keyof ColorSet] === "off") {
+                } else if (decorations[i].colors[j as keyof ColorSet] === ColorState.Off) {
                     maxCount++;
                 }
             }

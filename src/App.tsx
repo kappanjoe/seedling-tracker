@@ -34,7 +34,7 @@ function App() {
 		(decorations).forEach((deco) => {
 			Object.keys(deco.colors).forEach((color) => {
 				let value = deco.colors[color as keyof ColorSet];
-				if (value === ColorState.On) {
+				if (value === ColorState.On || value === ColorState.Seed) {
 					count++;
 					max++;
 				} else if (value === ColorState.Off) {
