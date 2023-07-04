@@ -156,8 +156,7 @@
 
 .CheckboxBlock {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 35pt);
-  grid-template-rows: 2;
+  grid-template-columns: repeat(auto-fill, 36pt);
   row-gap: 6pt;
   margin-top: 4pt;
   padding-bottom: 2pt;
@@ -168,62 +167,72 @@
   flex-direction: column-reverse;
   align-items: center;
   margin: 0pt 3pt 0pt 3pt;
-  padding: 8pt;
+  padding: 6pt;
   border-radius: 8pt;
 }
 
-.CheckboxBlock > div > input {
-  accent-color: green;
+.check-icon {
+  width: 18pt;
+  height: 18pt;
+  color: var(--check-off-color);
 }
 
-.redChecked {
+.check-icon.seed {
+  color: var(--check-seed-color);
+}
 
+.check-icon.on {
+  width: 18pt;
+  height: 18pt;
+  color: var(--check-on-color);
+}
+
+.redon {
   background-color: var(--red-checked);
 }
-.redUnchecked {
-
+.redoff, .redseed {
   background-color: var(--red-unchecked);
 }
 
-.yellowChecked {
+.yellowon {
   background-color: var(--yellow-checked);
 }
-.yellowUnchecked {
+.yellowoff, .yellowseed {
   background-color: var(--yellow-unchecked);
 }
 
-.blueChecked {
+.blueon {
   background-color: var(--blue-checked);
 }
-.blueUnchecked {
+.blueoff, .blueseed {
   background-color: var(--blue-unchecked);
 }
 
-.whiteChecked {
+.whiteon {
   background-color: var(--white-checked);
 }
-.whiteUnchecked {
+.whiteoff, .whiteseed {
   background-color: var(--white-unchecked);
 }
 
-.purpleChecked {
+.purpleon {
   background-color: var(--purple-checked);
 }
-.purpleUnchecked {
+.purpleoff, .purpleseed {
   background-color: var(--purple-unchecked);
 }
 
-.greyChecked {
+.greyon {
   background-color: var(--grey-checked);
 }
-.greyUnchecked {
+.greyoff, .greyseed {
   background-color: var(--grey-unchecked);
 }
 
-.pinkChecked {
+.pinkon {
   background-color: var(--pink-checked);
 }
-.pinkUnchecked {
+.pinkoff, .pinkseed {
   background-color: var(--pink-unchecked);
 }
 
@@ -240,7 +249,7 @@
   border-top-style: solid;
   border-top-width: 1pt;
   border-top-color: var(--border-color);
-  grid-template-columns: repeat(auto-fill, 35pt);
+  grid-template-columns: repeat(auto-fill, 36pt);
   grid-template-rows: 2;
   row-gap: 6pt;
   margin: 8pt 12pt 2pt 12pt;

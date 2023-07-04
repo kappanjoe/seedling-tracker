@@ -5,6 +5,9 @@
   --text-color: midnightblue;
   --border-color: lightgrey;
   --completed-color: lightgreen;
+  --check-off-color: grey;
+  --check-seed-color: rgba(25, 25, 112, 0.7);
+  --check-on-color: midnightblue;
 
   --red-unchecked: rgba(235, 110, 85, 0.2);
   --red-checked: rgb(235, 110, 85);
@@ -21,8 +24,8 @@
   --purple-unchecked: rgba(170, 110, 240, 0.2);
   --purple-checked: rgb(170, 110, 240);
 
-  --grey-unchecked: rgba(94, 94, 94, 0.2);
-  --grey-checked: rgb(94, 94, 94);
+  --grey-unchecked: rgba(94, 94, 94, 0.3);
+  --grey-checked: rgb(94, 94, 94, 0.8);
 
   --pink-unchecked: rgba(240, 150, 210, 0.2);
   --pink-checked: rgb(240, 150, 210);
@@ -37,6 +40,9 @@
   --text-color: lightgrey;
   --border-color: rgb(80, 80, 80);
   --completed-color: rgb(21, 115, 55);
+  --check-off-color: grey;
+  --check-seed-color: rgb(200, 200, 200, 0.8);
+  --check-on-color: midnightblue;
 
   --blank-div: rgb(40, 40, 40);
 }
