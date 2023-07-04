@@ -61,7 +61,7 @@ export const Toolbar: React.FC<Props> = () => {
 							leaveFrom="opacity-100 translate-y-0"
 							leaveTo="opacity-0 translate-y-1">
 								<Popover.Panel className="transition-colors absolute left-1/2 mt-8 w-screen max-w-sm -translate-x-1/2 transform px-4 text-base font-medium">
-									<div className="PopoverMenu transition-colors overflow-hidden rounded-lg shadow-xl">
+									<div className="PopoverMenu transition-colors rounded-lg shadow-xl">
 										<div className= "relative grid gap-8 p-7">
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
 												<p className="flex shrink-0 items-center justify-center">

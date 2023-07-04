@@ -26,7 +26,6 @@ export const SeedContextProvider = ({ children }: Props) => {
 	const [preferences, setPreferences] = useState(new Preferences());
 	const [contextLoaded, setContextLoaded] = useState(false);
 
-	// Initialize seeds with current version and reload
 	const initStorage = () => {
 		localStorage.clear();
 		localStorage.setItem("categories", JSON.stringify(categories));
@@ -163,13 +162,11 @@ export const SeedContextProvider = ({ children }: Props) => {
 
 	useEffect(() => {
 		//-- INITIAL CHECKS --//
-		// Seeds = { Info, Categories, Decorations ... }
 		if (!("decorations" in localStorage) || !("categories" in localStorage)) {
 			console.log("Could not find data in local storage.");
 			initStorage();
 		} else {
-			// Recent version of seeds (0.5 or later) implemented; load and update version if not current
-			// Initialize userPrefs if not stored
+			// Initialize userPrefs if not in localStorage
 			if (!("userPrefs" in localStorage)) {
 				localStorage.setItem("userPrefs", JSON.stringify(preferences));
 			}
