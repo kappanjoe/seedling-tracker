@@ -1,6 +1,6 @@
 # Deco Tracker v2.0.0
 
-## <h2 style="text-align: center;">[Open Deco Tracker](https://kappanjoe.github.io/seedling-tracker/)</h2>
+## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
 - Tap the colored boxes to save which decorations you've collected and hatched.
 - Collect all the decorations! :D
