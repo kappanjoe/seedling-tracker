@@ -10,7 +10,8 @@ export const SeedContext = createContext<ISeedContext>({
 	decorations: structure.decorations,
 	saveDecos: () => {},
 	preferences: Preferences,
-	savePrefs: () => {}
+	savePrefs: () => {},
+	contextLoaded: false
 });
 
 interface Props {
@@ -22,8 +23,8 @@ export const SeedContextProvider = ({ children }: Props) => {
 	const [colors, setColors] = useState(structure.colors as Colors);
 	const [decorations, setDecorations] = useState(structure.decorations as Decoration[]);
 	// TODO: Change decorations from Array to Object
-	// TODO: Use isLoading state to avoid rendering unloaded decos/cats
 	const [preferences, setPreferences] = useState(new Preferences());
+	const [contextLoaded, setContextLoaded] = useState(false);
 
 	// Initialize seeds with current version and reload
 	const initStorage = () => {
@@ -157,6 +158,7 @@ export const SeedContextProvider = ({ children }: Props) => {
 			let updatedPrefs = updatePrefs(localPrefs);
 			setPreferences(updatedPrefs);
 		}
+		setContextLoaded(true);
 	};
 
 	useEffect(() => {
@@ -188,7 +190,7 @@ export const SeedContextProvider = ({ children }: Props) => {
 	}, []);
 
 
-	return <SeedContext.Provider value={{ categories, saveCats, colors, setColors, decorations, saveDecos, preferences, savePrefs }}>
+	return <SeedContext.Provider value={{ categories, saveCats, colors, setColors, decorations, saveDecos, preferences, savePrefs, contextLoaded }}>
 		{ children }
 	</SeedContext.Provider>;
 };

@@ -10,5 +10,6 @@ declare interface ISeedContext {
 	decorations: Decoration[],
 	saveDecos: function,
 	preferences: Preferences,
-	savePrefs: function
+	savePrefs: function,
+	contextLoaded: boolean
 };
