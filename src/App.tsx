@@ -65,7 +65,7 @@ function App() {
 							index={ categories.indexOf(category) }/>;
 				})}
 				<GuideGrid visibility={ preferences.labelsOn }/>
-				<span className='Version-info'>App: v{ structure.info.appVersion } - Seeds: v{ structure.info.seedsVersion }</span>
+				<span className='Version-info'>App: { structure.info.appVersion } - Seeds: { structure.info.seedsVersion }</span>
 			</div>
 		</div>
 	)
