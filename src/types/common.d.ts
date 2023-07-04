@@ -26,6 +26,6 @@ declare type Decoration = {
 };
 
 declare type Info = {
-	appVersion: number;
-	seedsVersion: number;
+	appVersion: string;
+	seedsVersion: string;
 };
