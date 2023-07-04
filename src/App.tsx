@@ -10,7 +10,7 @@ import './App.css';
 
 
 function App() {
-	const { categories, decorations, preferences } = useSeedContext();
+	const { categories, decorations, preferences, contextLoaded } = useSeedContext();
 	let [seedCount, setSeedCount] = useState(0);
 	let [seedMax, setSeedMax] = useState(structure.decorations.length);
 
@@ -58,8 +58,8 @@ function App() {
 			<meta name="viewport" content="width=device-width, maximum-scale=1.0, viewport-fit=cover"/>
 			<Toolbar/>
 			<div className='App-body'>
-				<CountSpan count={ seedCount } max={ seedMax } category={ false }/>
-				{ categories.map( (category) => {
+				{ contextLoaded && <CountSpan count={ seedCount } max={ seedMax } category={ false }/> }
+				{ contextLoaded && categories.map( (category) => {
 					return <CategoryView
 							key={ category.name }
 							index={ categories.indexOf(category) }/>;

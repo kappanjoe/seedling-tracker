@@ -11,7 +11,7 @@ interface Props {
 
 export const CategoryView: React.FC<Props> = (props) => {
     const { index } = props;
-    const { decorations, categories, saveCats } = useSeedContext();
+    const { decorations, categories, saveCats, contextLoaded } = useSeedContext();
     const category = categories[index];
     const [isOpen, setIsOpen] = useState(category.isOpen);
     const prettyName = category.name.replace("-", " ");
@@ -43,7 +43,7 @@ export const CategoryView: React.FC<Props> = (props) => {
                 }
             }
         }
-        return <CountSpan count={ current } max={ maxCount } category={ true }/>;
+        return ( contextLoaded && <CountSpan count={ current } max={ maxCount } category={ true }/>);
     }
 
     useEffect(() => {

@@ -13,6 +13,7 @@ export const SeedCell: React.FC<Props> = (props) => {
     const { decorations } = useSeedContext();
     const [colorCount, setColorCount] = useState(0);
     const [colorMax, setColorMax] = useState(0);
+    const [cellLoading, setCellLoading] = useState(true);
     const colors = structure.colors;
     
     useEffect(() => {
@@ -30,6 +31,7 @@ export const SeedCell: React.FC<Props> = (props) => {
         });
         setColorCount(count);
         setColorMax(max);
+        setCellLoading(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [decorations]);
 
@@ -37,7 +39,7 @@ export const SeedCell: React.FC<Props> = (props) => {
         <div className={ 'SeedCell' } key={ "Cell-" + index }>
             <div className='SeedInfo'>
                 <span className='SeedName'>{ decorations[index].name }:</span>
-                <CountSpan count={ colorCount } max={ colorMax } category={ false }/>
+                { !cellLoading && <CountSpan count={ colorCount } max={ colorMax } category={ false }/> }
             </div>
             <div className='CheckboxBlock transition-colors'>
                 { colors.map((key: string) => {
