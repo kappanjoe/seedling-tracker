@@ -18,13 +18,13 @@
   --blue-unchecked: rgba(70, 160, 250, 0.2);
   --blue-checked: rgb(70, 160, 250);
 
-  --white-unchecked: rgba(220, 220, 220, 0.3);
+  --white-unchecked: rgba(255, 255, 255, 0.26);
   --white-checked: white;
 
   --purple-unchecked: rgba(170, 110, 240, 0.2);
   --purple-checked: rgb(170, 110, 240);
 
-  --grey-unchecked: rgba(94, 94, 94, 0.3);
+  --grey-unchecked: rgba(94, 94, 94, 0.2);
   --grey-checked: rgb(94, 94, 94, 0.8);
 
   --pink-unchecked: rgba(240, 150, 210, 0.2);
