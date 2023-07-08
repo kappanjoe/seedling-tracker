@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.1 - July 8, 2023
+- Added Spaceship decor
+
 ## v2.0.0 - July 4, 2023
 - Adopted Semantic Versioning
 - Simplified state management for collected seeds

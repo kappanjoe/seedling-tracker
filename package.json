@@ -1,7 +1,7 @@
 {
   "name": "deco-tracker",
   "homepage": "https://kappanjoe.github.io/seedling-tracker/",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.3",
@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER=none react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",

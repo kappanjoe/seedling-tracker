@@ -64,7 +64,9 @@ function App() {
 							key={ category.name }
 							index={ categories.indexOf(category) }/>;
 				})}
-				// FIXME: Hide GuideGrid & footer while context is still loading
+				{
+					// FIXME: Hide GuideGrid & footer while context is still loading
+				}
 				<GuideGrid visibility={ preferences.labelsOn }/>
 				<span className='Version-info'>App: { structure.info.appVersion } - Seeds: { structure.info.seedsVersion }</span>
 			</div>
