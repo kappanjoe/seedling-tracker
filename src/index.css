@@ -6,7 +6,7 @@
   --border-color: lightgrey;
   --completed-color: lightgreen;
   --check-off-color: grey;
-  --check-seed-color: rgba(25, 25, 112, 0.7);
+  --check-seed-color: rgba(25, 25, 112, 0.6);
   --check-on-color: midnightblue;
 
   --red-unchecked: rgba(235, 110, 85, 0.2);
@@ -41,7 +41,7 @@
   --border-color: rgb(80, 80, 80);
   --completed-color: rgb(21, 115, 55);
   --check-off-color: grey;
-  --check-seed-color: rgb(200, 200, 200, 0.8);
+  --check-seed-color: rgb(200, 200, 200, 0.7);
   --check-on-color: midnightblue;
 
   --blank-div: rgb(40, 40, 40);
