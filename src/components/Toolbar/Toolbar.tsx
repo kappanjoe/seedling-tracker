@@ -11,6 +11,13 @@ interface Props {
 export const Toolbar: React.FC<Props> = () => {
 	const { preferences, savePrefs } = useSeedContext();
 
+	function saveTheme(newTheme: string) {
+		savePrefs({
+			...preferences,
+			theme: newTheme
+		});
+	}
+	
 	function saveLabels() {
 		savePrefs({
 			...preferences,
@@ -18,10 +25,17 @@ export const Toolbar: React.FC<Props> = () => {
 		});
 	}
 
-	function saveTheme(newTheme: string) {
+	function saveSeeds() {
 		savePrefs({
 			...preferences,
-			theme: newTheme
+			seedsOn: !preferences.seedsOn
+		});
+	}
+
+	function saveCount() {
+		savePrefs({
+			...preferences,
+			doCountSeeds: !preferences.doCountSeeds
 		});
 	}
 
@@ -122,7 +136,7 @@ export const Toolbar: React.FC<Props> = () => {
 											</div>
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
 												<p className="flex shrink-0 items-center justify-center">
-													Color labels
+													Show color labels
 												</p>
 												<Switch
 													checked={ preferences.labelsOn }
@@ -130,9 +144,43 @@ export const Toolbar: React.FC<Props> = () => {
 													className={ `${preferences.labelsOn ? 'bg-emerald-600' : 'bg-gray-300'}
 														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
 														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
-														<span className='sr-only'>Display color labels</span>
+														<span className='sr-only'>Show color labels</span>
 														<span aria-hidden="true"
 															className={`${preferences.labelsOn ? 'translate-x-[20pt]' : 'translate-x-0'}
+																pointer-events-none inline-block h-[21pt] w-[21pt] transform
+																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
+												</Switch>
+											</div>
+											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
+												<p className="flex shrink-0 items-center justify-center">
+													Enable seeds
+												</p>
+												<Switch
+													checked={ preferences.seedsOn }
+													onClick={ saveSeeds }
+													className={ `${preferences.seedsOn ? 'bg-emerald-600' : 'bg-gray-300'}
+														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
+														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
+														<span className='sr-only'>Enable seeds</span>
+														<span aria-hidden="true"
+															className={`${preferences.seedsOn ? 'translate-x-[20pt]' : 'translate-x-0'}
+																pointer-events-none inline-block h-[21pt] w-[21pt] transform
+																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
+												</Switch>
+											</div>
+											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
+												<p className="flex shrink-0 items-center justify-center">
+													Count unhatched seeds
+												</p>
+												<Switch
+													checked={ preferences.doCountSeeds }
+													onClick={ saveCount }
+													className={ `${preferences.doCountSeeds ? 'bg-emerald-600' : 'bg-gray-300'}
+														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
+														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
+														<span className='sr-only'>Count unhatchedSeeds</span>
+														<span aria-hidden="true"
+															className={`${preferences.doCountSeeds ? 'translate-x-[20pt]' : 'translate-x-0'}
 																pointer-events-none inline-block h-[21pt] w-[21pt] transform
 																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
 												</Switch>
