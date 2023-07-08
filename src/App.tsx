@@ -34,10 +34,15 @@ function App() {
 		(decorations).forEach((deco) => {
 			Object.keys(deco.colors).forEach((color) => {
 				let value = deco.colors[color as keyof ColorSet];
-				if (value === ColorState.On || value === ColorState.Seed) {
+				if (value === ColorState.On) {
 					count++;
 					max++;
 				} else if (value === ColorState.Off) {
+					max++;
+				} else if (value === ColorState.Seed) {
+					if (preferences.doCountSeeds) {
+						count++;
+					}
 					max++;
 				}
 			})
@@ -46,7 +51,7 @@ function App() {
 		setSeedCount(count);
 		setSeedMax(max);
 
-	}, [decorations]);
+	}, [preferences.doCountSeeds, decorations]);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', preferences.theme === 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : preferences.theme);

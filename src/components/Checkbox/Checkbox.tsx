@@ -13,7 +13,7 @@ interface Props {
 export const Checkbox: React.FC<Props> = (props) => {
     const [status, setStatus] = useState(ColorState.Off);
     const { index, keyName } = props;
-    const { decorations, saveDecos } = useSeedContext();
+    const { decorations, saveDecos, preferences } = useSeedContext();
 
     // Save checkbox state to respective value in localStorage
     function updateValue(value: ColorState) {
@@ -27,7 +27,11 @@ export const Checkbox: React.FC<Props> = (props) => {
     function clickHandler() {
         switch(status) {
             case 'off':
-                updateValue(ColorState.Seed)
+                if (preferences.seedsOn) {
+                    updateValue(ColorState.Seed)
+                } else {
+                    updateValue(ColorState.On)
+                }
                 return;
             case 'seed':
                 updateValue(ColorState.On)
@@ -49,9 +53,13 @@ export const Checkbox: React.FC<Props> = (props) => {
                 status === 'off'
                     ? <PlusSmallIcon className='check-icon off'/>
                     : (
-                        status === 'seed'
-                            ? <ClockIcon className='check-icon seed'/>
-                            : <CheckCircleIcon className='check-icon on'/>
+                        status === 'on'
+                            ? <CheckCircleIcon className='check-icon on'/>
+                            : (
+                                preferences.seedsOn
+                                    ? <ClockIcon className='check-icon seed'/>
+                                    : <PlusSmallIcon className='check-icon off'/>
+                            )
                     )
             }
         </div>

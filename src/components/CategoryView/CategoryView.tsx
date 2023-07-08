@@ -12,7 +12,7 @@ interface Props {
 
 export const CategoryView: React.FC<Props> = (props) => {
     const { index } = props;
-    const { decorations, categories, saveCats, contextLoaded } = useSeedContext();
+    const { decorations, categories, saveCats, contextLoaded, preferences } = useSeedContext();
     const category = categories[index];
     const [isOpen, setIsOpen] = useState(category.isOpen);
     const prettyName = category.name.replace("-", " ");
@@ -36,11 +36,16 @@ export const CategoryView: React.FC<Props> = (props) => {
         var maxCount = 0;
         for (let i of category.values) {
             for (let j of Object.keys(decorations[i].colors)) {
-                if (decorations[i].colors[j as keyof ColorSet] === ColorState.On || decorations[i].colors[j as keyof ColorSet] === ColorState.Seed) {
+                if (decorations[i].colors[j as keyof ColorSet] === ColorState.On) {
                     current++;
                     maxCount++;
                 } else if (decorations[i].colors[j as keyof ColorSet] === ColorState.Off) {
                     maxCount++;
+                } else if (decorations[i].colors[j as keyof ColorSet] === ColorState.Seed) {
+                    if (preferences.doCountSeeds) {
+                        current++;
+                    }
+                    maxCount++;;
                 }
             }
         }

@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.1
+# Deco Tracker v2.0.2
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,8 +37,10 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-### v2.0.1 - July 8, 2023
+### v2.0.2 - July 8, 2023
 - Added Spaceship decor
+- Added Setting: Track unhatched seeds
+- Added Setting: Include unhatched seeds in count
 
 ### v2.0.0 - July 4, 2023
 - Adopted Semantic Versioning

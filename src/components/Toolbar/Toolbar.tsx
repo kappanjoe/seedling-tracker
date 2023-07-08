@@ -28,7 +28,8 @@ export const Toolbar: React.FC<Props> = () => {
 	function saveSeeds() {
 		savePrefs({
 			...preferences,
-			seedsOn: !preferences.seedsOn
+			seedsOn: !preferences.seedsOn,
+			doCountSeeds: preferences.seedsOn && preferences.doCountSeeds
 		});
 	}
 
@@ -153,7 +154,7 @@ export const Toolbar: React.FC<Props> = () => {
 											</div>
 											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
 												<p className="flex shrink-0 items-center justify-center">
-													Enable seeds
+													Track unhatched seeds
 												</p>
 												<Switch
 													checked={ preferences.seedsOn }
@@ -161,30 +162,33 @@ export const Toolbar: React.FC<Props> = () => {
 													className={ `${preferences.seedsOn ? 'bg-emerald-600' : 'bg-gray-300'}
 														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
 														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
-														<span className='sr-only'>Enable seeds</span>
+														<span className='sr-only'>Track unhatched seeds</span>
 														<span aria-hidden="true"
 															className={`${preferences.seedsOn ? 'translate-x-[20pt]' : 'translate-x-0'}
 																pointer-events-none inline-block h-[21pt] w-[21pt] transform
 																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
 												</Switch>
 											</div>
-											<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
-												<p className="flex shrink-0 items-center justify-center">
-													Count unhatched seeds
-												</p>
-												<Switch
-													checked={ preferences.doCountSeeds }
-													onClick={ saveCount }
-													className={ `${preferences.doCountSeeds ? 'bg-emerald-600' : 'bg-gray-300'}
-														relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
-														rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
-														<span className='sr-only'>Count unhatchedSeeds</span>
-														<span aria-hidden="true"
-															className={`${preferences.doCountSeeds ? 'translate-x-[20pt]' : 'translate-x-0'}
-																pointer-events-none inline-block h-[21pt] w-[21pt] transform
-																rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
-												</Switch>
-											</div>
+											{
+												preferences.seedsOn &&
+													<div className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out">
+														<p className="flex shrink-0 items-center justify-center">
+															Include unhatched in count
+														</p>
+														<Switch
+															checked={ preferences.doCountSeeds }
+															onClick={ saveCount }
+															className={ `${preferences.doCountSeeds ? 'bg-emerald-600' : 'bg-gray-300'}
+																relative inline-flex h-[24pt] w-[44pt] shrink-0 cursor-pointer
+																rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ml-auto`}>
+																<span className='sr-only'>Include unhatched in count</span>
+																<span aria-hidden="true"
+																	className={`${preferences.doCountSeeds ? 'translate-x-[20pt]' : 'translate-x-0'}
+																		pointer-events-none inline-block h-[21pt] w-[21pt] transform
+																		rounded-full bg-white shadow-lg transition duration-200 ease-in-out`}/>
+														</Switch>
+													</div>
+											}
 										</div>
 									</div>
 								</Popover.Panel>

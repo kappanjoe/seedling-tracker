@@ -11,7 +11,7 @@ interface Props {
 
 export const SeedCell: React.FC<Props> = (props) => {
     const { index } = props;
-    const { decorations } = useSeedContext();
+    const { decorations, preferences } = useSeedContext();
     const [colorCount, setColorCount] = useState(0);
     const [colorMax, setColorMax] = useState(0);
     const [cellLoading, setCellLoading] = useState(true);
@@ -25,8 +25,13 @@ export const SeedCell: React.FC<Props> = (props) => {
             let value = deco.colors[color as keyof ColorSet];
             if (value === ColorState.Off) {
                 max++;
-            } else if (value === ColorState.On || value === ColorState.Seed) {
+            } else if (value === ColorState.On) {
                 count++;
+                max++;
+            } else if (value === ColorState.Seed) {
+                if (preferences.doCountSeeds) {
+                    count++;
+                }
                 max++;
             }
         });
