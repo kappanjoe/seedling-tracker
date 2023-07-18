@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.1",
-        "appVersion": "v2.0.2"
+        "seedsVersion": "v2.0.2",
+        "appVersion": "v2.0.3"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -534,8 +534,8 @@
             "name": "Present Sticker (Gold)",
             "catInd": 21,
             "colors": {
-                "red": "off", "yellow": "off", "blue": "nil",
-                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "nil", "grey": "nil", "pink": "nil"
             }
         },
         {

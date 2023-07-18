@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.3 - July 18, 2023
+- Added colors to Present Sticker (Gold) decor
+
 ## v2.0.2 - July 8, 2023
 - Added Spaceship decor
 - Added Setting: Track unhatched seeds
