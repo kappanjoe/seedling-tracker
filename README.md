@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.3
+# Deco Tracker v2.0.4
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,13 +37,10 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-### v2.0.3 - July 18, 2023
-- Added colors to Present Sticker (Gold) decor
+### v2.0.4 - August 3, 2023
+- Added Mahjong Tile decor sets
 
-### v2.0.2 - July 8, 2023
-- Added Spaceship decor
-- Added Setting: Track unhatched seeds
-- Added Setting: Include unhatched seeds in count
+...
 
 ### v2.0.0 - July 4, 2023
 - Adopted Semantic Versioning
@@ -55,4 +52,4 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
   3. Seed hatched (circled checkmark icon)
 - The 'Count Method' setting and related group data has been removed, as the game no longer skips over similar seeds within certain groups.
 
-### [Click here to view Changelog](/CHANGELOG.md)
+### [Click here to view full Changelog](/CHANGELOG.md)

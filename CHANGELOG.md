@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.4 - August 3, 2023
+- Added Mahjong Tile decor sets
+
 ## v2.0.3 - July 18, 2023
 - Added colors to Present Sticker (Gold) decor
 

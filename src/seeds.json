@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.2",
-        "appVersion": "v2.0.3"
+        "seedsVersion": "v2.0.3",
+        "appVersion": "v2.0.4"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -28,7 +28,7 @@
         { "name": "Clothes-Store", "values": [23], "isOpen": true },
         { "name": "Park", "values": [24, 25], "isOpen": true },
         { "name": "Library/Bookstore", "values": [26], "isOpen": true },
-        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56, 61, 59, 62, 66], "isOpen": true },
+        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56, 61, 59, 62, 66, 67, 68], "isOpen": true },
         { "name": "Roadside", "values": [37, 38, 39, 40, 58], "isOpen": true },
         { "name": "Sushi-Restaurant", "values": [41], "isOpen": true },
         { "name": "Mountain", "values": [42], "isOpen": true },
@@ -572,6 +572,22 @@
         },
         {
             "name": "Pikmin 4 Spaceship",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Mahjong Tile A",
+            "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Mahjong Tile B",
             "catInd": 21,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
