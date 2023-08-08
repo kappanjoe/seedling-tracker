@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/seedling-tracker/static/css/main.24bc725d.css",
-    "main.js": "/seedling-tracker/static/js/main.b0c61217.js",
+    "main.js": "/seedling-tracker/static/js/main.25044eae.js",
     "index.html": "/seedling-tracker/index.html",
     "main.24bc725d.css.map": "/seedling-tracker/static/css/main.24bc725d.css.map",
-    "main.b0c61217.js.map": "/seedling-tracker/static/js/main.b0c61217.js.map"
+    "main.25044eae.js.map": "/seedling-tracker/static/js/main.25044eae.js.map"
   },
   "entrypoints": [
     "static/css/main.24bc725d.css",
-    "static/js/main.b0c61217.js"
+    "static/js/main.25044eae.js"
   ]
 }
