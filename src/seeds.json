@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.3",
-        "appVersion": "v2.0.4"
+        "seedsVersion": "v2.0.4",
+        "appVersion": "v2.0.5"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -38,7 +38,8 @@
         { "name": "Bus-Stop", "values": [48], "isOpen": true },
         { "name": "Italian-Restaurant", "values": [57], "isOpen": true },
         { "name": "Ramen-Shop", "values": [60], "isOpen": true },
-        { "name": "Bridge", "values": [63], "isOpen": true }
+        { "name": "Bridge", "values": [63], "isOpen": true },
+        { "name": "Hotel", "values": [69], "isOpen": true }
     ],
     "decorations": [
         {
@@ -589,6 +590,14 @@
         {
             "name": "Mahjong Tile B",
             "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Hotel Amenities",
+            "catInd": 32,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"

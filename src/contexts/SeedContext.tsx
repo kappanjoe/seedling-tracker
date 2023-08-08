@@ -42,7 +42,9 @@ export const SeedContextProvider = ({ children }: Props) => {
 				return targetCat.name === sourceCat.name;
 			});
 			if (i >= 0) {
-				workingCats[i].values = sourceCat.values
+				workingCats[i].values = sourceCat.values;
+			} else {
+				workingCats.push(sourceCat);
 			}
 		});
 		return workingCats;

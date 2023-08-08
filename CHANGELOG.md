@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.5 - August 8, 2023
+- Added Hotel Amenities decor
+- Fixed bug where new categories were not added to local storage
+
 ## v2.0.4 - August 3, 2023
 - Added Mahjong Tile decor sets
 
