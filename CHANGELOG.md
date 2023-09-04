@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.6 - September 4, 2023
+- Added Ice Cream decor
+
 ## v2.0.5 - August 8, 2023
 - Added Hotel Amenities decor
 - Fixed bug where new categories were not added to local storage

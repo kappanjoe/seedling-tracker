@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.5
+# Deco Tracker v2.0.6
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,9 +37,8 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-### v2.0.5 - August 8, 2023
-- Added Hotel Amenities decor
-- Fixed bug where new categories were not added to local storage
+### v2.0.6 - September 4, 2023
+- Added Ice Cream decor
 
 ...
 
