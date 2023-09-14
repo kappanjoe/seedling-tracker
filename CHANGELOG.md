@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.7 - September 14, 2023
+- Added Makeup decor
+- Updated category order to match in-game list
+
 ## v2.0.6 - September 4, 2023
 - Added Ice Cream decor
 
