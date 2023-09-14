@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.5",
-        "appVersion": "v2.0.6"
+        "seedsVersion": "v2.0.6",
+        "appVersion": "v2.0.7"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -39,7 +39,8 @@
         { "name": "Italian-Restaurant", "values": [57], "isOpen": true },
         { "name": "Ramen-Shop", "values": [60], "isOpen": true },
         { "name": "Bridge", "values": [63], "isOpen": true },
-        { "name": "Hotel", "values": [69], "isOpen": true }
+        { "name": "Hotel", "values": [69], "isOpen": true },
+        { "name": "Makeup-Store", "values": [71], "isOpen": true }
     ],
     "decorations": [
         {
@@ -606,6 +607,14 @@
         {
             "name": "Ice Cream",
             "catInd": 21,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Makeup",
+            "catInd": 33,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
