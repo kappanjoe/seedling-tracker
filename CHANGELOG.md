@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.8 - September 15, 2023
+- Fixed a bug where the category list would not update to match the in-game list
+
 ## v2.0.7 - September 14, 2023
 - Added Makeup decor
 - Updated category order to match in-game list

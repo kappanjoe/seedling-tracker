@@ -36,13 +36,13 @@ export const SeedContextProvider = ({ children }: Props) => {
 	};
 
 	const updateCats = (inputCats: Category[]) => {
-		let workingCats = inputCats;
+		let workingCats: Category[] = [];
 		categories.forEach( (sourceCat: Category) => {
-			let i = workingCats.findIndex( (targetCat: Category) => {
+			let i = inputCats.findIndex( (targetCat: Category) => {
 				return targetCat.name === sourceCat.name;
 			});
 			if (i >= 0) {
-				workingCats[i].values = sourceCat.values;
+				workingCats.push({ ...inputCats[i], values: sourceCat.values });
 			} else {
 				workingCats.push(sourceCat);
 			}

@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.7
+# Deco Tracker v2.0.8
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,9 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.0.8 - September 15, 2023
+- Fixed a bug where the category list would not update to match the in-game list
 
 ### v2.0.7 - September 14, 2023
 - Added Makeup decor
