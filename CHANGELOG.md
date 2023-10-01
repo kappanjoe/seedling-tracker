@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.9 - October 1, 2023
+- Added Halloween Treat Decor
+
 ## v2.0.8 - September 15, 2023
 - Fixed a bug where the category list would not update to match the in-game list
 
