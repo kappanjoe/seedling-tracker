@@ -15,7 +15,7 @@ export const CategoryView: React.FC<Props> = (props) => {
     const { decorations, categories, saveCats, contextLoaded, preferences } = useSeedContext();
     const category = categories[index];
     const [isOpen, setIsOpen] = useState(category.isOpen);
-    const prettyName = category.name.replace("-", " ");
+    const prettyName = category.name.replaceAll("-", " ");
 
     // Save category visibility state to localStorage
     function onClick(event: MouseEvent) {
