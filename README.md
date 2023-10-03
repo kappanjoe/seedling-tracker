@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.9
+# Deco Tracker v2.0.10
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,7 +37,10 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-## v2.0.9 - October 1, 2023
+### v2.0.10 - October 3, 2023
+- Added Shrines and Temples category with Fortune decor
+
+### v2.0.9 - October 1, 2023
 - Added Halloween Treat Decor
 
 ...

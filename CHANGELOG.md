@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.10 - October 3, 2023
+- Added Shrines and Temples category with Fortune decor
+
 ## v2.0.9 - October 1, 2023
 - Added Halloween Treat Decor
 

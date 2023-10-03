@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.7",
-        "appVersion": "v2.0.9"
+        "seedsVersion": "v2.0.8",
+        "appVersion": "v2.0.10"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -40,6 +40,7 @@
         { "name": "Bridge", "values": [63], "isOpen": true },
         { "name": "Hotel", "values": [69], "isOpen": true },
         { "name": "Makeup-Store", "values": [71], "isOpen": true },
+        { "name": "Shrines-and-Temples", "values": [73, 74, 75, 76, 77], "isOpen": true },
         { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56, 61, 59, 62, 66, 67, 68, 70, 72], "isOpen": true }
     ],
     "decorations": [
@@ -261,7 +262,7 @@
         },
         {
             "name": "Mario Hat",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -269,7 +270,7 @@
         },
         {
             "name": "Lunar New Year Ornament 2022",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -277,7 +278,7 @@
         },
         {
             "name": "Chess Piece (White)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -285,7 +286,7 @@
         },
         {
             "name": "Fingerboard",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -293,7 +294,7 @@
         },
         {
             "name": "Hanafuda A",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -301,7 +302,7 @@
         },
         {
             "name": "Hanafuda B",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -310,7 +311,7 @@
         },
         {
             "name": "Hanafuda C",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -318,7 +319,7 @@
         },
         {
             "name": "Hanafuda D",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -326,7 +327,7 @@
         },
         {
             "name": "Hanafuda E",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -334,7 +335,7 @@
         },
         {
             "name": "Hanafuda F",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -438,7 +439,7 @@
         },
         {
             "name": "Jack-O'-Lantern",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -446,7 +447,7 @@
         },
         {
             "name": "1st Anniversary Snack",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -454,7 +455,7 @@
         },
         {
             "name": "Koppaite Space Suit",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -470,7 +471,7 @@
         },
         {
             "name": "Mitten",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -478,7 +479,7 @@
         },
         {
             "name": "2023 Glasses",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -486,7 +487,7 @@
         },
         {
             "name": "Lunar New Year Ornament 2023",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -494,7 +495,7 @@
         },
         {
             "name": "Present Sticker",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -518,7 +519,7 @@
         },
         {
             "name": "Easter Egg",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -534,7 +535,7 @@
         },
         {
             "name": "Present Sticker (Gold)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -542,7 +543,7 @@
         },
         {
             "name": "Sneaker Keychain",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -566,7 +567,7 @@
         },
         {
             "name": "Chess Piece (Black)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -574,7 +575,7 @@
         },
         {
             "name": "Pikmin 4 Spaceship",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -582,7 +583,7 @@
         },
         {
             "name": "Mahjong Tile A",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -590,7 +591,7 @@
         },
         {
             "name": "Mahjong Tile B",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -606,7 +607,7 @@
         },
         {
             "name": "Ice Cream",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -622,10 +623,50 @@
         },
         {
             "name": "Halloween Treat",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Fortune A (大吉)",
+            "catInd": 33,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            }
+        },
+        {
+            "name": "Fortune B (中吉)",
+            "catInd": 33,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            }
+        },
+        {
+            "name": "Fortune C (小吉)",
+            "catInd": 33,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            }
+        },
+        {
+            "name": "Fortune D (吉)",
+            "catInd": 33,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            }
+        },
+        {
+            "name": "Fortune E (末吉)",
+            "catInd": 33,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             }
         }
     ]
