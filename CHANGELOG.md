@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.11 - October 28, 2023
+- Updated order of decor in Special category to better reflect game order
+
 ## v2.0.10 - October 3, 2023
 - Added Shrines and Temples category with Fortune decor
 

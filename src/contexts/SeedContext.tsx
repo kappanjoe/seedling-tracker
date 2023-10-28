@@ -22,7 +22,7 @@ export const SeedContextProvider = ({ children }: Props) => {
 	const [categories, setCategories] = useState(structure.categories);
 	const [colors, setColors] = useState(structure.colors as Colors);
 	const [decorations, setDecorations] = useState(structure.decorations as Decoration[]);
-	// TODO: Change decorations from Array to Object
+	// TODO: Migrate Decorations to Object-based structure
 	const [preferences, setPreferences] = useState(new Preferences());
 	const [contextLoaded, setContextLoaded] = useState(false);
 
@@ -36,6 +36,8 @@ export const SeedContextProvider = ({ children }: Props) => {
 	};
 
 	const updateCats = (inputCats: Category[]) => {
+		// TODO: Check English Category names
+		// TODO: Migrate Categories to Object-based structure
 		let workingCats: Category[] = [];
 		categories.forEach( (sourceCat: Category) => {
 			let i = inputCats.findIndex( (targetCat: Category) => {

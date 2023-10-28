@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.8",
-        "appVersion": "v2.0.10"
+        "seedsVersion": "v2.0.9",
+        "appVersion": "v2.0.11"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -41,7 +41,7 @@
         { "name": "Hotel", "values": [69], "isOpen": true },
         { "name": "Makeup-Store", "values": [71], "isOpen": true },
         { "name": "Shrines-and-Temples", "values": [73, 74, 75, 76, 77], "isOpen": true },
-        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 49, 50, 51, 53, 54, 56, 61, 59, 62, 66, 67, 68, 70, 72], "isOpen": true }
+        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 49, 72, 50, 51, 53, 54, 56, 61, 59, 62, 66, 67, 68, 70], "isOpen": true }
     ],
     "decorations": [
         {

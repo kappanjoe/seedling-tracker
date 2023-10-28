@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.10
+# Deco Tracker v2.0.11
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,9 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.0.11 - October 28, 2023
+- Updated order of Special decor to reflect game order
 
 ### v2.0.10 - October 3, 2023
 - Added Shrines and Temples category with Fortune decor
