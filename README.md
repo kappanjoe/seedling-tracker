@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.11
+# Deco Tracker v2.0.12
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,14 +37,8 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-### v2.0.11 - October 28, 2023
-- Updated order of Special decor to reflect game order
-
-### v2.0.10 - October 3, 2023
-- Added Shrines and Temples category with Fortune decor
-
-### v2.0.9 - October 1, 2023
-- Added Halloween Treat Decor
+### v2.0.12 - November 5, 2023
+- Added Puzzle: 2021 Fall / 2022 Summer Memories decors
 
 ...
 

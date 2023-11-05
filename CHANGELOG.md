@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.12 - November 5, 2023
+- Added Puzzle: 2021 Fall / 2022 Summer Memories decors
+
 ## v2.0.11 - October 28, 2023
 - Updated order of decor in Special category to better reflect game order
 
