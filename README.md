@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.12
+# Deco Tracker v2.0.13
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,10 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.0.13 - November 23, 2023
+- Added Battery decor
+- Renamed "Shrine / Temple" category for consistency
 
 ### v2.0.12 - November 5, 2023
 - Added Puzzle: 2021 Fall / 2022 Summer Memories decors

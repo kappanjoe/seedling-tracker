@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.13 - November 23, 2023
+- Added Battery decor
+- Renamed "Shrine / Temple" category for consistency
+
 ## v2.0.12 - November 5, 2023
 - Added Puzzle: 2021 Fall / 2022 Summer Memories decors
 
