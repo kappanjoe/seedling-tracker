@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.14 - December 2, 2023
+- Added new colors to Mitten decor
+
 ## v2.0.13 - November 23, 2023
 - Added Battery decor
 - Renamed "Shrine / Temple" category for consistency

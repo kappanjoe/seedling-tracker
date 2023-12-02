@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.13
+# Deco Tracker v2.0.14
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,9 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.0.14 - December 2, 2023
+- Added new colors to Mitten decor
 
 ### v2.0.13 - November 23, 2023
 - Added Battery decor
