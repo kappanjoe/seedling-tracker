@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.15 - December 6, 2023
+- Added new Fairy Lights decors
+
 ## v2.0.14 - December 2, 2023
 - Added new colors to Mitten decor
 
