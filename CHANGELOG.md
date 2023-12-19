@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.16 - December 19, 2023
+- Added new Snow decor in Snowy Day category
+- Renamed Weather category to Rainy Day
+
 ## v2.0.15 - December 6, 2023
 - Added new Fairy Lights decors
 

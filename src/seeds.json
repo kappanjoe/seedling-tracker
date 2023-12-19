@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.13",
-        "appVersion": "v2.0.15"
+        "seedsVersion": "v2.0.15",
+        "appVersion": "v2.0.16"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -32,7 +32,8 @@
         { "name": "Sushi-Restaurant", "values": [41], "isOpen": true },
         { "name": "Mountain", "values": [42], "isOpen": true },
         { "name": "Stadium", "values": [52], "isOpen": true },
-        { "name": "Weather", "values": [43, 44, 45], "isOpen": true },
+        { "name": "Rainy-Day", "values": [43, 44, 45], "isOpen": true },
+        { "name": "Snowy-Day", "values": [88], "isOpen": true },
         { "name": "Theme-Park", "values": [46, 47], "isOpen": true },
         { "name": "Bus-Stop", "values": [48], "isOpen": true },
         { "name": "Italian-Restaurant", "values": [57], "isOpen": true },
@@ -263,7 +264,7 @@
         },
         {
             "name": "Mario Hat",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -271,7 +272,7 @@
         },
         {
             "name": "Lunar New Year Ornament 2022",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -279,7 +280,7 @@
         },
         {
             "name": "Chess Piece (White)",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -287,7 +288,7 @@
         },
         {
             "name": "Fingerboard",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -295,7 +296,7 @@
         },
         {
             "name": "Hanafuda A",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -303,7 +304,7 @@
         },
         {
             "name": "Hanafuda B",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -312,7 +313,7 @@
         },
         {
             "name": "Hanafuda C",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -320,7 +321,7 @@
         },
         {
             "name": "Hanafuda D",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -328,7 +329,7 @@
         },
         {
             "name": "Hanafuda E",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -336,7 +337,7 @@
         },
         {
             "name": "Hanafuda F",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -416,7 +417,7 @@
         },
         {
             "name": "Theme Park Ticket A",
-            "catInd": 26,
+            "catInd": 27,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -424,7 +425,7 @@
         },
         {
             "name": "Theme Park Ticket B",
-            "catInd": 26,
+            "catInd": 27,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -432,7 +433,7 @@
         },
         {
             "name": "Paper Bus",
-            "catInd": 27,
+            "catInd": 28,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -440,7 +441,7 @@
         },
         {
             "name": "Jack-O'-Lantern",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -448,7 +449,7 @@
         },
         {
             "name": "1st Anniversary Snack",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -456,7 +457,7 @@
         },
         {
             "name": "Koppaite Space Suit",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -472,7 +473,7 @@
         },
         {
             "name": "Mitten",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -480,7 +481,7 @@
         },
         {
             "name": "2023 Glasses",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -488,7 +489,7 @@
         },
         {
             "name": "Lunar New Year Ornament 2023",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -496,7 +497,7 @@
         },
         {
             "name": "Present Sticker",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -504,7 +505,7 @@
         },
         {
             "name": "Pizza",
-            "catInd": 28,
+            "catInd": 29,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -520,7 +521,7 @@
         },
         {
             "name": "Easter Egg",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -528,7 +529,7 @@
         },
         {
             "name": "Ramen Keychain",
-            "catInd": 29,
+            "catInd": 30,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -536,7 +537,7 @@
         },
         {
             "name": "Present Sticker (Gold)",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -544,7 +545,7 @@
         },
         {
             "name": "Sneaker Keychain",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -552,7 +553,7 @@
         },
         {
             "name": "Bridge Badge",
-            "catInd": 30,
+            "catInd": 31,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -568,7 +569,7 @@
         },
         {
             "name": "Chess Piece (Black)",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -576,7 +577,7 @@
         },
         {
             "name": "Pikmin 4 Spaceship",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -584,7 +585,7 @@
         },
         {
             "name": "Mahjong Tile A",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -592,7 +593,7 @@
         },
         {
             "name": "Mahjong Tile B",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -600,22 +601,6 @@
         },
         {
             "name": "Hotel Amenities",
-            "catInd": 31,
-            "colors": {
-                "red": "off", "yellow": "off", "blue": "off",
-                "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            }
-        },
-        {
-            "name": "Ice Cream",
-            "catInd": 35,
-            "colors": {
-                "red": "off", "yellow": "off", "blue": "off",
-                "white": "off", "purple": "off", "grey": "off", "pink": "off"
-            }
-        },
-        {
-            "name": "Makeup",
             "catInd": 32,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -623,8 +608,24 @@
             }
         },
         {
+            "name": "Ice Cream",
+            "catInd": 36,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Makeup",
+            "catInd": 33,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
             "name": "Halloween Treat",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -632,7 +633,7 @@
         },
         {
             "name": "Fortune A (大吉)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -640,7 +641,7 @@
         },
         {
             "name": "Fortune B (中吉)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -648,7 +649,7 @@
         },
         {
             "name": "Fortune C (小吉)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -656,7 +657,7 @@
         },
         {
             "name": "Fortune D (吉)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -664,7 +665,7 @@
         },
         {
             "name": "Fortune E (末吉)",
-            "catInd": 33,
+            "catInd": 34,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -672,7 +673,7 @@
         },
         {
             "name": "Puzzle: 2021 Fall Memories",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -680,7 +681,7 @@
         },
         {
             "name": "Puzzle: 2022 Summer Memories",
-            "catInd": 35,
+            "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -688,7 +689,7 @@
         },
         {
             "name": "Battery A",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -696,7 +697,7 @@
         },
         {
             "name": "Battery B",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -704,7 +705,7 @@
         },
         {
             "name": "Battery C",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -712,7 +713,7 @@
         },
         {
             "name": "Battery D",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -720,7 +721,7 @@
         },
         {
             "name": "Battery E",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -728,7 +729,7 @@
         },
         {
             "name": "Battery F",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -736,7 +737,7 @@
         },
         {
             "name": "Fairy Lights A",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -744,10 +745,18 @@
         },
         {
             "name": "Fairy Lights B",
-            "catInd": 34,
+            "catInd": 35,
             "colors": {
                 "red": "nil", "yellow": "off", "blue": "nil",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            }
+        },
+        {
+            "name": "Snow",
+            "catInd": 26,
+            "colors": {
+                "red": "nil", "yellow": "nil", "blue": "off",
+                "white": "off", "purple": "nil", "grey": "nil", "pink": "nil"
             }
         }
     ]
