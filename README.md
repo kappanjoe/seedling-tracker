@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.16
+# Deco Tracker v2.0.17
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,11 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.0.17 - January 1, 2024
+- Happy New Year!
+- Added new 2024 Glasses decor
+- Added new colors to each Fortune decor
 
 ### v2.0.16 - December 19, 2023
 - Added new Snow decor in Snowy Day category

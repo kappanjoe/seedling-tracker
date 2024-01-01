@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.17 - January 1, 2024
+- Happy New Year!
+- Added new 2024 Glasses decor
+- Added new colors to each Fortune decor
+
 ## v2.0.16 - December 19, 2023
 - Added new Snow decor in Snowy Day category
 - Renamed Weather category to Rainy Day
