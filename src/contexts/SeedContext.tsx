@@ -76,6 +76,20 @@ export const SeedContextProvider = ({ children }: Props) => {
 			workingDecos[j].name = "Lunar New Year Ornament 2022";
 		}
 
+		// Replace Lunar New Year Ornament year-based titles with color-based titles
+		let l = decorations.findIndex( (x: Decoration) => {
+			return x.name === "Lunar New Year Ornament 2022";
+		});
+		if (l >= 0) {
+			workingDecos[l].name = "Lunar New Year Ornament (Red)";
+		}
+		let m = decorations.findIndex( (x: Decoration) => {
+			return x.name === "Lunar New Year Ornament 2023";
+		});
+		if (m >= 0) {
+			workingDecos[m].name = "Lunar New Year Ornament (Gold)";
+		}
+
 		// Separate Chess Piece decor by Black/White
 		let k = decorations.findIndex( (x: Decoration) => {
 			return x.name === "Chess Piece";

@@ -1,4 +1,4 @@
-# Deco Tracker v2.0.17
+# Deco Tracker v2.1.0
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,27 +37,11 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-### v2.0.17 - January 1, 2024
-- Happy New Year!
-- Added new 2024 Glasses decor
-- Added new colors to each Fortune decor
-
-### v2.0.16 - December 19, 2023
-- Added new Snow decor in Snowy Day category
-- Renamed Weather category to Rainy Day
-
-### v2.0.15 - December 6, 2023
-- Added new Fairy Lights decors
-
-### v2.0.14 - December 2, 2023
-- Added new colors to Mitten decor
-
-### v2.0.13 - November 23, 2023
-- Added Battery decor
-- Renamed "Shrine / Temple" category for consistency
-
-### v2.0.12 - November 5, 2023
-- Added Puzzle: 2021 Fall / 2022 Summer Memories decors
+### v2.1.0 - January 30, 2024
+- Renamed Lunar New Year Ornament 2022 → Lunar New Year Ornament (Red)
+- Renamed Lunar New Year Ornament 2023 → Lunar New Year Ornament (Gold)
+- Added new seedling colors to Lunar New Year Ornament decorations
+- Updated dependencies to remove security vulnerabilities
 
 ...
 

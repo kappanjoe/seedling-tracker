@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.0.17",
-        "appVersion": "v2.0.17"
+        "seedsVersion": "v2.1.0",
+        "appVersion": "v2.1.0"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -271,11 +271,11 @@
             }
         },
         {
-            "name": "Lunar New Year Ornament 2022",
+            "name": "Lunar New Year Ornament (Red)",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
-                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             }
         },
         {
@@ -488,11 +488,11 @@
             }
         },
         {
-            "name": "Lunar New Year Ornament 2023",
+            "name": "Lunar New Year Ornament (Gold)",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
-                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             }
         },
         {

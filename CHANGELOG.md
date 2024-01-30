@@ -1,5 +1,11 @@
 # Changelog
 
+### v2.1.0 - January 30, 2024
+- Renamed Lunar New Year Ornament 2022 → Lunar New Year Ornament (Red)
+- Renamed Lunar New Year Ornament 2023 → Lunar New Year Ornament (Gold)
+- Added new seedling colors to Lunar New Year Ornament decorations
+- Updated dependencies to remove security vulnerabilities
+
 ## v2.0.17 - January 1, 2024
 - Happy New Year!
 - Added new 2024 Glasses decor
