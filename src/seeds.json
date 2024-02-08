@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.1.0",
-        "appVersion": "v2.1.0"
+        "seedsVersion": "v2.1.1",
+        "appVersion": "v2.1.1"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -308,7 +308,6 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
-
             }
         },
         {
@@ -496,7 +495,7 @@
             }
         },
         {
-            "name": "Present Sticker",
+            "name": "Valentine Sticker",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -532,7 +531,7 @@
             "catInd": 30,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
-                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             }
         },
         {

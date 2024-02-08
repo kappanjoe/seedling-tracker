@@ -90,6 +90,14 @@ export const SeedContextProvider = ({ children }: Props) => {
 			workingDecos[m].name = "Lunar New Year Ornament (Gold)";
 		}
 
+		// Rename Present Sticker decor to Valentine Sticker
+		let n = decorations.findIndex( (x: Decoration) => {
+			return x.name === "Present Sticker";
+		});
+		if (n >= 0) {
+			workingDecos[j].name = "Valentine Sticker";
+		}
+
 		// Separate Chess Piece decor by Black/White
 		let k = decorations.findIndex( (x: Decoration) => {
 			return x.name === "Chess Piece";
