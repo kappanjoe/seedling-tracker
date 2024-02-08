@@ -60,61 +60,41 @@ export const SeedContextProvider = ({ children }: Props) => {
 	const updateDecos = (inputDecos: Decoration[]) => {
 		let workingDecos = inputDecos;
 
-		// Fix Jack-O'-Lantern decoration name spacing typo
-		let i = decorations.findIndex( (x: Decoration) => {
-			return x.name === "Jack-O' -Lantern";
+		// Update decor names
+		inputDecos.forEach( (x: Decoration, i: number) => {
+			switch (x.name) {
+			case "Jack-O' -Lantern":
+				workingDecos[i].name = "Jack-O'-Lantern";
+				break;
+			case "Lunar New Year Ornament":
+				workingDecos[i].name = "Lunar New Year Ornament (Red)";
+				break;
+			case "Lunar New Year Ornament 2022":
+				workingDecos[i].name = "Lunar New Year Ornament (Red)";
+				break;
+			case "Lunar New Year Ornament 2023":
+				workingDecos[i].name = "Lunar New Year Ornament (Gold)";
+				break;
+			case "Present Sticker":
+				workingDecos[i].name = "Valentine Sticker";
+				break;
+			case "Chess Piece":
+				workingDecos[i].name = "Chess Piece (White)";
+				workingDecos.push({
+					"name": "Chess Piece (Black)",
+					"catInd": 21,
+					"colors": {
+						"red": ColorState.Off, "yellow": workingDecos[i].colors.yellow, "blue": ColorState.Off,
+						"white": ColorState.Off, "purple": workingDecos[i].colors.purple, "grey": ColorState.Off, "pink": ColorState.Off
+					}
+				});
+				workingDecos[i].colors.yellow = ColorState.Off;
+				workingDecos[i].colors.purple = ColorState.Off;
+				break;
+			default:
+				break;
+			}
 		});
-		if (i >= 0) {
-			workingDecos[i].name = "Jack-O'-Lantern";
-		}
-
-		// Append 2022 to existing Lunar New Year Ornament decoration
-		let j = decorations.findIndex( (x: Decoration) => {
-			return x.name === "Lunar New Year Ornament";
-		});
-		if (j >= 0) {
-			workingDecos[j].name = "Lunar New Year Ornament 2022";
-		}
-
-		// Replace Lunar New Year Ornament year-based titles with color-based titles
-		let l = decorations.findIndex( (x: Decoration) => {
-			return x.name === "Lunar New Year Ornament 2022";
-		});
-		if (l >= 0) {
-			workingDecos[l].name = "Lunar New Year Ornament (Red)";
-		}
-		let m = decorations.findIndex( (x: Decoration) => {
-			return x.name === "Lunar New Year Ornament 2023";
-		});
-		if (m >= 0) {
-			workingDecos[m].name = "Lunar New Year Ornament (Gold)";
-		}
-
-		// Rename Present Sticker decor to Valentine Sticker
-		let n = decorations.findIndex( (x: Decoration) => {
-			return x.name === "Present Sticker";
-		});
-		if (n >= 0) {
-			workingDecos[j].name = "Valentine Sticker";
-		}
-
-		// Separate Chess Piece decor by Black/White
-		let k = decorations.findIndex( (x: Decoration) => {
-			return x.name === "Chess Piece";
-		});
-		if (k >= 0) {
-			workingDecos[k].name = "Chess Piece (White)";
-			workingDecos.push({
-				"name": "Chess Piece (Black)",
-				"catInd": 21,
-				"colors": {
-					"red": ColorState.Off, "yellow": workingDecos[k].colors.yellow, "blue": ColorState.Off,
-					"white": ColorState.Off, "purple": workingDecos[k].colors.purple, "grey": ColorState.Off, "pink": ColorState.Off
-				}
-			});
-			workingDecos[k].colors.yellow = ColorState.Off;
-			workingDecos[k].colors.purple = ColorState.Off;
-		}
 
 		// Fill in new colors in existing decorations with non-nil values
 		decorations.forEach( (sourceDeco: Decoration) => {
