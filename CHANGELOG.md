@@ -6,7 +6,6 @@
 - **Note:** A separate entry for 2024's Valentine Sticker decor will not be added, as the game considers it to be the same as the decor from 2023
 - Improved speed of decor renaming algorithm
 - Fixed a bug that prevented names from correctly updating
-- Updated addt'l dependencies to remove security vulnerabilities
 
 ## v2.1.0 - January 30, 2024
 - Renamed Lunar New Year Ornament 2022 → Lunar New Year Ornament (Red)
