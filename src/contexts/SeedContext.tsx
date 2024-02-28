@@ -94,7 +94,13 @@ export const SeedContextProvider = ({ children }: Props) => {
 			default:
 				if (/^Hanafuda [A-F]$/.test(x.name)) {
 					workingDecos[i].name = "2023 Flower Card " + x.name.charAt(x.name.search(/[A-F]$/));
-				};
+				}
+				if (i === 90 && workingDecos[i].name.includes("Lunar")) {
+					workingDecos[i].name = "2024 Flower Card A";
+				}
+				if (i === 91 && workingDecos[i].name.includes("Lunar")) {
+					workingDecos[i].name = "2024 Flower Card B";
+				}
 				break;
 			}
 		});
@@ -119,6 +125,7 @@ export const SeedContextProvider = ({ children }: Props) => {
 				});
 			} else {
 				// Add any sourceDeco that is not already found in workingDecos
+				// FIX: prevent pushing duplicate decors - update structure using values from local? (inverse of current algorithm, which updates local using values from structure)
 				workingDecos.push(sourceDeco);
 			}
 		})

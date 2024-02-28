@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.1.3 - February 28, 2024
+- Hotfix: Remove duplicate Lunar New Year decor
+
 ## v2.1.2 - February 28, 2024
 - Added Flower Card 2024 decor
 - Renamed 2023 Hanafuda decor to Flower Card 2023 to align with game
