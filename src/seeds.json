@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.1.1",
-        "appVersion": "v2.1.1"
+        "seedsVersion": "v2.1.2",
+        "appVersion": "v2.1.2"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -43,7 +43,7 @@
         { "name": "Makeup-Store", "values": [71], "isOpen": true },
         { "name": "Shrine-/-Temple", "values": [73, 74, 75, 76, 77], "isOpen": true },
         { "name": "Appliance-Store", "values": [80, 81, 82, 83, 84, 85, 86, 87], "isOpen": true },
-        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 49, 72, 50, 51, 53, 54, 89, 56, 61, 59, 62, 66, 67, 68, 70, 78, 79], "isOpen": true }
+        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 90, 91, 49, 72, 50, 51, 53, 54, 89, 56, 61, 59, 62, 66, 67, 68, 70, 78, 79], "isOpen": true }
     ],
     "decorations": [
         {
@@ -295,7 +295,7 @@
             }
         },
         {
-            "name": "Hanafuda A",
+            "name": "Flower Card 2023 A",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -303,7 +303,7 @@
             }
         },
         {
-            "name": "Hanafuda B",
+            "name": "Flower Card 2023 B",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -311,7 +311,7 @@
             }
         },
         {
-            "name": "Hanafuda C",
+            "name": "Flower Card 2023 C",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -319,7 +319,7 @@
             }
         },
         {
-            "name": "Hanafuda D",
+            "name": "Flower Card 2023 D",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -327,7 +327,7 @@
             }
         },
         {
-            "name": "Hanafuda E",
+            "name": "Flower Card 2023 E",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -335,7 +335,7 @@
             }
         },
         {
-            "name": "Hanafuda F",
+            "name": "Flower Card 2023 F",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
@@ -760,6 +760,22 @@
         },
         {
             "name": "2024 Glasses",
+            "catInd": 36,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Flower Card 2024 A",
+            "catInd": 36,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Flower Card 2024 B",
             "catInd": 36,
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",

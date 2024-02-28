@@ -92,6 +92,9 @@ export const SeedContextProvider = ({ children }: Props) => {
 				workingDecos[i].colors.purple = ColorState.Off;
 				break;
 			default:
+				if (/^Hanafuda [A-F]$/.test(x.name)) {
+					workingDecos[i].name = "2023 Flower Card " + x.name.charAt(x.name.search(/[A-F]$/));
+				};
 				break;
 			}
 		});

@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.2 - February 28, 2024
+- Added Flower Card 2024 decor
+- Renamed 2023 Hanafuda decor to Flower Card 2023 to align with game
+
 ## v2.1.1 - February 8, 2024
 - Added new Ramen decor colors
 - Renamed Present Sticker to Valentine Sticker

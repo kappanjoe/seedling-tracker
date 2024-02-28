@@ -1,4 +1,4 @@
-# Deco Tracker v2.1.1
+# Deco Tracker v2.1.2
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,10 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.1.2 - February 28, 2024
+- Added Flower Card 2024 decor
+- Renamed 2023 Hanafuda decor to Flower Card 2023 to align with game
 
 ### v2.1.1 - February 8, 2024
 - Added new Ramen decor colors
