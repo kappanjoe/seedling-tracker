@@ -1,4 +1,4 @@
-# Deco Tracker v2.1.3
+# Deco Tracker v2.1.4
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -16,7 +16,7 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 *Deco Tracker was made by @kappanjoe as a fan project, and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Pikmin Bloom, Nintendo, or Niantic or any of their respective subsidiaries or affliates.*
 
 ## Features
-- NEW: Track which decorations you've collected in the game (separate from what you've hatched)
+- Track which decorations you've collected in the game (separate from what you've hatched)
 - Track which decorations you've hatched in the game
 - Count the total number of decorations you've collected
 - Choose between Light Mode or Dark Mode, or use your device's system default
@@ -36,6 +36,9 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.1.4 - March 21, 2024
+- Added Reverse Valentine's Day Sticker
 
 ### v2.1.3 - February 28, 2024
 - Hotfix: Remove duplicate Lunar New Year decor

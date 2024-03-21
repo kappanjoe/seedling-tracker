@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.1.4 - March 21, 2024
+- Added Reverse Valentine's Day Sticker
+
 ## v2.1.3 - February 28, 2024
 - Hotfix: Remove duplicate Lunar New Year decor
 

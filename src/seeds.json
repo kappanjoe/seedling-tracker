@@ -1,7 +1,7 @@
 {
     "info": {
-        "seedsVersion": "v2.1.2",
-        "appVersion": "v2.1.3"
+        "seedsVersion": "v2.1.3",
+        "appVersion": "v2.1.4"
     },
     "colors": [
         "red", "yellow", "blue", "white", "purple", "grey", "pink"
@@ -43,7 +43,7 @@
         { "name": "Makeup-Store", "values": [71], "isOpen": true },
         { "name": "Shrine-/-Temple", "values": [73, 74, 75, 76, 77], "isOpen": true },
         { "name": "Appliance-Store", "values": [80, 81, 82, 83, 84, 85, 86, 87], "isOpen": true },
-        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 90, 91, 49, 72, 50, 51, 53, 54, 89, 56, 61, 59, 62, 66, 67, 68, 70, 78, 79], "isOpen": true }
+        { "name": "Special", "values": [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 90, 91, 49, 72, 50, 51, 53, 54, 89, 56, 92, 61, 59, 62, 66, 67, 68, 70, 78, 79], "isOpen": true }
     ],
     "decorations": [
         {
@@ -780,6 +780,14 @@
             "colors": {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
+            }
+        },
+        {
+            "name": "Reverse Valentine's Day Sticker",
+            "catInd": 36,
+            "colors": {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
             }
         }
     ]
