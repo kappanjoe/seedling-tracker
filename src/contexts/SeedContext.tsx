@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { ColorState, Preferences } from '../types/classes.d';
-import structure from '../seeds.json';
+import structure from '../seeds';
 
 export const SeedContext = createContext<ISeedContext>({
 	categories: structure.categories,
@@ -100,6 +100,9 @@ export const SeedContextProvider = ({ children }: Props) => {
 				}
 				if (i === 91 && workingDecos[i].name.includes("Lunar")) {
 					workingDecos[i].name = "2024 Flower Card B";
+				}
+				if (i === 92 && workingDecos[i].name.includes("Flower")) {
+					workingDecos[i].name = "Reverse Valentine's Day Sticker";
 				}
 				break;
 			}

@@ -5,7 +5,7 @@ import { CountSpan } from './components/CountSpan';
 import { Toolbar } from './components/Toolbar';
 import { GuideGrid } from './components/GuideGrid';
 import { ColorState } from './types/classes.d';
-import structure from './seeds.json';
+import structure from './seeds';
 import './App.css';
 
 

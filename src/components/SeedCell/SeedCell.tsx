@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSeedContext } from '../../contexts';
 import { Checkbox } from '../Checkbox';
 import { CountSpan } from '../CountSpan';
-import structure from '../../seeds.json';
+import structure from '../../seeds';
 import { ColorState } from '../../types/classes.d';
 
 interface Props {
@@ -16,7 +16,7 @@ export const SeedCell: React.FC<Props> = (props) => {
     const [colorMax, setColorMax] = useState(0);
     const [cellLoading, setCellLoading] = useState(true);
     const colors = structure.colors;
-    
+
     useEffect(() => {
         let deco = decorations[index];
         let count = 0;

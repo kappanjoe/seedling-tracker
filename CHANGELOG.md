@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.1.5 - March 29, 2024
+- Various updates and fixes
+
 ## v2.1.4 - March 21, 2024
 - Added Reverse Valentine's Day Sticker
 

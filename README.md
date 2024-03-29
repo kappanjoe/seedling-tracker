@@ -1,4 +1,4 @@
-# Deco Tracker v2.1.4
+# Deco Tracker v2.1.5
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,11 +37,13 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
+### v2.1.5 - March 29, 2024
+- Various updates and fixes
+
 ### v2.1.4 - March 21, 2024
 - Added Reverse Valentine's Day Sticker
 
-### v2.1.3 - February 28, 2024
-- Hotfix: Remove duplicate Lunar New Year decor
+...
 
 ### v2.1.2 - February 28, 2024
 - Added Flower Card 2024 decor
