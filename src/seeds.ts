@@ -52,7 +52,8 @@ const structure = {
         { name: "Makeup-Store", values: [71], isOpen: true },
         { name: "Shrine-/-Temple", values: [73, 74, 75, 76, 77], isOpen: true },
         { name: "Appliance-Store", values: [80, 81, 82, 83, 84, 85, 86, 87], isOpen: true },
-        { name: "Special", values: [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 36, 90, 91, 49, 72, 50, 51, 53, 54, 89, 56, 92, 61, 59, 62, 66, 67, 68, 70, 78, 79], isOpen: true }
+        { name: "Curry-Restaurant", values: [93], isOpen: true },
+        { name: "Special", values: [27, 28, 55, 29, 65, 30, 31, 32, 33, 34, 35, 37, 90, 91, 49, 72, 50, 51, 53, 54, 89, 56, 92, 61, 59, 62, 66, 67, 68, 70, 78, 79], isOpen: true }
     ],
     "decorations": [
         {
@@ -273,7 +274,7 @@ const structure = {
         },
         {
             name: "Mario Hat",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "nil", "yellow": "nil", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -281,7 +282,7 @@ const structure = {
         },
         {
             name: "Lunar New Year Ornament (Red)",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -289,7 +290,7 @@ const structure = {
         },
         {
             name: "Chess Piece (White)",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -297,7 +298,7 @@ const structure = {
         },
         {
             name: "Fingerboard",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -305,7 +306,7 @@ const structure = {
         },
         {
             name: "Flower Card 2023 A",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -313,7 +314,7 @@ const structure = {
         },
         {
             name: "Flower Card 2023 B",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -321,7 +322,7 @@ const structure = {
         },
         {
             name: "Flower Card 2023 C",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -329,7 +330,7 @@ const structure = {
         },
         {
             name: "Flower Card 2023 D",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -337,7 +338,7 @@ const structure = {
         },
         {
             name: "Flower Card 2023 E",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -345,7 +346,7 @@ const structure = {
         },
         {
             name: "Flower Card 2023 F",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "off", "grey": "nil", "pink": "nil"
@@ -449,7 +450,7 @@ const structure = {
         },
         {
             name: "Jack-O'-Lantern",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -457,7 +458,7 @@ const structure = {
         },
         {
             name: "1st Anniversary Snack",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -465,7 +466,7 @@ const structure = {
         },
         {
             name: "Koppaite Space Suit",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -481,7 +482,7 @@ const structure = {
         },
         {
             name: "Mitten",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -489,7 +490,7 @@ const structure = {
         },
         {
             name: "2023 Glasses",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -497,7 +498,7 @@ const structure = {
         },
         {
             name: "Lunar New Year Ornament (Gold)",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -505,7 +506,7 @@ const structure = {
         },
         {
             name: "Valentine Sticker",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -529,7 +530,7 @@ const structure = {
         },
         {
             name: "Easter Egg",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -545,7 +546,7 @@ const structure = {
         },
         {
             name: "Present Sticker (Gold)",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "nil", "grey": "nil", "pink": "nil"
@@ -553,7 +554,7 @@ const structure = {
         },
         {
             name: "Sneaker Keychain",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -577,7 +578,7 @@ const structure = {
         },
         {
             name: "Chess Piece (Black)",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -585,7 +586,7 @@ const structure = {
         },
         {
             name: "Pikmin 4 Spaceship",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -593,7 +594,7 @@ const structure = {
         },
         {
             name: "Mahjong Tile A",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -601,7 +602,7 @@ const structure = {
         },
         {
             name: "Mahjong Tile B",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -617,7 +618,7 @@ const structure = {
         },
         {
             name: "Ice Cream",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -633,7 +634,7 @@ const structure = {
         },
         {
             name: "Halloween Treat",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -681,7 +682,7 @@ const structure = {
         },
         {
             name: "Puzzle: 2021 Fall Memories",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -689,7 +690,7 @@ const structure = {
         },
         {
             name: "Puzzle: 2022 Summer Memories",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -769,7 +770,7 @@ const structure = {
         },
         {
             name: "2024 Glasses",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -777,7 +778,7 @@ const structure = {
         },
         {
             name: "Flower Card 2024 A",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -785,7 +786,7 @@ const structure = {
         },
         {
             name: "Flower Card 2024 B",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "off", "purple": "off", "grey": "off", "pink": "off"
@@ -793,10 +794,18 @@ const structure = {
         },
         {
             name: "Reverse Valentine's Day Sticker",
-            catInd: 36,
+            catInd: 37,
             colors: {
                 "red": "off", "yellow": "off", "blue": "off",
                 "white": "nil", "purple": "nil", "grey": "nil", "pink": "nil"
+            }
+        },
+        {
+            name: "Curry Bowl",
+            catInd: 36,
+            colors: {
+                "red": "off", "yellow": "off", "blue": "off",
+                "white": "off", "purple": "off", "grey": "off", "pink": "off"
             }
         }
     ]

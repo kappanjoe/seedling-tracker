@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.1.6 - March 30, 2024
+- Added Curry Bowl decor
+
 ## v2.1.5 - March 29, 2024
 - Various updates and fixes
 

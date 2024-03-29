@@ -104,6 +104,9 @@ export const SeedContextProvider = ({ children }: Props) => {
 				if (i === 92 && workingDecos[i].name.includes("Flower")) {
 					workingDecos[i].name = "Reverse Valentine's Day Sticker";
 				}
+				if (i === 93 && workingDecos[i].name.includes("Flower")) {
+					workingDecos[i].name = "Curry Bowl";
+				}
 				break;
 			}
 		});

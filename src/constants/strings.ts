@@ -1,7 +1,7 @@
 const strings = {
     appInfo: {
-        seedsVersion: "v2.1.4",
-        appVersion: "v2.1.5",
+        seedsVersion: "v2.1.5",
+        appVersion: "v2.1.6",
     },
     colorNames: {
         red: "red",
@@ -50,6 +50,7 @@ const strings = {
       shrineTemple: "Shrine/Temple",
       applianceStore: "Appliance Store",
       special: "Special",
+      curryRestaurant: "Curry Restaurant",
     },
     decorNames: {
       chefHat: "Chef Hat",
