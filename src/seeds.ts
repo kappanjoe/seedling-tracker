@@ -1,5 +1,5 @@
 import strings from './constants/strings';
-const { appInfo, colorNames } = strings;
+const { appInfo } = strings;
 
 const structure = {
     info: {
@@ -7,13 +7,13 @@ const structure = {
         appVersion: appInfo.appVersion,
     },
     colors: [
-        colorNames.red,
-        colorNames.yellow,
-        colorNames.blue,
-        colorNames.white,
-        colorNames.purple,
-        colorNames.grey,
-        colorNames.pink,
+        "red",
+        "yellow",
+        "blue",
+        "white",
+        "purple",
+        "grey",
+        "pink",
     ],
     categories: [
         { name: "Restaurant", values: [0, 1], isOpen: true },

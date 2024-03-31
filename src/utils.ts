@@ -1,4 +1,4 @@
-export const countColors = (colors: ColorState[], doCountSeeds: boolean): { count: number, max: number } => {
+export const countColors = (colors: string[], doCountSeeds: boolean): { count: number, max: number } => {
   let count = 0;
   let max = 0;
 
