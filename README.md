@@ -1,4 +1,4 @@
-# Deco Tracker v2.1.6
+# Deco Tracker v2.2.0
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,11 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.2.0 - April 3, 2024
+- Refactored seeds data structure
+- This fix removes bugs causing duplicate seeds, etc., but please note that some data loss may occur as a result of this transition.
+- The Import/Export feature has been temporarily disabled until it is updated to be compatible with the new data structure.
 
 ### v2.1.6 - March 30, 2024
 - Added Curry Bowl decor

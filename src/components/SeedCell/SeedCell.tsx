@@ -2,55 +2,39 @@ import React, { useEffect, useState } from 'react';
 import { useSeedContext } from '../../contexts';
 import { Checkbox } from '../Checkbox';
 import { CountSpan } from '../CountSpan';
-import structure from '../../seeds';
-import { ColorState } from '../../types/classes.d';
+import defaultSeeds from '../../constants/seeds';
+import { countColors } from '../../utils';
 
 interface Props {
-    index: number;
+    deco: Decoration;
 };
 
 export const SeedCell: React.FC<Props> = (props) => {
-    const { index } = props;
-    const { decorations, preferences } = useSeedContext();
+    const { deco } = props;
+    const { preferences } = useSeedContext();
     const [colorCount, setColorCount] = useState(0);
     const [colorMax, setColorMax] = useState(0);
     const [cellLoading, setCellLoading] = useState(true);
-    const colors = structure.colors;
+    const colors = defaultSeeds.colors;
 
     useEffect(() => {
-        let deco = decorations[index];
-        let count = 0;
-        let max = 0;
-        Object.keys(deco.colors).forEach( (color) => {
-            let value = deco.colors[color as keyof ColorSet];
-            if (value === ColorState.Off) {
-                max++;
-            } else if (value === ColorState.On) {
-                count++;
-                max++;
-            } else if (value === ColorState.Seed) {
-                if (preferences.doCountSeeds) {
-                    count++;
-                }
-                max++;
-            }
-        });
+        let { count, max } = countColors(Object.keys(deco.colors).map(colorKey => deco.colors[colorKey as Color]), preferences.doCountSeeds);
         setColorCount(count);
         setColorMax(max);
         setCellLoading(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [decorations]);
+    }, [deco]);
 
     return (
-        <div className={ 'SeedCell' } key={ "Cell-" + index }>
+        <div className={ 'SeedCell' } key={ "Cell-" + deco.name }>
             <div className='SeedInfo'>
-                <span className='SeedName'>{ decorations[index].name }:</span>
+                <span className='SeedName'>{ deco.name }:</span>
                 { !cellLoading && <CountSpan count={ colorCount } max={ colorMax } category={ false }/> }
             </div>
             <div className='CheckboxBlock transition-colors'>
-                { colors.map((key: string) => {
-                    // console.log(key + " " + seed.colors[key as keyof colors]);
-                    var checked: string = decorations[index].colors[key as keyof ColorSet]!;
+                { colors.map((key: Color) => {
+                    // console.log(key + " " + deco.colors[key]);
+                    var checked: string = deco.colors[key]!;
                     if (checked === "nil") {
                         return (
                             <div className='blankDiv transition-colors' key={ key }></div>
@@ -58,9 +42,8 @@ export const SeedCell: React.FC<Props> = (props) => {
                     }
 
                     return <Checkbox
-                                index= { index }
-                                keyName= { key }
-                                key= { key }
+                                deco={ deco }
+                                colorKey= { key }
                                 />;
                 })}
             </div>

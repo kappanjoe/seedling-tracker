@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.2.0 - April 3, 2024
+- Refactored seeds data structure (Updated to v3.0.0)
+- This fix removes bugs causing duplicate seeds, etc., but please note that some data loss may occur as a result of this transition.
+- The Import/Export feature has been temporarily disabled until it is updated to be compatible with the new data structure.
+
 ## v2.1.6 - March 30, 2024
 - Added Curry Bowl decor
 

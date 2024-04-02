@@ -4,15 +4,15 @@ import { CategoryView } from './components/CategoryView';
 import { CountSpan } from './components/CountSpan';
 import { Toolbar } from './components/Toolbar';
 import { GuideGrid } from './components/GuideGrid';
-import { ColorState } from './types/classes.d';
-import structure from './seeds';
+import { countColors } from './utils';
+import defaultSeeds from './constants/seeds';
 import './App.css';
 
 
 function App() {
-	const { categories, decorations, preferences, contextLoaded } = useSeedContext();
+	const { categories, categoryOrder, preferences, contextLoaded } = useSeedContext();
 	let [seedCount, setSeedCount] = useState(0);
-	let [seedMax, setSeedMax] = useState(structure.decorations.length);
+	let [seedMax, setSeedMax] = useState(defaultSeeds.decorationCount!);
 
 	var bgColor: string;
   	if (preferences.theme === 'system') {
@@ -28,30 +28,21 @@ function App() {
 	}
 
 	useEffect(() => {
-		let count = 0;
-		let max = 0;
-
-		(decorations).forEach((deco) => {
-			Object.keys(deco.colors).forEach((color) => {
-				let value = deco.colors[color as keyof ColorSet];
-				if (value === ColorState.On) {
-					count++;
-					max++;
-				} else if (value === ColorState.Off) {
-					max++;
-				} else if (value === ColorState.Seed) {
-					if (preferences.doCountSeeds) {
-						count++;
-					}
-					max++;
-				}
+		// TODO: Handle cases where local storage has keys that don't exist on defaultSeeds (here and elsewhere)
+		let colorStates = categoryOrder.flatMap((catKey) => {
+			return categories[catKey].decorationOrder.flatMap((decorKey) => {
+				return Object.keys(categories[catKey].decorations[decorKey].colors).map((colorKey) => {
+					return categories[catKey].decorations[decorKey].colors[colorKey as Color];
+				})
 			})
 		});
 
+		let { count, max } = countColors(colorStates, preferences.doCountSeeds);
+
 		setSeedCount(count);
 		setSeedMax(max);
-
-	}, [preferences.doCountSeeds, decorations]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [preferences.doCountSeeds, categories]);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', preferences.theme === 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : preferences.theme);
@@ -64,16 +55,14 @@ function App() {
 			<Toolbar/>
 			<div className='App-body'>
 				{ contextLoaded && <CountSpan count={ seedCount } max={ seedMax } category={ false }/> }
-				{ contextLoaded && categories.map( (category) => {
-					return <CategoryView
-							key={ category.name }
-							index={ categories.indexOf(category) }/>;
+				{ contextLoaded && categoryOrder.map( catKey => {
+					return <CategoryView catKey={ catKey }/>;
 				})}
 				{
 					// FIXME: Hide GuideGrid & footer while context is still loading
 				}
 				<GuideGrid visibility={ preferences.labelsOn }/>
-				<span className='Version-info'>App: { structure.info.appVersion } - Seeds: { structure.info.seedsVersion }</span>
+				<span className='Version-info'>App: { defaultSeeds.info.appVersion } - Seeds: { defaultSeeds.info.seedsVersion }</span>
 			</div>
 		</div>
 	)

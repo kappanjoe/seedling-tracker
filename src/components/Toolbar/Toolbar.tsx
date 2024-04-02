@@ -42,9 +42,9 @@ export const Toolbar: React.FC<Props> = () => {
 
 	return (
 		<header className='Toolbar transition-colors'>
-			<div className='IOButtonWrapper'>
+			{/* <div className='IOButtonWrapper'>
 				<ImportExport/>
-			</div>
+			</div> */}
 			<div className='Title'>
 			  	<p>
 					<span>Deco Tracker</span>

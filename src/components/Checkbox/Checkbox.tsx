@@ -3,52 +3,65 @@ import { PlusSmallIcon } from '@heroicons/react/24/outline';
 import { ClockIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import { useSeedContext } from '../../contexts';
-import { ColorState } from '../../types/classes.d';
 
 interface Props {
-    index: number;
-    keyName: string;
+    deco: Decoration;
+    colorKey: Color;
 };
 
 export const Checkbox: React.FC<Props> = (props) => {
-    const [status, setStatus] = useState(ColorState.Off);
-    const { index, keyName } = props;
-    const { decorations, saveDecos, preferences } = useSeedContext();
+    const { deco, colorKey } = props;
+    const [status, setStatus] = useState<ColorState>("off");
+    const { categories, saveCats, preferences } = useSeedContext();
 
     // Save checkbox state to respective value in localStorage
     function updateValue(value: ColorState) {
-        let newDecos = [...decorations];
-        newDecos[index].colors[keyName as keyof ColorSet] = value;
+        let newCats = {
+            ...categories,
+            [deco.catKey]: {
+                ...categories[deco.catKey],
+                decorations: {
+                    ...categories[deco.catKey].decorations,
+                    [deco.key]: {
+                        ...categories[deco.catKey].decorations[deco.key],
+                        colors: {
+                            ...categories[deco.catKey].decorations[deco.key].colors,
+                            [colorKey]: value
+                        }
+                    }
+                }
+            }
+        };
+        
         setStatus(value);
-        saveDecos(newDecos);
+        saveCats(newCats);
     }
 
-    // Click handler to allow checkbox parent to update state, effectively increasing tap target
+    // Click handler to allow checkbox parent div to update state, increasing tap target size
     function clickHandler() {
         switch(status) {
             case 'off':
                 if (preferences.seedsOn) {
-                    updateValue(ColorState.Seed)
+                    updateValue("seed")
                 } else {
-                    updateValue(ColorState.On)
+                    updateValue("on")
                 }
                 return;
             case 'seed':
-                updateValue(ColorState.On)
+                updateValue("on")
                 return;
             default:
-                updateValue(ColorState.Off)
+                updateValue("off")
                 return;
         }
     }
 
     useEffect(() => {
-        setStatus(decorations[index].colors[keyName as keyof ColorSet]);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [decorations]);
+        setStatus(deco.colors[colorKey]);
+    }, [deco, colorKey]);
 
     return (
-        <div className={ keyName + status + ' transition-colors' } key= { keyName } onClick={ clickHandler }>
+        <div className={ colorKey + status + ' transition-colors' } key= { colorKey } onClick={ clickHandler }>
             {
                 status === 'off'
                     ? <PlusSmallIcon className='check-icon off'/>

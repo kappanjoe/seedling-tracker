@@ -4,64 +4,51 @@ import { Transition } from '@headlessui/react';
 import { useSeedContext } from '../../contexts';
 import { SeedCell } from '../SeedCell';
 import { CountSpan } from '../CountSpan';
-import { ColorState }  from '../../types/classes.d';
+import { countColors } from '../../utils';
 
 interface Props {
-    index: number;
+    catKey: string;
 };
 
 export const CategoryView: React.FC<Props> = (props) => {
-    const { index } = props;
-    const { decorations, categories, saveCats, contextLoaded, preferences } = useSeedContext();
-    const category = categories[index];
+    const { catKey } = props;
+    const { categories, saveCats, contextLoaded, preferences } = useSeedContext();
+    const [category, setCategory] = useState(categories[catKey]);
     const [isOpen, setIsOpen] = useState(category.isOpen);
-    const prettyName = category.name.replaceAll("-", " ");
+    const [count, setCount] = useState(0);
+    const [max, setMax] = useState(7);
 
     // Save category visibility state to localStorage
-    function onClick(event: MouseEvent) {
-        let newCats = [...categories];
-        newCats[index].isOpen = !isOpen;
+    function onClick(_: MouseEvent) {
+        let newCats = { ...categories };
+        newCats[catKey].isOpen = !isOpen;
         saveCats(newCats);
-    }
-
-    // Create array to populate category with appropriate decoration types
-    let seedCells: JSX.Element[] = [];
-    for (let i of category.values) {
-        seedCells.push(<SeedCell index={ i } key={ i }/>);
     }
 
     // Count category totals
     function countCategory() {
-        var current = 0;
-        var maxCount = 0;
-        for (let i of category.values) {
-            for (let j of Object.keys(decorations[i].colors)) {
-                if (decorations[i].colors[j as keyof ColorSet] === ColorState.On) {
-                    current++;
-                    maxCount++;
-                } else if (decorations[i].colors[j as keyof ColorSet] === ColorState.Off) {
-                    maxCount++;
-                } else if (decorations[i].colors[j as keyof ColorSet] === ColorState.Seed) {
-                    if (preferences.doCountSeeds) {
-                        current++;
-                    }
-                    maxCount++;;
-                }
-            }
-        }
-        return ( contextLoaded && <CountSpan count={ current } max={ maxCount } category={ true }/>);
+        let colorStates = category.decorationOrder.flatMap((decorKey) => {
+           return Object.keys(category.decorations[decorKey].colors).map((colorKey) => {
+               return category.decorations[decorKey].colors[colorKey as Color];
+           });
+        });
+
+        let { count, max } = countColors(colorStates, preferences.doCountSeeds);
+        setCount(count);
+        setMax(max);
     }
 
     useEffect(() => {
-        let updatedCat = categories[index];
-        setIsOpen(updatedCat.isOpen);
+        setCategory(categories[catKey]);
+        setIsOpen(category.isOpen);
+        countCategory();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [categories]);
+    }, [categories, saveCats]);
 
     return (
-        <div className="Category" key={ category.name + "Container" } >
-            <div className="CategoryName transition-colors" key={ category.name } onClick={ onClick }>
-                <span>{ prettyName }</span>
+        <div className="Category" key={ catKey + " Container" } >
+            <div className="CategoryName transition-colors" key={ category.key } onClick={ onClick }>
+                <span>{ category.name }</span>
                 <Transition
                     show={ !isOpen }
                     enter="transition-all origin-bottom"
@@ -70,7 +57,7 @@ export const CategoryView: React.FC<Props> = (props) => {
                     leave="transition-all origin-bottom"
                     leaveFrom="scale-y-100"
                     leaveTo="scale-y-0">
-                        { countCategory() }
+                        { contextLoaded && <CountSpan count={ count } max={ max } category/> }
                 </Transition>
                 <ChevronUpIcon className={ isOpen ? 'transition-transform rotate-0 transform-gpu' : 'transition-transform rotate-180 transform-gpu' }/>
             </div>
@@ -83,7 +70,9 @@ export const CategoryView: React.FC<Props> = (props) => {
                 leaveFrom="scale-y-100"
                 leaveTo="scale-y-0">
                     <div key={ category.name + "Seeds" }>
-                        { seedCells }
+                        { category.decorationOrder.map((decorKey) => {
+                            return <SeedCell deco={ category.decorations[decorKey] }/>
+                        }) }
                     </div>
             </Transition>
         </div>
