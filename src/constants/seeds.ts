@@ -1635,6 +1635,20 @@ const defaultSeeds: SeedStructure = {
                         pink: "off"
                     }
                 },
+                rabbitEgg: {
+                    catKey: "special",
+                    key: "rabbitEgg",
+                    name: "Rabbit Egg",
+                    colors: {
+                        red: "off",
+                        yellow: "off",
+                        blue: "off",
+                        white: "off",
+                        purple: "off",
+                        grey: "off",
+                        pink: "off"
+                    }
+                },
                 sneakerKeychain: {
                     catKey: "special",
                     key: "sneakerKeychain",
@@ -1760,6 +1774,7 @@ const defaultSeeds: SeedStructure = {
                 "reverseValentinesDaySticker",
                 "presentStickerGold",
                 "easterEgg",
+                "rabbitEgg",
                 "sneakerKeychain",
                 "pikmin4Spaceship",
                 "mahjongTileA",

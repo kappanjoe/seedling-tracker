@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.2.1 - April 6, 2024
+- Added Rabbit Egg decor
+
 ## v2.2.0 - April 3, 2024
 - Refactored seeds data structure (Updated to v3.0.0)
 - This fix removes bugs causing duplicate seeds, etc., but please note that some data loss may occur as a result of this transition.
