@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const ImportExport: React.FC<Props> = () => {
-	const { colors, decorations, categories, preferences } = useSeedContext();
+	const { categories, preferences } = useSeedContext();
 	const [importDidError, setImportDidError] = useState(false);
 	const [importText, setImportText] = useState("");
 	const [isCopied, setIsCopied] = useState(false);
@@ -23,11 +23,9 @@ export const ImportExport: React.FC<Props> = () => {
 
 	let base64 = require('base-64');
 	let utf8 = require('utf8');
-	
+
 	async function pasteUserMemToClipboard() {
 		let userMem = {
-			colors: colors,
-			decorations: decorations,
 			categories: categories,
 			userPrefs: preferences
 		};
@@ -55,7 +53,9 @@ export const ImportExport: React.FC<Props> = () => {
 			const newUserMem = JSON.parse(utf8.decode(base64String));
 
 			localStorage.clear();
-			localStorage.setItem("decorations", JSON.stringify(newUserMem.decorations));
+			if (newUserMem.decorations) {
+				localStorage.setItem("decorations", JSON.stringify(newUserMem.decorations));
+			};
 			localStorage.setItem("categories", JSON.stringify(newUserMem.categories));
 			localStorage.setItem("userPrefs", JSON.stringify(newUserMem.userPrefs ?? new Preferences()));
 			window.location.reload();

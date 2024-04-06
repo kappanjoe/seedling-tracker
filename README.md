@@ -1,4 +1,4 @@
-# Deco Tracker v2.2.1
+# Deco Tracker v2.2.2
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -37,8 +37,9 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
 
 ## What's New
 
-### v2.2.1 - April 6, 2024
+### v2.2.1, v2.2.2 - April 6, 2024
 - Added Rabbit Egg decor
+- Relocated Winter Sticker decor to the Special category
 
 ### v2.2.0 - April 3, 2024
 - Refactored seeds data structure

@@ -42,7 +42,7 @@ function App() {
 		setSeedCount(count);
 		setSeedMax(max);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [preferences.doCountSeeds, categories]);
+	}, [preferences.doCountSeeds, contextLoaded, categories]);
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', preferences.theme === 'system'? (window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light') : preferences.theme);

@@ -35,6 +35,22 @@ export const SeedContextProvider = ({ children }: Props) => {
 
 	const updateCats = (savedCats: Indexable<Category>): Indexable<Category> => {
 		let newCats = defaultSeeds.categories;
+
+		const relocateDecor = (decorKey: string, oldCatKey: string, newCatKey: string) => {
+			if (savedCats[oldCatKey].decorations[decorKey] !== undefined) {
+				savedCats[newCatKey].decorations[decorKey] = {
+					...savedCats[oldCatKey].decorations[decorKey],
+					catKey: newCatKey
+				};
+				delete savedCats[oldCatKey].decorations[decorKey];
+				savedCats[newCatKey].decorationOrder.push(decorKey);
+				savedCats[oldCatKey].decorationOrder = newCats[oldCatKey].decorationOrder;
+			}
+		};
+
+		// Relocate decor to new categories if not yet updated in local storage
+		relocateDecor("stickerWinter", "roadside", "special");
+		
 		// For every available old category
 		defaultSeeds.categoryOrder.forEach((defaultCatKey: string) => {
 			// Update the new category with the isOpen state if it exists in the old list

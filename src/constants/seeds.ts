@@ -673,20 +673,6 @@ const defaultSeeds: SeedStructure = {
                         pink: "off"
                     }
                 },
-                stickerWinter: {
-                    catKey: "roadside",
-                    key: "stickerWinter",
-                    name: "Sticker (Winter)",
-                    colors: {
-                        red: "off",
-                        yellow: "off",
-                        blue: "off",
-                        white: "off",
-                        purple: "off",
-                        grey: "off",
-                        pink: "off"
-                    }
-                },
                 coin: {
                     catKey: "roadside",
                     key: "coin",
@@ -706,7 +692,6 @@ const defaultSeeds: SeedStructure = {
                 "stickerGreen",
                 "stickerBlue",
                 "stickerOrange",
-                "stickerWinter",
                 "coin"
             ]
         },
@@ -1746,6 +1731,20 @@ const defaultSeeds: SeedStructure = {
                         grey: "off",
                         pink: "off"
                     }
+                },
+                stickerWinter: {
+                    catKey: "special",
+                    key: "stickerWinter",
+                    name: "Winter Sticker",
+                    colors: {
+                        red: "off",
+                        yellow: "off",
+                        blue: "off",
+                        white: "off",
+                        purple: "off",
+                        grey: "off",
+                        pink: "off"
+                    }
                 }
             },
             decorationOrder: [
@@ -1781,7 +1780,8 @@ const defaultSeeds: SeedStructure = {
                 "mahjongTileB",
                 "iceCream",
                 "puzzle2021FallMemories",
-                "puzzle2022SummerMemories"
+                "puzzle2022SummerMemories",
+                "stickerWinter"
             ]
         }
     },
