@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.2.3 - April 12, 2024
+- Added Spring Sticker decor
+
 ## v2.2.1, v2.2.2 - April 6, 2024
 - Added Rabbit Egg decor
 - Relocated Winter Sticker decor to the Special category

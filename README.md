@@ -1,4 +1,4 @@
-# Deco Tracker v2.2.2
+# Deco Tracker v2.2.3
 
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
@@ -36,6 +36,9 @@ Deco Tracker is a tool for keeping tabs on which decorations/seeds you've collec
    - Run `npm run deploy` any time you want to update the GitHub Pages deployment with changes to your current branch.
 
 ## What's New
+
+### v2.2.3 - April 12, 2024
+- Added Spring Sticker decor
 
 ### v2.2.1, v2.2.2 - April 6, 2024
 - Added Rabbit Egg decor

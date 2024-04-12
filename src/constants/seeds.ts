@@ -15,7 +15,7 @@ const defaultSeeds: SeedStructure = {
         "grey",
         "pink",
     ],
-    decorationCount: 94,
+    decorationCount: 96,
     categories: {
         restaurant: {
             key: "restaurant",
@@ -1745,6 +1745,20 @@ const defaultSeeds: SeedStructure = {
                         grey: "off",
                         pink: "off"
                     }
+                },
+                stickerSpring: {
+                    catKey: "special",
+                    key: "stickerSpring",
+                    name: "Spring Sticker",
+                    colors: {
+                        red: "off",
+                        yellow: "off",
+                        blue: "off",
+                        white: "off",
+                        purple: "off",
+                        grey: "off",
+                        pink: "off"
+                    }
                 }
             },
             decorationOrder: [
@@ -1781,7 +1795,8 @@ const defaultSeeds: SeedStructure = {
                 "iceCream",
                 "puzzle2021FallMemories",
                 "puzzle2022SummerMemories",
-                "stickerWinter"
+                "stickerWinter",
+                "stickerSpring"
             ]
         }
     },

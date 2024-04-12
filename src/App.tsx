@@ -12,7 +12,7 @@ import './App.css';
 function App() {
 	const { categories, categoryOrder, preferences, contextLoaded } = useSeedContext();
 	let [seedCount, setSeedCount] = useState(0);
-	let [seedMax, setSeedMax] = useState(defaultSeeds.decorationCount!);
+	let [seedMax, setSeedMax] = useState(defaultSeeds.decorationCount);
 
 	var bgColor: string;
   	if (preferences.theme === 'system') {
