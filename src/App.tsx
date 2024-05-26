@@ -53,6 +53,7 @@ function App() {
 			<meta name="theme-color" content={ bgColor }/>
 			<meta name="viewport" content="width=device-width, maximum-scale=1.0, viewport-fit=cover"/>
 			<Toolbar/>
+			<p className="Notice"><b>Notice:</b> Deco Tracker is no longer maintained.</p>
 			<div className='App-body'>
 				{ contextLoaded && <CountSpan count={ seedCount } max={ seedMax } category={ false }/> }
 				{ contextLoaded && categoryOrder.map( catKey => {

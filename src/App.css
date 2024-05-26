@@ -296,3 +296,7 @@
   font-size: 10pt;
   font-weight: 300;
 }
+
+.Notice {
+  color: var(--warning-color);
+}

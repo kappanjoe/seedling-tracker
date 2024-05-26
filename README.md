@@ -1,5 +1,9 @@
 # Deco Tracker v2.2.3
 
+## Notice
+
+### Deco Tracker is no longer being maintained due to the complexities of newer decorations added to the game, the existing ability to track collected decorations in-game, and a lack of personal free time. Please feel free to fork it and make it your own. :)
+
 ## [<p align=center>Open Deco Tracker</p>](https://kappanjoe.github.io/seedling-tracker/)
 
 - Tap the colored boxes to save which decorations you've collected and hatched.

@@ -3,6 +3,7 @@
   --backdrop-color: rgba(249, 248, 243, 0.2);
   --lbox-color: rgb(240, 240, 235);
   --text-color: midnightblue;
+  --warning-color: #895400;
   --border-color: lightgrey;
   --completed-color: lightgreen;
   --check-off-color: grey;
@@ -38,6 +39,7 @@
   --backdrop-color: rgba(40, 40, 40, 0.6);
   --lbox-color: rgb(40, 40, 40);
   --text-color: lightgrey;
+  --warning-color: #ffaf31;
   --border-color: rgb(80, 80, 80);
   --completed-color: rgb(21, 115, 55);
   --check-off-color: grey;
